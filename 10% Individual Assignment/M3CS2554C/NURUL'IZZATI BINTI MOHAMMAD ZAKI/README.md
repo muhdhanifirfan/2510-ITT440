@@ -43,9 +43,9 @@ Artillery was chosen because it offers the balance of simplicity, accuracy, and 
 
 | Component | Details |
 | --- | --- |
-| Operating System | Windows 10 |
-| Node.js Version | 18.x |
-| Artillery Version | 2.x |
+| Operating System | Windows 11 |
+| Node.js Version | 22.21.0 |
+| Artillery Version | 2.0.26 |
 | Target URL | https://jsonplaceholder.typicode.com |
 | Internet Connection | Stable broadband |
 
@@ -237,6 +237,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
