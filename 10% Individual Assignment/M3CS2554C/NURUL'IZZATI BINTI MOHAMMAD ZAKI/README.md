@@ -228,8 +228,7 @@ Overall, this project successfully demonstrates how **Artillery** can be used to
 
 ---
 
-**📁 File:** `results/jsonplaceholder-load-test-report.json`  
-**🔗 Dashboard:** _Artillery Cloud – Interactive Metrics View_
+
 
 
 
