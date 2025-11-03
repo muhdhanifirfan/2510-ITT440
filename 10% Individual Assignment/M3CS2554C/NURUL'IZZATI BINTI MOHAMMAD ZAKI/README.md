@@ -102,6 +102,12 @@ This gradual increase simulates real-world traffic, helping to identify how perf
 
 ## 📊 Data Analysis
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/adf1012e-c5d3-4669-bbb6-39fc5f0a6aad" alt="Artillery Response Time Graph" width="750"/><br>
+  <em>Figure: Artillery Cloud graph showing response time and request rate trends</em>
+</p>
+
+
 ### 🔹 Throughput
 The request rate increased smoothly from **8–10/sec** in the low phase to around **44/sec** at the heavy phase.  
 ✅ The API managed the higher request load without errors or timeouts.
@@ -224,6 +230,7 @@ Overall, this project successfully demonstrates how **Artillery** can be used to
 
 **📁 File:** `results/jsonplaceholder-load-test-report.json`  
 **🔗 Dashboard:** _Artillery Cloud – Interactive Metrics View_
+
 
 
 
