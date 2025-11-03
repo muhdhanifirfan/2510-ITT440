@@ -136,6 +136,11 @@ The request rate increased smoothly from **8–10/sec** in the low phase to arou
 ---
 
 ## 📉 Graph Interpretation (Artillery Cloud)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/69b9b09c-7817-4fe4-a743-5b3afed799d0" alt="Artillery Cloud Graph" width="750"/><br>
+  <em>Figure: Artillery Cloud graph showing load test metrics</em>
+</p>
+
 
 | **Metric** | **Interpretation** |
 |-------------|--------------------|
@@ -219,6 +224,7 @@ Overall, this project successfully demonstrates how **Artillery** can be used to
 
 **📁 File:** `results/jsonplaceholder-load-test-report.json`  
 **🔗 Dashboard:** _Artillery Cloud – Interactive Metrics View_
+
 
 
 
