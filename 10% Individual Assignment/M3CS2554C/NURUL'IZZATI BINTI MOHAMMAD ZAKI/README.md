@@ -78,8 +78,18 @@ This gradual increase simulates real-world traffic, helping to identify how perf
 
 ## 🧰 Test Execution
 
-### Step 1: Run test locally and save results
+### Step 1: Install Node.js and Artillery (in VS Code Terminal)
 
+Open the integrated terminal in **Visual Studio Code** and run these commands step by step.
+
+### 1️⃣ Install Node.js (if not installed)
+
+- After installation, verify using:
+
+```bash
+node -v
+npm -v
+```
 
 ---
 
@@ -227,6 +237,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
