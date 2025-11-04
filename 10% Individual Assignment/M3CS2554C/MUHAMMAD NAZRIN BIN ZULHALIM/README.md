@@ -141,3 +141,24 @@ The VU are designed to act like real, curious shoppers, not just bots hitting th
 <p align="center">
 <img width="800" alt="Screenshot (797)" src="https://github.com/user-attachments/assets/3b77bcf3-76ed-4cb3-943c-2aa1130f89fa" />
 </p>
+
+#### 2. The `P95 Average Response Time` Chart
+
+* **What it shows:** This is the P95 response time, a key metric for user experience. It means "95% of users had a response time *at or below* this value." The Y-axis is in milliseconds (ms).
+* **The Pattern (The Bad):** During the entire ramp-up phase (the first 20 minutes), the performance was *extremely* volatile. We see multiple massive spikes, with the worst one hitting **~55,000ms (55 seconds!)**. This is a completely unacceptable wait time.
+* **The Pattern (The Good):** The *moment* the load stabilized at 300 users (at timestamp `...751954`), the response time **immediately** dropped and became stable, staying consistently below 5,000ms (5 seconds).
+
+<p align="center">
+<img width="800" alt="Screenshot (797)" src="https://github.com/user-attachments/assets/446ad4a5-b9db-45c3-8ee1-8990e5205aca" />
+</p>
+
+#### 3. The `Error Rate` Chart
+
+* **What it shows:** This chart shows the percentage of requests that failed. A `1.0` on this chart means **100% of requests were failing** at that moment.
+* **The Pattern (The Ugly):** This chart mirrors the response time chart perfectly. During the ramp-up, the error rate was wild, frequently spiking to `1.0` (100% failures). This means that when the system got slow, it wasn't just slow—it was **down**. It was actively dropping connections and failing to serve users.
+* **The Pattern (The Recovery):** Just like the response time, the error rate **immediately** fell and stabilized as soon as the 300-user soak test began. While not zero, it dropped from a catastrophic 100% to a much lower, spikier average of 10-20%.
+
+<p align="center">
+<img width="800" alt="Error Rate" src="https://github.com/user-attachments/assets/bad6b6ec-6c27-4fe6-be34-05699811cd32" />
+</p>
+
