@@ -35,7 +35,8 @@
 <p align="center">
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/9d6be43b-c143-4beb-898a-fcc94426d2be" />
 </p>
-## 🎯 **`https://demo.nopcommerce.com`**
+
+## 🎯 `https://demo.nopcommerce.com`
 
 | Feature | Description |
 | :--- | :--- |
@@ -71,4 +72,22 @@ The VU are designed to act like real, curious shoppers, not just bots hitting th
 4.  **"Think Time":** The user pauses for another 1-3 seconds while looking at the results.
 5.  **View Product:** Finally, the user clicks on a specific product, the `"Apple MacBook Pro 13-inch"`, to see its details.
 6.  **"Think Time":** The user pauses for 1-3 seconds to "read" the page before starting their journey over again.
+
+### `https://demo.nopcommerce.com` Web Page Preview
+- **Home Page** 
+<p align="center">
+<img width="800" alt="Screenshot (796)" src="https://github.com/user-attachments/assets/52688a50-438a-4055-948d-783c73638bf0" />
+</p>
+
+
+---
+
+- **View Product Page**
+<p align="center">
+<img width="800" alt="Screenshot (797)" src="https://github.com/user-attachments/assets/339199a3-8ed3-4964-b4e2-0ea8af812771" />
+</p>
+
+---
+
+
 
