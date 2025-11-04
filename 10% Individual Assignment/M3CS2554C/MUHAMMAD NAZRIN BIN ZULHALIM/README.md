@@ -32,7 +32,11 @@
 | **Extensibility** | Supports extensions (like `xk6-browser`) to add capabilities, such as real browser automation for frontend performance. |
 ---
 ## :dart: Target Application
+<p align="center">
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/9d6be43b-c143-4beb-898a-fcc94426d2be" />
+</p>
 ## 🎯 **`https://demo.nopcommerce.com`**
+
 | Feature | Description |
 | :--- | :--- |
 | **:dart: Target Application** | The application we're testing is **`https://demo.nopcommerce.com`**, which is a public demo of an online store. |
