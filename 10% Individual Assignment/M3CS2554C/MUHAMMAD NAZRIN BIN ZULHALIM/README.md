@@ -162,3 +162,15 @@ The VU are designed to act like real, curious shoppers, not just bots hitting th
 <img width="800" alt="Error Rate" src="https://github.com/user-attachments/assets/bad6b6ec-6c27-4fe6-be34-05699811cd32" />
 </p>
 
+---
+
+### :dart: Overall Conclusion
+
+**The application cannot handle a *rapidly increasing* load.**
+
+The data tells a clear story:
+
+1.  While the user load was growing, the server was overwhelmed. It couldn't cope with the *change* in traffic, leading to massive 55-second response times and 100% error rates. For a real business, this is a disaster.
+2.  However, once the load *stabilized* (even at its peak of 300 users), the application "caught its breath" and recovered. This could be due to caches warming up, database connection pools finally scaling, or an auto-scaler kicking in too late.
+
+**Key Takeaway:** If this were a real e-commerce site, a "flash sale" or a successful marketing email would **crash the site** for the first 15-20 minutes—exactly when you need it to be working the most. The system's ability to handle *changing* load (its "elasticity") is its biggest weakness.
