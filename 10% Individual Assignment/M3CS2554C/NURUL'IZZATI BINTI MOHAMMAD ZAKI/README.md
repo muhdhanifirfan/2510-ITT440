@@ -90,7 +90,21 @@ Open the integrated terminal in **Visual Studio Code** and run these commands st
 node -v
 npm -v
 ```
+### 2️⃣ Install Artillery globally
+```bash
+npm install -g artillery
 
+```
+### 3️⃣ Verify Artillery installation
+```bash
+artillery --version
+
+```
+or
+```bash
+artillery -v
+
+```
 ---
 
 ## 🧮 Test Summary
@@ -237,6 +251,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
