@@ -11,7 +11,6 @@
 
 ---
 ## 🔨 Tools Selection
-<img width="1200" height="976" alt="K6_software_logo" src="https://github.com/user-attachments/assets/ce07a1f9-b3e4-49e1-962e-a9aa77d878ec" />
 
 <p align="center">
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/ce07a1f9-b3e4-49e1-962e-a9aa77d878ec" />
