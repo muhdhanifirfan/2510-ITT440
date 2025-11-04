@@ -191,3 +191,6 @@ performance started to decline after around 200 users.
 
 Overall, The use of Grafana k6 provided clear insights into response time, error rate, and system behavior under different traffic conditions
 achieving the project’s objective of assessing system performance and reliability.
+
+## 📹 Demonstration Video 
+https://youtu.be/no7autqBv5g?si=3f3WjA5kHnouw2Em
