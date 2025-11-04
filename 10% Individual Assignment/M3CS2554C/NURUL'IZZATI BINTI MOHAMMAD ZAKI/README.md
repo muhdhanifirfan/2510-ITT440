@@ -156,7 +156,7 @@ artillery run jsonplaceholder-load-test.yml
 - To save the test output in JSON format inside a results folder, run:
 
 ```bash
-artillery run jsonplaceholder-load-test.yml -o results/test_output.json
+npx artillery run --output "results/jsonplaceholder-load-test-report.json" jsonplaceholder-load-test.yml
 
 ```
 - This will create a file named test_output.json inside the results directory.
@@ -171,8 +171,7 @@ This can use this file to generate charts or reports.
 npx artillery run --record --key YOUR_ARTILLERY_CLOUD_KEY --output "results/jsonplaceholder-load-test-report.json" jsonplaceholder-load-test.yml
 
 ```
-- This will create a file named test_output.json inside the results directory.
-This can use this file to generate charts or reports.
+
 ---
 
 ## 🧮 Test Summary
@@ -319,6 +318,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
