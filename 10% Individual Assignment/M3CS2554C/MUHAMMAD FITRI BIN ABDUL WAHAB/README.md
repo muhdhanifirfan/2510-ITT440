@@ -1,4 +1,4 @@
-# 🧪 ITT440 - Web Application Performance Testing & Analysis  
+# 🧪  Web Application Performance Testing & Analysis  
 ## Title: Load Testing of FakeStoreAPI Using K6  
 
 ### 👤 Author  
@@ -9,7 +9,17 @@
 
 ---
 
-## 🎯 1. Objective  
+## 🧠 Background
+
+**Load testing** evaluates how well a system handles concurrent requests.  
+Each **virtual user (VU)** acts like a real human user sending API requests.  
+
+By running **50 VUs** for **30 seconds**, this test simulates moderate user traffic to the API.  
+We use **k6**, a modern developer-centric load testing tool, and send real-time data to **Grafana Cloud** using an authentication token.
+
+---
+
+## 🎯  Objective  
 
 The purpose of this project is to perform a **Load Test** on a public web application using **K6**, a modern and developer-friendly load testing tool.  
 The target system is [FakeStoreAPI](https://fakestoreapi.com/), an open REST API that simulates an online store.  
@@ -21,9 +31,11 @@ This test aims to evaluate:
 
 ---
 
-## ⚙️ 2. Tool Selection Justification  
+## ⚙️  Tool Selection Justification  
 
 ### 🔸 Why Grafana K6?  
+<img width="200" height="174" alt="k6 logo" src="https://github.com/user-attachments/assets/4695c7f3-f91f-4b71-887c-fabcbfc25044" />
+
 Grafana K6 was selected due to its simplicity, lightweight setup, and developer-friendly scripting language (JavaScript).  
 Compared to other tools, K6 offers:
 - Easier scripting and execution from the command line  
@@ -32,7 +44,7 @@ Compared to other tools, K6 offers:
 
 ---
 
-## 🌐 3. Target Web Application  
+## 🌐  Target Web Application  
 
 **Application:** [FakeStoreAPI](https://fakestoreapi.com/)  
 **Description:** A free online API for testing and prototyping e-commerce applications.  
@@ -41,25 +53,42 @@ Compared to other tools, K6 offers:
 
 ---
 
-## 🧰 4. Test Environment Setup  
+## 🧰  Test Environment Setup  
 
 | Component | Description |
 |------------|-------------|
 | **Operating System** | Windows 11 |
 | **Tool** | K6 v0.52.0 |
-| **Connection** | Broadband Internet |
+| **Platform** | Window Comand Prompt |
 | **Target URL** | `https://fakestoreapi.com/products` |
 
-### 🔧 Installation Steps
-1. Download and install K6  
-   - **Windows (Chocolatey):**  
-     ```bash
-     choco install k6
-     ```
-   - **Linux (Debian/Ubuntu):**  
-     ```bash
-     sudo apt install k6
-     ```
-2. Verify installation  
+
+## ⚙️ Test Configuration 
+   Test Script (loadtest.js):
    ```bash
-   k6 version
+    import http from 'k6/http';  
+    import { sleep } from 'k6';  
+    
+    export const options = {  
+      vus: 50,         // Number of virtual users  
+      duration: '30s', // Test duration  
+      };  
+      export default function () {  
+      // Target: FakeStoreAPI 
+      const res = http.get('https://fakestoreapi.com/products');  
+      sleep(1); // Simulate user wait time between requests  
+      }
+   ```
+
+## ⚙️ Step 1: Run in CLI  
+<img width="1237" height="151" alt="image" src="https://github.com/user-attachments/assets/667f24b4-6df1-4d46-bcfe-733bcad0d2e4" />  
+Output  
+<img width="1337" height="982" alt="image" src="https://github.com/user-attachments/assets/d49d6cc7-7776-4d0e-a2f6-b5449ff5c08b" />  
+Graph Analysis  
+<img width="1444" height="605" alt="image" src="https://github.com/user-attachments/assets/47c19d6b-2754-4d29-8b61-3e41e39a27bf" />
+
+
+
+
+
+
