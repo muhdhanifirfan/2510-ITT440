@@ -47,7 +47,7 @@ Artillery was chosen because it offers the balance of simplicity, accuracy, and 
 | Node.js Version | 22.21.0 |
 | Artillery Version | 2.0.26 |
 | Target URL | https://jsonplaceholder.typicode.com |
-| Internet Connection | Stable broadband |
+| Internet Connection | WiFI |
 
 ---
 
@@ -317,6 +317,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
