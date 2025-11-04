@@ -1,52 +1,52 @@
 # MUHAMMAD KAMAL BIN OTHMAN
-Web Application Performance Testing 
+**Web Application Performance Testing** 
 
-STUDENT ID: 2025118299
+**STUDENT ID: 2025118299**
 
-CLASS: M3CS2554C
+**CLASS: M3CS2554C**
 
-TITLE: WEBSITE PERFORMANCE TESTING USING SIEGE 
+**TITLE: WEBSITE PERFORMANCE TESTING USING SIEGE** 
 
-Tool Selection Justification: Siege
+### **Tool Selection Justification: Siege**
 
 Siege was selected as the testing tool for this performance analysis due to several reasons:
 
-1. Open-Source Tool
+**1. Open-Source Tool**
 
 Siege is an open-source tool, which is completely free to use without any fees. Siege also allows users 
 to modify the code and customize it according to their specific needs. This tool also provide transparency 
 and continuous improvement through contributions from developers around the world.
 
-2. Support for HTTP and HTTPS Testing
+**2. Support for HTTP and HTTPS Testing**
 
 Siege is primarily designed for testing HTTP and HTTPS-based web servers, which makes it very suitable 
 for testing the performance of web applications and services. This allows it to simulate multiple users 
 making requests to the web server, which is very suitable for several test like stress test, load test,
 and spike test.
 
-3. Lightweight and Efficient
+**3. Lightweight and Efficient**
 
 Siege is a lightweight tool that does not require significant system resources to operate due to the use of 
 command line (CLI) instead of Graphical User Interface (GUI). It is ideal for quick tests with minimum resource, 
 and it can easily handle scenarios with a high number of concurrent users. Siege offers essential features such 
 as customizable delays between requests to simulate realistic user behavior.
 
-4. Ease of Use
+**4. Ease of Use**
 
 Siege is known for its beginner-friendly concept and ease of use. The command-line interface (CLI) allows users to perform
 specific tests by providing several basic parameters, such as the number of concurrent users, test duration, and 
 the target URL. Additionally, the tool provides clear output, making it easy to analyze results.
 
-TEST ENVIRONMENT SETUP AND METHADOLOGY
+### **TEST ENVIRONMENT SETUP AND METHADOLOGY**
 
-TESTED ENVIRONEMENT
+**TESTED ENVIRONEMENT**
 
 IMAGE (KALI)
 - Kali Linux is an open-source Linux distribution that is created for cybersecurity purpose. Even though it is closely
   related with cybersecurity, it is also can be used for other purposes, such as website's performance test in this case
   using 'siege' tool.
 
-GUIDE:
+**GUIDE:**
 
 1. Update the Kali Linux using this command
 2. Install 'siege' using this command
@@ -55,22 +55,22 @@ GUIDE:
    -t1M represents the test duration is 1 minute
    -specify the target website's URL
    
-TESTED APPLICATION
+**TESTED APPLICATION**
 
-https://tools-httpstatus.pickup-services.com/
+**https://tools-httpstatus.pickup-services.com/**
 
 This website is a public HTTP Status Code testing service that provides various endpoints to simulate server responses.
 It is primarily designed for testing HTTP client behavior and verifying response codes such as 200 OK, 204 No Content, or 404 Not Found.
 Due to it's lightweight feature, this website is suitable for quick performance and availability testing.
 
-Key features include:
+**Key features include:**
 
 1. Simulation of standard HTTP response codes
 2. Minimal payload responses for fast network benchmarking
 3. Simple API endpoints suitable for automated or manual testing
 4. Public accessibility without permission needed
 
-Testing Infrastructure Setup
+**Testing Infrastructure Setup**
 
 This performance test was conducted using the following configuration:
 
@@ -80,16 +80,16 @@ System Memory: 32 GB RAM
 Processor: AMD Ryzen 5 5600H
 Network Connection: 131 Mbps mobile hotspot (may introduce variable latency)
 
-Test Configuration
+**Test Configuration**
 
-Performance Test Design
+**Performance Test Design**
 
 Objective: Evaluate the website’s response consistency and throughput under moderate concurrent user load in 1 minute.
 Concurrent Users: 50 virtual users
 Test Duration: 60 seconds (1 minute)
 User Behavior: Accessed the root URL, which is 'https://tools-httpstatus.pickup-services.com/'.
 
-HTTP Request Configuration
+**HTTP Request Configuration**
 
 Protocol: HTTPS
 Server Name: tools-httpstatus.pickup-services.com
@@ -97,7 +97,7 @@ Server URL: https://tools-httpstatus.pickup-services.com/
 HTTP Method: GET
 Port: 443
 
-RAW DATA PRESENTATION
+**RAW DATA PRESENTATION**
 
 GRAPH1 IMAGE
 Figure 1: Transaction Summary showing successful and failed transactions
@@ -106,7 +106,7 @@ Figure 2: Key Performance Metrics Overview
 GRAPH3 IMAGE
 Figure 3: Transaction Time Comparison
 
-INTERPRETATION OF RESULTS 
+**INTERPRETATION OF RESULTS** 
 
 The performance test on the website https://tools-httpstatus.pickup-services.com/ shows that the site can handle response 
 times well when there is a moderate load. The average response time of 2.69 seconds, as shown in the performance figure 1 graph.
@@ -124,7 +124,7 @@ even though 40 of them failed. This failure rate may be attributed to network ti
 common in publicly accessible testing endpoints. However, the overall result of 3909 successful transactions in just 60 seconds shows that
 the server is capable of managing a massive volume of traffic without any serious problems.
 
-BOTTLENECKS
+**BOTTLENECKS**
 
 The performance test on the website https://tools-httpstatus.pickup-services.com/ found a number of problems with the system's performance. 
 The first bottleneck is the high average response time. Despite the website handling requests with consistent performance, the average response 
@@ -143,7 +143,7 @@ across different request, and a variety of endpoints are often involved in servi
 /GET, with a fixed load does not fully test the website's performance, especially on how the system will perform when handling more diverse traffic patterns. 
 In practice, some requests might experience shorter response times, while others might take longer, especially under higher traffic loads or more complex process.
 
-RECOMMENDATIONS OF IMPROVEMENT
+**RECOMMENDATIONS OF IMPROVEMENT**
 
 While the website https://tools-httpstatus.pickup-services.com/ performed well under moderate load, some areas could be improved to enhance performance, especially 
 for handling high traffic volumes.
@@ -166,7 +166,7 @@ The website's performance test resulted in a failure rate of 1.01%, which is 40 
 review server-side error handling to ensure that failed transactions are minimized and to ensure that rate-limiting mechanisms do not unnecessarily block valid traffic.
 Load balancing also can be considered to be implemented to distribute user traffic across multiple servers, reducing the chance of server overloads and transaction failures.
 
-Conclusion
+**Conclusion**
 
 In conclusion, the website https://tools-httpstatus.pickup-services.com/ showed stable performance under moderate load, managing 50 concurrent users with 2.69 seconds average 
 response time. The website’s throughput of 0.21 MB/sec and the transaction rate of 64.88 transactions/sec indicates that the website can efficiently handle multiple requests
