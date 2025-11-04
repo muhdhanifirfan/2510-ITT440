@@ -143,6 +143,34 @@ scenarios:
             userId: 1
       - think: 1
 ```
+### 🧪 Step 3: Run the Test (Basic)
+- Run the load test using configuration file. This will display live results directly in the terminal.
+
+```bash
+artillery run jsonplaceholder-load-test.yml
+
+```
+### 💾 Step 4: Save Test Results Locally
+- To save the test output in JSON format inside a results folder, run:
+
+```bash
+artillery run jsonplaceholder-load-test.yml -o results/test_output.json
+
+```
+- This will create a file named test_output.json inside the results directory.
+This can use this file to generate charts or reports.
+
+### ☁️ Step 5: Upload Results to Artillery Cloud (for Graphs)
+- To visualize your results on Artillery Cloud, use this command:
+
+> ⚠️ Important: Replace the API key with your own Artillery Cloud key before running.
+
+```bash
+npx artillery run --record --key YOUR_ARTILLERY_CLOUD_KEY --output "results/jsonplaceholder-load-test-report.json" jsonplaceholder-load-test.yml
+
+```
+- This will create a file named test_output.json inside the results directory.
+This can use this file to generate charts or reports.
 ---
 
 ## 🧮 Test Summary
@@ -289,6 +317,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
