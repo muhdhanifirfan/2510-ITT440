@@ -130,5 +130,14 @@ The VU are designed to act like real, curious shoppers, not just bots hitting th
 
 ---
 
+## 📝Result : In-Depth Analysis
+#### 1. The `Load` Chart
+* **What it shows:** This chart confirms our test ran exactly as planned.
+* **The Pattern:** We see a perfect "stair-step" pattern:
+    1.  A gradual ramp-up in user load (from timestamp `...750755` to `...751954`).
+    2.  A flat 10-minute "soak test" plateau where the load held steady at 300 users (`...751954` to `...752530`).
+    3.  A final ramp-down as users left the site (`...752530` onwards).
 
-
+<p align="center">
+<img width="800" alt="Screenshot (797)" src="https://github.com/user-attachments/assets/3b77bcf3-76ed-4cb3-943c-2aa1130f89fa" />
+</p>
