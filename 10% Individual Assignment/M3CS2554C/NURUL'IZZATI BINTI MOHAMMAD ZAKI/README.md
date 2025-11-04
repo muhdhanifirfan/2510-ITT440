@@ -78,34 +78,7 @@ This gradual increase simulates real-world traffic, helping to identify how perf
 
 ## 🧰 Test Execution
 
-### Step 1: Install Node.js and Artillery (in VS Code Terminal)
-
-Open the integrated terminal in **Visual Studio Code** and run these commands step by step.
-
-### 1️⃣ Install Node.js (if not installed)
-
-- After installation, verify using:
-
-```bash
-node -v
-npm -v
-```
-### 2️⃣ Install Artillery globally
-```bash
-npm install -g artillery
-
-```
-### 3️⃣ Verify Artillery installation
-```bash
-artillery --version
-
-```
-or
-```bash
-artillery -v
-
-```
-### 🧪 Step 2: Coding
+### 🧪 Step 1: Coding (in VS Code Terminal)
 ```bash
 config:
   target: "https://jsonplaceholder.typicode.com"
@@ -143,6 +116,35 @@ scenarios:
             userId: 1
       - think: 1
 ```
+
+### Step 2: Install Node.js and Artillery 
+
+Open the integrated terminal in **Visual Studio Code** and run these commands step by step.
+
+### 1️⃣ Install Node.js (if not installed)
+
+- After installation, verify using:
+
+```bash
+node -v
+npm -v
+```
+### 2️⃣ Install Artillery globally
+```bash
+npm install -g artillery
+
+```
+### 3️⃣ Verify Artillery installation
+```bash
+artillery --version
+
+```
+or
+```bash
+artillery -v
+
+```
+
 ### 🧪 Step 3: Run the Test (Basic)
 - Run the load test using configuration file. This will display live results directly in the terminal.
 
@@ -317,6 +319,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
