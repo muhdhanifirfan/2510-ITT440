@@ -75,15 +75,15 @@ import { sleep, group } from 'k6';
 
 export const options = {
   stages: [
-    { duration: '5m', target: 50 },    // Ramp up to a normal 50-user load
+    { duration: '5m', target: 50 }, 
     { duration: '5m', target: 100 },
     { duration: '5m', target: 200 },
     { duration: '5m', target: 300 },
-    { duration: '10m', target: 300 },  // ** Hold that load for 4 HOURS **
-    { duration: '5m', target: 0 },    // Ramp down
+    { duration: '10m', target: 300 }, 
+    { duration: '5m', target: 0 },    
   ],
 };
-// --- This is your main user script ---
+
 export default function() {
   const BASE_URL = 'https://demo.nopcommerce.com';
 
