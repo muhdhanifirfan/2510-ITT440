@@ -26,11 +26,11 @@ This project focuses on performing **capacity testing** on the [Fake REST API](h
 ## 🧰 Test Plan and Methodology
 k6 was selected as a tool to be used in this experiment because it is a modern, lightweight, and developer-friendly performance testing tool that supports scripting with JavaScript. k6 requires less configuration and provides clean command-line output suitable for small-scale experiments.
 
-| Tool name | k6 |
-| Testing type | Capacity Testing |
-| Target: https | fakerestapi.azurewebsites.net/ |
-| Test duration | 10 seconds per scenario |
-| Virtual users | 100, 1000, 2000, 3000, 4000, 5000 (for comparison) |
+| Tool name | k6 |  
+| Testing type | Capacity Testing |  
+| Target: https | fakerestapi.azurewebsites.net/ |  
+| Test duration | 10 seconds per scenario |  
+| Virtual users | 100, 1000, 2000, 3000, 4000, 5000 (for comparison) |  
 
 ---
 
@@ -41,4 +41,5 @@ k6 was selected as a tool to be used in this experiment because it is a modern, 
 - Processor: Intel i5 processor 
 - RAM: 8 GB  
 - Internet Connection: Stable broadband
+
 
