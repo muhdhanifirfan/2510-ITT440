@@ -306,18 +306,16 @@ These findings demonstrate professional-level application of empirical testing a
 
 ## 🏁 Conclusion
 
-The load testing results on the **JSONPlaceholder API** confirm that the system remains **stable and responsive** even under increasing load.  
-Across all three phases, a total of **5,040 requests** were executed with **no failures** and an **average response time of 126 ms**.
+In conclusion, the load testing results show that the **JSONPlaceholder API** is **stable, reliable, and efficient** under different levels of user load.
 
-This indicates:
+Across all three phases, a total of **5,040 requests** were completed with **no failures**, and an **average response time of only 126 milliseconds**.
 
-- ✅ The API can handle concurrent user requests effectively.  
-- 🧩 Artillery is a dependable tool for replicating real-world load patterns.  
-- ⚙️ Proper test design and gradual load increments ensure meaningful, accurate insights.  
+This means the API can handle **concurrent users effectively**, and **Artillery** has proven to be a dependable tool for simulating real-world load conditions.
 
-Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
+With a proper test design and gradual load increments, we can gain **meaningful and accurate insights** about system performance.
 
 ---
+
 
 
 
