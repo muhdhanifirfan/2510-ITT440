@@ -105,6 +105,44 @@ or
 artillery -v
 
 ```
+### 🧪 Step 2: Coding
+```bash
+config:
+  target: "https://jsonplaceholder.typicode.com"
+  phases:
+    - duration: 30
+      arrivalRate: 2
+      rampTo: 5
+      name: "Low load test"
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 10
+      name: "Moderate load test"
+    - duration: 90
+      arrivalRate: 10
+      rampTo: 15
+      name: "Heavy load test"
+  defaults:
+    headers:
+      Content-Type: "application/json"
+  http:
+    timeout: 30  # prevents timeouts for slower connections
+
+scenarios:
+  - name: "Stable JSONPlaceholder Load Test"
+    flow:
+      - get:
+          url: "/posts/1"
+      - get:
+          url: "/users/1"
+      - post:
+          url: "/posts"
+          json:
+            title: "Artillery JSON Load Test"
+            body: "This test checks API stability under increasing load."
+            userId: 1
+      - think: 1
+```
 ---
 
 ## 🧮 Test Summary
@@ -251,6 +289,7 @@ This indicates:
 Overall, this project successfully demonstrates how **Artillery** can be used to measure **performance stability**, identify **bottlenecks**, and validate **API reliability** in a realistic testing environment.
 
 ---
+
 
 
 
