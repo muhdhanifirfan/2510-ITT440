@@ -177,11 +177,11 @@ This points to a classic **elasticity bottleneck**. The application's infrastruc
 
 ---
 
-## 💡 Recommendations for Improvement
+## 💡 Recommendations to Improve the Web Page
 
 Here are actionable steps to fix this instability and improve the website's performance.
 
-### 1. Fix the Scaling Bottleneck (Priority 1)
+### 1. Fix the Scaling Bottleneck
 
 The goal is to help the server "warm up" faster or be warm *before* traffic hits.
 
