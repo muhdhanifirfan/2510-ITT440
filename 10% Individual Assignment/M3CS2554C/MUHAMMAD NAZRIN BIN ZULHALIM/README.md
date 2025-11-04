@@ -11,6 +11,11 @@
 
 ---
 ## 🔨 Tools Selection
+
+<p align="center">
+<img width="400" height="300" alt="image" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FK6_%2528software%2529&psig=AOvVaw33TU8wzH9H34rhw3OFEd5J&ust=1762344074614000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNjw9LW52JADFQAAAAAdAAAAABAE" />
+</p>
+
 ## 🔥Grafana k6
 ## 🚀 Key Features of Grafana k6
 
