@@ -64,9 +64,9 @@
 * **Stage 6 (Ramp Down):** Gradually remove all users over 5 minutes.
 
 ---
-## 🧩 Test Scripts (JavaScript Files)
+## 🧪 Test Scripts
 
-### 🔹 `k6_low.js` (Low Configuration)
+### 🔹 `k6_script.js` 
 
 ```javascript
 import http from 'k6/http';
