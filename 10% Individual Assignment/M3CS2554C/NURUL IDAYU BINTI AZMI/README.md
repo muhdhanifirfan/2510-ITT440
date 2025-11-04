@@ -1,6 +1,15 @@
-#Website Capacity Testing Using K6
+# Website Capacity Testing Using K6
 
-#### 🧩 Introduction
+### Name: NURUL IDAYU BINTI AZMI
+### Student ID: 2025156453
+### Group: CDCS2554C
+### Subject: ITT440 - Network Programming
+
+### Prepared for: MR. SHAHADAN BIN SAAD
+
+---
+
+## 🧩 Introduction
 This project focuses on performing **capacity testing** on the [Fake REST API](https://fakerestapi.azurewebsites.net/) website using **K6**, an open-source load testing tool.  
 The goal of this test is to analyze how the system performs under an increasing number of concurrent virtual users (VUs) and identify its performance limit.
 
@@ -38,3 +47,4 @@ k6 was selected as a tool to be used in this experiment because it is a modern, 
 | Tool | Purpose |
 |------|----------|
 | **K6** | Load and capacity testing tool for scripting tests in JavaScript. |
+
