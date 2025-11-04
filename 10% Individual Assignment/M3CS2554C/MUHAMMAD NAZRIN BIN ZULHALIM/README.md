@@ -63,6 +63,47 @@
 * **Stage 5 (Soak Test):** Hold the peak load of **300** users steady for **10 minutes**. This is where we look for stability issues.
 * **Stage 6 (Ramp Down):** Gradually remove all users over 5 minutes.
 
+---
+## 🧩 Test Scripts (JavaScript Files)
+
+### 🔹 `k6_low.js` (Low Configuration)
+
+```javascript
+import http from 'k6/http';
+import { sleep, group } from 'k6';
+
+
+export const options = {
+  stages: [
+    { duration: '5m', target: 50 },    // Ramp up to a normal 50-user load
+    { duration: '5m', target: 100 },
+    { duration: '5m', target: 200 },
+    { duration: '5m', target: 300 },
+    { duration: '10m', target: 300 },  // ** Hold that load for 4 HOURS **
+    { duration: '5m', target: 0 },    // Ramp down
+  ],
+};
+// --- This is your main user script ---
+export default function() {
+  const BASE_URL = 'https://demo.nopcommerce.com';
+
+  group('User Flow: Browse Products', function() {
+    
+    // 1. Visit Homepage
+    http.get(BASE_URL);
+    sleep(Math.random() * 2 + 1); // Think time: 1-3s
+
+    // 2. Search for "laptop"
+    http.get(`${BASE_URL}/search?q=laptop`);
+    sleep(Math.random() * 2 + 1); // Think time: 1-3s
+
+    // 3. Visit a specific product page
+    http.get(`${BASE_URL}/apple-macbook-pro-13-inch`);
+    sleep(Math.random() * 2 + 1); // Think time: 1-3s
+  });
+}
+```
+---
 ### The User Simulation: What Are They Doing?
 The VU are designed to act like real, curious shoppers, not just bots hitting the homepage. Each user will repeatedly execute a 3-step "Browse and Search" journey.
 
