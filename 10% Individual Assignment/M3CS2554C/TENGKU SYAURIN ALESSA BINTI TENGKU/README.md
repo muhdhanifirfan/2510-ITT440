@@ -76,11 +76,13 @@ In summary, Locust was selected for its simplicity, scalability, and modern Pyth
 ## Setup Procedure
 
 **1. Launch Docker container**
+It is up to you to use any name for the Docker container.
   ```bash
   docker run -d -p 8088:80 --name stress-target nginx
   ```
  This creates a running container serving static web pages at http://localhost:8088.
  **2. Create Locust test script**
+ This will be the file you run on your terminal or PowerShell
  ```javascript
   from locust import HttpUser, task, between
 
@@ -93,9 +95,9 @@ class StressUser(HttpUser):
   ```
  **3. Run Locust**
  ```bash
-  locust -f locustfile.py --host http://localhost:8088
+  locust -f (filename).py --host http://localhost:8088
   ```
- Open the web interface at http://localhost:8089 to configure and start the test.
+ Open the web interface at http://localhost:8088 to configure and start the test.
 
  ## Methodology
 
