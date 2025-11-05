@@ -175,4 +175,4 @@ The Artillery performance test evaluated the DummyJSON API through various load 
 
 ---
 
-## **YouTube Demo:** [Click to Watch Demonstration Video][(https://youtu.be/fHesKKUZHLI)](https://youtu.be/NC-dLn--po8)
+## **YouTube Demo:** [Click to Watch Demonstration Video](https://youtu.be/NC-dLn--po8)
