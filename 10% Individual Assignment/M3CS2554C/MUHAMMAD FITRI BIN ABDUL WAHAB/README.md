@@ -1,5 +1,5 @@
 # 🧪  Web Application Performance Testing & Analysis  
-## Title: Load Testing of FakeStoreAPI Using K6  
+## Title: Load Testing of FakeStoreAPI Using Grafana K6  
 
 ### 👤 Author  
 | **Name:** | MUHAMMAD FITRI BIN ABDUL WAHAB  |  
