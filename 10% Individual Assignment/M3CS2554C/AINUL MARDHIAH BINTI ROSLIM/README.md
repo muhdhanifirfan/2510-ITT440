@@ -142,6 +142,25 @@ In addition, I can get the overall reports documentation to analyse the **Global
 
 ## 😍 Looking at the beautifully mesmerizing factual charts or graphs  (Raw data presentation)
 
+in Global Gatling Documentation : -
+
+<img width="764" height="275" alt="image" src="https://github.com/user-attachments/assets/4988fb63-17b8-4cf6-892b-9c4ce7a25a9d" />
+
+### Response time distribution
+<img width="763" height="280" alt="image" src="https://github.com/user-attachments/assets/b23321ad-00aa-47af-a1ab-e6deac220f29" />
+
+### Response time percentiles
+<img width="763" height="282" alt="image" src="https://github.com/user-attachments/assets/e682bbd9-46d3-4d8c-a700-53f351b9dc4f" />
+
+### Requests / sec
+<img width="762" height="282" alt="image" src="https://github.com/user-attachments/assets/ed61e7c0-4627-403f-9cfc-8c104f3977fb" />
+
+
+### Response / sec
+
+
+
+
 in Details bar graph for : -
 
 ### T01_GET_Login_Page
