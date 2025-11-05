@@ -1,48 +1,168 @@
 # 🧪 Website Stress Testing Using Artillery on Linux
 
-## 1. Introduction: Stress Testing
-
-Stress testing is a type of performance testing used to evaluate how a website or web application behaves under extreme conditions such as heavy traffic, limited server resources, or unexpected spikes in requests.
-The goal is to determine the **maximum capacity**, **stability**, and **reliability** of the system before it goes live.
-
-By conducting stress tests, developers can:
-
-* Identify **bottlenecks** and performance limits.
-* Improve **server configurations** and **code efficiency**.
-* Ensure the system remains **stable and responsive** under high load.
+### NAME: **MUHAMMAD FARIS IMRAN BIN RUSDI**
+### STUDENT ID: 2025137413
+### CLASS: M3CDCS2554C
+### TITLE: STRESS TESTING ON
 
 ---
 
-## 2. Tool Used: Artillery (on Linux)
+## 🧩 Introduction
 
-**Artillery** is a modern, open-source load testing tool used to simulate real-world traffic for APIs, websites, and backend systems.
-It is written in Node.js and can generate a large number of HTTP, WebSocket, or Socket.io requests efficiently.
+This project focuses on **Stress Testing a web API** using **Artillery.io** to analyze its performance, stability, and reliability under extreme load conditions.
+The main goal is to identify the **breaking point** of the system — how much traffic it can handle before performance starts to degrade.
 
-
-## 3. Features of Artillery
-
-| Feature                       | Description                                          |
-| ----------------------------- | ---------------------------------------------------- |
-| 🧩 **Scenario-based testing** | Define multiple user flows using YAML or JSON files. |
-| 🚀 **High scalability**       | Can generate thousands of virtual users.             |
-| 📊 **Detailed reports**       | Provides JSON or HTML summaries of test results.     |
-| ⚙️ **Protocol support**       | Supports HTTP, HTTPS, WebSocket, and Socket.io.      |
-| ⏱ **Custom timings**          | Control request rates, delays, and durations.        |
-| 🧠 **Integration ready**      | Works with CI/CD pipelines and cloud testing.        |
+Stress testing helps developers and organizations ensure that the system can withstand unexpected spikes in user requests and still maintain acceptable performance levels.
 
 ---
 
-## 4. Target Website
+## 🧠 Objective
 
-The test will target a simple web application hosted online or locally (e.g., `http://`
-This helps evaluate:
-
-* **Response time (latency)**
-* **Requests per second (RPS)**
-* **Error rate under load**
-
+* To determine the **maximum capacity** of the target API.
+* To identify **response degradation**, **timeouts**, and **failure rates** under stress.
+* To observe how the system behaves beyond its operational limits.
+* To document findings using **data, charts, and summaries** for future optimization.
 
 ---
 
+## 🧰 Tool Selection
 
+| Tool                          | Purpose                                                    |
+| ----------------------------- | ---------------------------------------------------------- |
+| **Artillery.io**              | Open-source performance testing tool for APIs and web apps |
+| **Node.js (NPM)**             | Required to install and run Artillery                      |
+| **Linux / Kali VM**           | Testing environment for executing stress tests             |
+| **Artillery Cloud Dashboard** | Provides visualization and performance tracking            |
 
+---
+
+## 🖥️ Testing Environment
+
+| Component            | Description                                             |
+| -------------------- | ------------------------------------------------------- |
+| **Operating System** | Kali Linux (VirtualBox)                                 |
+| **Tool**             | Artillery.io                                            |
+| **Target**           | Pokémon API endpoint (for functional stress simulation) |
+| **Duration**         | 5 minutes and 25 seconds                                |
+| **Phases**           | Warm-up → Moderate Load → Stress → Break Point          |
+
+---
+
+## ⚙️ Steps to Run the Project
+
+1. **Install Node.js & Artillery**
+
+   ```bash
+   sudo apt update
+   sudo apt install nodejs npm -y
+   sudo npm install -g artillery
+   ```
+
+2. **Create a YAML Test File**
+
+   ```yaml
+   config:
+     target: "https://pokeapi.co/api/v2"
+     phases:
+       - duration: 60
+         arrivalRate: 10
+         name: "Warm up"
+       - duration: 60
+         arrivalRate: 30
+         name: "Moderate load"
+       - duration: 90
+         arrivalRate: 50
+         name: "Stress test"
+       - duration: 60
+         arrivalRate: 100
+         name: "Break point"
+   scenarios:
+     - name: "Get Pokemon Info"
+       flow:
+         - get:
+             url: "/pokemon/1"
+   ```
+
+3. **Run the Test**
+
+   ```bash
+   artillery run stress-test.yml --record --key <your_artillery_key>
+   ```
+
+4. **View Results**
+
+   * In the terminal (real-time stats)
+   * On [Artillery Cloud Dashboard](https://app.artillery.io/)
+
+---
+
+## 📊 Raw Data Highlights
+
+| Metric                             | Result       |
+| ---------------------------------- | ------------ |
+| **Total Duration**                 | 5 min 25 sec |
+| **Requests Sent**                  | 13,800       |
+| **Successful Responses (200/404)** | 4,319        |
+| **Timeout Errors (ETIMEDOUT)**     | 9,481        |
+| **Average Response Time**          | 199.3 ms     |
+| **Peak Response Time (Max)**       | 2996 ms      |
+| **95th Percentile**                | 1130.2 ms    |
+| **99th Percentile**                | 1686.1 ms    |
+| **Failed Virtual Users**           | 9,481        |
+| **Completed Virtual Users**        | 4,319        |
+
+---
+
+## 🎯 Target
+
+The API under test was chosen to simulate **a real-world endpoint** — fetching Pokémon data via a GET request.
+This allows realistic evaluation of how a public API might respond under sudden bursts of requests.
+
+---
+
+## 📈 Graph Analysis
+
+Visual representation from the Artillery Cloud Dashboard shows:
+
+* A **steady response time** during warm-up.
+* **Gradual performance drop** under moderate load.
+* **Significant timeouts** during peak stress and break point phases.
+* **Error spikes (ETIMEDOUT)** showing the system’s breaking threshold.
+
+*(Attach your graph screenshot here if available)*
+
+---
+
+## 🧾 Test Report Summary
+
+| Phase         | Duration | Avg Req/sec | Avg Response (ms) | Errors |
+| ------------- | -------- | ----------- | ----------------- | ------ |
+| Warm-Up       | 60s      | 10          | 59                | 0      |
+| Moderate Load | 60s      | 30          | 70                | 1      |
+| Stress Test   | 90s      | 50          | 191               | 596    |
+| Break Point   | 60s      | 148         | 178               | 9,481  |
+
+---
+
+## 🧩 Key Findings
+
+* The system remained **stable up to moderate load** (≈30 requests/sec).
+* **Performance degradation** started beyond 50 concurrent users.
+* The **break point** occurred when reaching ~100 requests/sec.
+* A total of **9,481 timeout errors** indicates the server limit was exceeded.
+
+---
+
+## 🧠 Conclusion
+
+This stress testing project successfully demonstrates:
+
+* The **importance of scalability** testing before deployment.
+* The **behavior of APIs under extreme traffic conditions**.
+* How Artillery provides clear metrics and visual insights into performance.
+
+Improvements could include:
+
+* Implementing **caching** or **load balancing**.
+* Optimizing backend queries.
+* Deploying **distributed servers** to handle peak traffic efficiently.
