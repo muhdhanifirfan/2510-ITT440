@@ -151,7 +151,7 @@ Visual representation from the Artillery Cloud Dashboard shows:
 
 <img width="506" height="739" alt="image" src="https://github.com/user-attachments/assets/10bc1b2a-7287-4b6f-bd8e-249a659526e6" />
 
-*picture of summary report 
+_picture of summary report_
 
 ---
 
