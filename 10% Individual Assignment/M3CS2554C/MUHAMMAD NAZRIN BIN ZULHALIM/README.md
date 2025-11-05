@@ -6,6 +6,12 @@
 ### 🧠 Group: M3CS2554C
 
 ---
+
+## 🚀 Introduction: Why Are We Doing This?
+### What is Load Testing?
+### Load testing is a type of Performance Testing that determines the performance of a system, software product, or software application under real-life-based load conditions. Load testing determines the behavior of the application when multiple users use it at the same time. It is the response of the system measured under varying load conditions.
+
+---
 ## :building_construction: Project Objective
 ### The objective of this is to analyse how ‘https://demo.nopcommerce.com’ will behave under soak testing using Grafana k6. k6 is used to simulate continuous real life traffic loads and identify performance degradation, memory and resource leaks and stability issues. The result of the test will be the indicators(KPIs) of the key performance and application endurance.
 
