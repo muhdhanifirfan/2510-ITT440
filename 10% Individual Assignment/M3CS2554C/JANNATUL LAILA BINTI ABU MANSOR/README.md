@@ -4,10 +4,11 @@
 ####  GROUP : M3CS2554C
  <hr> <!-- This creates a horizontal divider line -->
 <p align="center">
-<img width="252" height="132" alt="image" src="  C:\Users\User\Desktop\GTMETRIX.jpg  "> </p>
+<img width="252" height="132" alt="image" src="https://github.com/user-attachments/assets/98e81f4f-aa05-4463-a5d0-eb8b50864f49" /> </p>
 
  <p align="center">
-<img width="250" height="134" alt="image" src="  C:\Users\User\Desktop\JOOMLA.png  " > </p>
+<img width="272" height="186" alt="JOOMLA" src="https://github.com/user-attachments/assets/b95c696b-fb75-478f-8f08-60160ea11a6a" /> </p>
+
  <hr> <!-- This creates a horizontal divider line -->
 
 ## 1. INTRODUCTION
