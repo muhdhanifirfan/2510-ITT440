@@ -2,32 +2,36 @@
 ## Title: Load Testing of FakeStoreAPI Using K6  
 
 ### 👤 Author  
-**Name:** MUHAMMAD FITRI BIN ABDUL WAHAB  
-**Student ID:** 2025172963  
-**Course:** ITT440 – Web Application Performance Testing  
-**Institution:** UiTM Kampus Jasin 
+| **Name:** | MUHAMMAD FITRI BIN ABDUL WAHAB  |  
+|-----------|-------------|
+| **Student ID:** |2025172963  |
+| **Course:** |ITT440 – Network Programming  |
+| **Institution:** |UiTM Kampus Jasin |
 
 ---
 
 ## 🧠 Background
 
-**Load testing** evaluates how well a system handles concurrent requests.  
-Each **virtual user (VU)** acts like a real human user sending API requests.  
+This project focuses on evaluating how well a web API performs when accessed by multiple users at the same time.  
+The testing tool used is **Grafana K6**, which generates **virtual users (VUs)** that behave like real client traffic.
 
-By running **50 VUs** for **30 seconds**, this test simulates moderate user traffic to the API.  
-We use **k6**, a modern developer-centric load testing tool, and send real-time data to **Grafana Cloud** using an authentication token.
+We performed **two types of Load Tests** to compare performance:
+| Test Type | Virtual Users | Purpose |
+|----------|--------------|----------|
+| **Normal Load Test** | 50 VUs | Simulates average expected usage |
+| **Heavy Load Test** | 100 VUs | Maximum cloud capacity & stress comparison |
 
 ---
 
 ## 🎯  Objective  
 
 The purpose of this project is to perform a **Load Test** on a public web application using **K6**, a modern and developer-friendly load testing tool.  
-The target system is [FakeStoreAPI](https://fakestoreapi.com/), an open REST API that simulates an online store.  
 
-This test aims to evaluate:
-- Response time under concurrent requests  
-- System throughput (requests per second)  
-- Error rate and performance stability  
+The objective of this experiment is to evaluate:
+- Response time under increasing load
+- Throughput and request handling efficiency
+- System stability during continuous access
+- Performance degradation when stressed
 
 ---
 
@@ -56,16 +60,19 @@ Compared to other tools, K6 offers:
 ## 🧰  Test Environment Setup  
 
 | Component | Description |
-|------------|-------------|
+|----------|-------------|
 | **Operating System** | Windows 11 |
-| **Tool** | K6 v0.52.0 |
-| **Platform** | Window Comand Prompt |
+| **Load Testing Tool** | Grafana K6 |
+| **Result Visualization** | Grafana Cloud Dashboard |
+| **Execution Platform** | Windows Command Prompt |
 | **Target URL** | `https://fakestoreapi.com/products` |
 
+---
 
-## ⚙️ Test Configuration 
-   Test Script (loadtest.js):
-   ```bash
+## ⚙️ Test Scipts 
+### 1️⃣ Normal Load Test (50 VUs)
+`Nloadtest.js`
+   ```javascript
     import http from 'k6/http';  
     import { sleep } from 'k6';  
     
@@ -73,22 +80,113 @@ Compared to other tools, K6 offers:
       vus: 50,         // Number of virtual users  
       duration: '30s', // Test duration  
       };  
-      export default function () {  
+    export default function () {  
       // Target: FakeStoreAPI 
       const res = http.get('https://fakestoreapi.com/products');  
       sleep(1); // Simulate user wait time between requests  
       }
    ```
+### 2️⃣ Heavy Load Test (100 VUs)
+`Hloadtest.js`
+   ```javascript
+    import http from 'k6/http';
+    import { sleep } from 'k6';
 
-## ⚙️ Step 1: Run in CLI  
-<img width="1237" height="151" alt="image" src="https://github.com/user-attachments/assets/667f24b4-6df1-4d46-bcfe-733bcad0d2e4" />  
-Output  
-<img width="1337" height="982" alt="image" src="https://github.com/user-attachments/assets/d49d6cc7-7776-4d0e-a2f6-b5449ff5c08b" />  
+    export const options = {
+      vus: 100,
+      duration: '30s',
+    };
+
+    export default function () {
+      http.get('https://fakestoreapi.com/products');
+      sleep(1);
+}
+
+   ```
+---
+
+## ▶️ Step-by-Step Instructions to Run the Tests 
+Step 1 — Login to Grafana Cloud Using Token  
+```bash
+k6 cloud login --token <TOKEN>
+```  
+
+Step 2 — Run Normal Load Test  
+```bash  
+k6 run --out cloud Nloadtest.js
+```  
+
+Step 3 — Run Heavy Load Test  
+```bash  
+k6 run --out cloud Hloadtest.js
+```
+
+Step 4 — View Results
+   1. Open Grafana Cloud Dashboard
+   2. Go to k6 Test Runs
+   3. Select the run history to view:  
+      Requests per Second  
+      Response Time (http_req_duration)  
+      Failure Rate  
+      VU Load Behavior  
+
+--- 
+
+## 📊 Results & Analysis
+### 1️⃣ Normal Load Test (50 VUs)  
+
+<img width="1435" height="942" alt="image" src="https://github.com/user-attachments/assets/6e09223a-84f1-443a-ab40-bda039c7cb55" />
+
 Graph Analysis  
-<img width="1444" height="605" alt="image" src="https://github.com/user-attachments/assets/47c19d6b-2754-4d29-8b61-3e41e39a27bf" />
+<img width="1451" height="598" alt="image" src="https://github.com/user-attachments/assets/8eebc302-a28d-4d0a-8b0d-1cb495cf5cce" />
 
 
+### 2️⃣ Heavy Load Test (100 VUs)  
 
+<img width="1357" height="808" alt="hloatest result" src="https://github.com/user-attachments/assets/4eb7aa32-718a-4788-ae8a-d0e010b687e7" />
 
+Graph Analysis  
+<img width="1448" height="597" alt="image" src="https://github.com/user-attachments/assets/990a8d8a-a0c9-4c53-8cb6-e8edc7b8ce2b" />
 
+## ⚖️ Performance Comparison (Normal Load vs Heavy Load)
+
+| Test Condition | Normal Load Test | Heavy Load Test |
+|---|---|---|
+| **Virtual Users (VUs)** | **50 VUs** | **100 VUs** |
+| **Test Duration** | 30 seconds | 30 seconds |
+| **P95 Response Time** | **~888 ms** | **~10,158 ms (≈10s)** |
+| **Peak Request Rate (RPS)** | ~36 req/s | ~43 req/s |
+| **Total Requests Made** | ~1,000 requests | ~121 requests |
+| **HTTP Failure Rate** | 0 failures | 0 failures |
+| **Performance Behavior** | Stable and responsive | Severe slowdown, high latency |
+| **Scalability Observation** | System handles moderate traffic well | System struggles with heavy concurrency |
+
+---
+
+## 🔍 Bottlenecks Identified
+
+| Issue | Observation | Impact |
+|------|-------------|--------|
+| **Response Time Increased** | Response time rose from ~888 ms (50 VU) to ~10s (100 VU). | Slower user experience under heavier traffic. |
+| **Throughput Decreased** | Fewer requests were completed during the heavy test. | System cannot handle many concurrent users efficiently. |
+| **Possible Backend Resource Limits** | Server performance drops when load increases. | Indicates CPU / Memory / Database constraints. |
+| **No Caching Detected** | Same data fetched repeatedly without caching. | Increases unnecessary server work. |
+
+---  
+
+## 💡 Simple Recommendations for Improvement
+
+| Improvement | Benefit |
+|------------|----------|
+| **Enable server-side caching** (store product list temporarily in memory) | Reduces repeated database calls and speeds up response time. |
+| **Optimize database queries** (indexing / reduce unnecessary joins) | Improves data retrieval efficiency and lowers response latency. |
+| **Increase server resources or introduce auto-scaling** | Allows the system to handle more concurrent users without performance drop. |
+| **Use CDN caching for static or rarely-changing data** | Delivers content faster to users globally. |
+| **Implement load balancing across multiple API servers** | Distributes traffic evenly, improving stability and scalability. |  
+
+---
+
+## 🏁 Conclusion  
+
+Based on the results, the performance threshold of the FakeStoreAPI appears to be around 50 concurrent users. At this level, the system operates efficiently with quick response times and stable throughput. However, when the load increases to 100 concurrent users, the response time deteriorates sharply. This indicates limited scalability and suggests that the system may require optimization or resource scaling to support heavier traffic loads.
 
