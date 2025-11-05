@@ -142,6 +142,12 @@ In addition, I can get the overall reports documentation to analyse the **Global
 
 ## 😍 Looking at the beautifully mesmerizing factual charts or graphs  (Raw data presentation)
 
+in Details bar graph for : -
+
+# T01_GET_Login_Page
+<img width="767" height="298" alt="T01_GET_Login_Page" src="https://github.com/user-attachments/assets/63aa8840-c1a7-475a-9f40-87d7e9efb6ba" />
+
+
 
 
 ## ○ Interpretation of results.
