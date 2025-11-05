@@ -142,16 +142,15 @@ Visual representation from the Artillery Cloud Dashboard shows:
 
 ## 🧾 Test Report Summary
 
-<img width="506" height="739" alt="image" src="https://github.com/user-attachments/assets/10bc1b2a-7287-4b6f-bd8e-249a659526e6" />
-picture of summary report 
-
-
 | Phase         | Duration | Avg Req/sec | Avg Response (ms) | Errors |
 | ------------- | -------- | ----------- | ----------------- | ------ |
 | Warm-Up       | 60s      | 10          | 59                | 0      |
 | Moderate Load | 60s      | 30          | 70                | 1      |
 | Stress Test   | 90s      | 50          | 191               | 596    |
 | Break Point   | 60s      | 148         | 178               | 9,481  |
+
+<img width="506" height="739" alt="image" src="https://github.com/user-attachments/assets/10bc1b2a-7287-4b6f-bd8e-249a659526e6" />
+*picture of summary report 
 
 ---
 
