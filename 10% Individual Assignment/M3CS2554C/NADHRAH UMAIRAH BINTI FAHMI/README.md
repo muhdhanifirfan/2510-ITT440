@@ -1,10 +1,17 @@
-# 🧠 COMPREHENSIVE WEB APPLICATION PERFORMANCE TESTING & ANALYSIS
+<div align="center">
 
-📌 SPIKE TEST ANALYSIS of AutomationInTesting WEB APPLICATION USING GRAFANA K6
+  <h1> WEB APPLICATION SPIKE TEST USING GRAFANA K6</h1>
+  <h3>COMPREHENSIVE PERFORMANCE TESTING REPORT</h3>
 
-**NAME:** NADHRAH UMAIRAH BINTI FAHMI  
-**STUDENT ID:** 2025168903  
-**GROUP :** M3CS2554C
+  <img width="900" alt="Grafana Screenshot" src="https://github.com/user-attachments/assets/a08ff3eb-5a94-435c-a9ca-106e51ccdccb" />
+
+  <p>
+    <b>NAME:</b> NADHRAH UMAIRAH BINTI FAHMI<br>
+    <b>STUDENT ID:</b> 2025168903<br>
+    <b>GROUP:</b> M3CS2554C
+  </p>
+
+</div>
 
 ---
 
@@ -12,10 +19,16 @@
 Web performance testing is essential for ensuring that a program can handle sudden spikes in user traffic without failure. This project focuses on conducting spike testing of web performance using **k6**, an open-source performance testing tool, and visualizing the results using **InfluxDB** and **Grafana**.
 The primary goal of this project is to assess how the target web application, **AutomationInTesting**, responds to a sudden surge of 1000 virtual users (VUs) and how it recovers afterwards. The performance test measures **request rate**, **active virtual users**, and **stability under high traffic situations**.
 
+---
+
+
+## 📌 2.0 WHAT IS SPIKE TESTING
+Spike testing is a type of performance test that examines how a system reacts when the number of users or requests increases sharply and then decreases rapidly over a short period. The objective is to identify whether the system can handle unexpected traffic spikes, recover from overload conditions, and maintain acceptable response times without crashing or data loss.
+Through spike testing, developers and testers can observe system stability, scalability limits, and potential resource constraints, such as CPU usage, memory consumption, and request handling efficiency.
 
 ---
 
-## 🎯 2.0 OBJECTIVES
+## 🎯 3.0 OBJECTIVES
 The vital objective of this project is to:
 - Analyse the capability of the website under a sudden spike across 1000 virtual users (VUs).  
 - Collect and monitor key performance indicators (KPIs), including request rate (req/s), response time, and error rate.  
@@ -24,8 +37,15 @@ The vital objective of this project is to:
 
 ---
 
-## ⚙️ 3.0 TOOL SELECTION JUSTIFICATION
-KR was chosen because 
+## ⚙️ 4.0 TOOL SELECTION JUSTIFICATION
+<p align="center">
+  <img width="649" height="244" alt="image" src="https://github.com/user-attachments/assets/556742d2-8c3e-484d-b341-629b583db0e7" />
+</p>
+
+
+Grafana K6 is a modern open-source load testing tool that prioritises simplicity, efficiency, and scalability.  It enables JavaScript scripting of performance tests, allowing for greater flexibility and automation in complex circumstances.
+
+K6 is frequently combined with InfluxDB for storing time-series data and Grafana for visualising test results through dynamic dashboards.  This integration allows testers to see real-time analytics, including virtual users (VUs), request rates, response times, and error rates. 
 
 | Tool | Purpose | Justification |
 |------|----------|----------------|
@@ -37,10 +57,10 @@ KR was chosen because
 
 ---
 
-## 🧭 4.0 TEST ENVIRONMENT SETUP AND CONFIGURATION
+## 🧭 5.0 TEST ENVIRONMENT SETUP AND CONFIGURATION
 This section explains how the testing environment was configured, how the spike test was designed, and how performance metrics were captured and analyzed.
 
-### 🖥️ 4.1 TEST ENVIRONMENT CONFIGURATION
+### 🖥️ 5.1 TEST ENVIRONMENT CONFIGURATION
 | Component | Description |
 |------------|--------------|
 | Operating System (OS) | Windows 11 64-bit |
@@ -55,7 +75,7 @@ This section explains how the testing environment was configured, how the spike 
 
 ---
 
-### 🧩 4.2 TEST SCRIPT CONFIGURATION
+### 🧩 5.2 TEST SCRIPT CONFIGURATION
 
 The k6 script defines the load pattern, thresholds, and behavior of virtual users. The final script used for the spike test was:  
 
@@ -91,7 +111,7 @@ export default function () {
 }
 ````
 ---
-### 📈 **4.3 METRICS MEASURED**
+### 📈 **5.3 METRICS MEASURED**
 
 The following performance metrics were captured through Grafana and k6:
 
@@ -104,7 +124,7 @@ The following performance metrics were captured through Grafana and k6:
 
 ---
 
-### ⚡ **4.4 TEST EXECUTION**
+### ⚡ **5.4 TEST EXECUTION**
 
 The test was executed from the local machine, with data streamed in real-time to Grafana dashboards. The total number of requests sent was approximately **2,653** over **2 minutes and 30 seconds**, which is reasonable for a spike test at this concurrency level, considering the 0.5-second sleep time per request per user.
 
@@ -121,7 +141,7 @@ Data gathering uses a local InfluxDB database. Grafana connected through the por
 
 ---
 
-### 📊 **5.0 RESULTS AND INTERPRETATION**
+### 📊 **6.0 RESULTS AND INTERPRETATION**
 
 **RESULT GRAPHS**
 
@@ -156,7 +176,7 @@ These console results were simultaneously exported to InfluxDB and visualised th
 
 ---
 
-### 🔍 **6.0 ANALYSIS AND FINDINGS**
+### 🔍 **7.0 ANALYSIS AND FINDINGS**
 
 | METRIC | OBSERVATION | ANALYSIS |
 |--------|--------------|-----------|
@@ -173,7 +193,7 @@ These console results were simultaneously exported to InfluxDB and visualised th
 
 ---
 
-### 🧩 **7.0 DISCUSSION**
+### 🧩 **8.0 DISCUSSION**
 
 During the spike test with 1,000 virtual users, the K6 console recorded **21,069 total HTTP requests** with an average response time of **1.83 seconds**, while the Grafana dashboard displayed only **2,653 total requests**.
 
@@ -191,7 +211,7 @@ The lower total in Grafana does not affect test accuracy, as the performance tre
 
 ---
 
-### 🛠 **8.0 RECOMMENDATIONS**
+### 🛠 **9.0 RECOMMENDATIONS**
 
 Based on the spike test results, the following actions are recommended:
 
@@ -206,7 +226,7 @@ Based on the spike test results, the following actions are recommended:
 
 ---
 
-### 🧾 **9. CONCLUSION**
+### 🧾 **10.0 CONCLUSION**
 
 The spike test demonstrated that the website could handle sudden traffic surges up to **1,000 virtual users** with minimal errors, although temporary delays were observed during peak load. This indicates that, while the system is generally stable, there are moments of strain that could impact the user experience under extreme conditions.
 
@@ -219,20 +239,20 @@ Overall, this experience enhanced my technical skills in performance evaluation,
 
 ---
 
-### 📚 **10.0 REFERENCES**
+### 📚 **11.0 REFERENCES**
 
-1. Grafana Labs. (2025). Grafana documentation: InfluxDB data source. Retrieved from https://grafana.com/docs/grafana/latest/datasources/influxdb/
+- Grafana Labs. (2025). *Grafana documentation: InfluxDB data source.* Retrieved from [https://grafana.com/docs/grafana/latest/datasources/influxdb/](https://grafana.com/docs/grafana/latest/datasources/influxdb/)
 
-2. Grafana Labs. (2025). Getting started with Grafana and InfluxDB. Retrieved from https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-
-   influxdb/
-   
-3. InfluxData. (2025). Using Grafana with InfluxDB OSS. Retrieved from https://docs.influxdata.com/influxdb/v2/tools/grafana/
-   
-4. k6.io. (2025). k6 documentation: Load and performance testing tool. Retrieved from https://k6.io/docs/
-   
-5. CircleCI. (2024, March 12). API performance testing with k6. Retrieved from https://circleci.com/blog/api-performance-testing-with-k6/
-   
-6. Automation in Testing. (2025). *Public Test Application.* Retrieved from [https://automationintesting.online](https://automationintesting.online)
+- Grafana Labs. (2025). *Getting started with Grafana and InfluxDB.* Retrieved from [https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-influxdb/](https://grafana.com/docs/grafana/latest/getting-started/get-started-grafana-influxdb/)
+
+- InfluxData. (2025). *Using Grafana with InfluxDB OSS.* Retrieved from [https://docs.influxdata.com/influxdb/v2/tools/grafana/](https://docs.influxdata.com/influxdb/v2/tools/grafana/)
+
+- k6.io. (2025). *k6 documentation: Load and performance testing tool.* Retrieved from [https://k6.io/docs/](https://k6.io/docs/)
+
+- CircleCI. (2024, March 12). *API performance testing with k6.* Retrieved from [https://circleci.com/blog/api-performance-testing-with-k6/](https://circleci.com/blog/api-performance-testing-with-k6/)
+
+- Automation in Testing. (2025). *Public Test Application.* Retrieved from [https://automationintesting.online](https://automationintesting.online)
+
 
 ---
 
