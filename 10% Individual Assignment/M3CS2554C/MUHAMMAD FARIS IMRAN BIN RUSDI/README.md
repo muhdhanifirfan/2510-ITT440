@@ -127,8 +127,11 @@ This allows realistic evaluation of how a public API might respond under sudden 
 ## 📈 Graph Analysis
 <img width="940" height="329" alt="image" src="https://github.com/user-attachments/assets/89921ab1-e25e-42ff-9c44-9694ea52b6e4" />
 
+            _Graph of analysis_
+
 <img width="940" height="271" alt="image" src="https://github.com/user-attachments/assets/c96e72f5-5123-4399-9a65-4d0785e2b13a" />
 
+            _Graph of HTTP performance_
 
 Visual representation from the Artillery Cloud Dashboard shows:
 
@@ -151,7 +154,7 @@ Visual representation from the Artillery Cloud Dashboard shows:
 
 <img width="506" height="739" alt="image" src="https://github.com/user-attachments/assets/10bc1b2a-7287-4b6f-bd8e-249a659526e6" />
 
-_picture of summary report_
+            _picture of summary report_
 
 ---
 
