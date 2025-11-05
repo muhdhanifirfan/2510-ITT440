@@ -297,11 +297,27 @@ These visualizations confirm that JSONPlaceholder sustains good performance even
 
 ## 🧠 Result Interpretation and Discussion
 
-The system remained **responsive and reliable** through all test phases.  
-No requests failed, and latency stayed below **500 ms** for nearly all interactions.  
-Occasional response spikes (around **1 second**) appeared only in the 99th percentile which is normal during high concurrency scenarios.
+The results show that the **JSONPlaceholder API** handled all phases of the load test efficiently with **no errors or request failures**. Across three minutes of testing, the system maintained stable performance, quick response times, and consistent throughput.
 
-This result demonstrates that **JSONPlaceholder’s API infrastructure** is resilient and capable of handling steady traffic while maintaining performance quality.
+During the **low load phase**, the API responded quickly with an average response time below 100 ms, setting a strong performance baseline.  
+As the test moved to the **moderate phase**, the throughput increased steadily to about **20 requests per second**, with no drop in performance.  
+In the **heavy load phase**, the rate reached around **44 requests per second**, and response times remained stable, averaging **126 ms** with the **95th percentile at 320 ms**.
+
+The **p95 and p99 values** indicate that most users experienced responses under 0.3 seconds, while only a few requests took longer due to normal network delays.  
+Throughout all phases, there were **no failed or timed-out requests**, proving the API’s stability under concurrent usage.
+
+The **HTTP response codes** also confirm consistent reliability, with 3,360 successful `GET` requests (200) and 1,680 successful `POST` requests (201). This shows that both read and write operations were processed correctly without interruption.
+
+From a performance perspective, the **Artillery tool** effectively simulated realistic user behavior and provided detailed metrics such as response time and throughput. The system’s scalability was evident, as performance remained steady even as the number of virtual users increased.
+
+In summary:
+- ✅ No request failures or timeouts
+- ⚡ Average response time: **126 ms**  
+- 📈 Throughput scaled up smoothly to **44 requests/sec**  
+- 🧩 Stable performance across all test phases  
+- 🟢 Consistent 2xx response codes (100% success rate)
+
+Overall, the **JSONPlaceholder API** proved to be **stable, responsive, and reliable** under varying levels of load, and **Artillery** successfully provided accurate, real-world performance insights.
 
 ---
 
@@ -366,6 +382,7 @@ This demonstrates that the API can handle **concurrent users effectively**, main
 With a **structured test plan**, **gradual load scaling**, and **proper monitoring**, meaningful insights into API behavior can be achieved — helping developers better understand system performance under pressure.
 
 ---
+
 
 
 
