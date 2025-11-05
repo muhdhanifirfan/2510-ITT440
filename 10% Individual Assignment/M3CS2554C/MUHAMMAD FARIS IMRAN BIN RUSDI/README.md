@@ -1,9 +1,9 @@
-# 🧪 Website Stress Testing Using Artillery 
+# 🧪 Website Stress Testing Using Artillery.io
 
 ### NAME: **MUHAMMAD FARIS IMRAN BIN RUSDI**
 ### STUDENT ID: 2025137413
 ### CLASS: M3CDCS2554C
-### TITLE: STRESS TESTING ON
+### TITLE: STRESS TESTING ON WEBSITE https://pokeapi.co/
 
 ---
 
@@ -86,7 +86,9 @@ Stress testing helps developers and organizations ensure that the system can wit
 3. **Run the Test**
 
    ```bash
-   artillery run stress-test.yml --record --key <your_artillery_key>
+   artillery run stress-test.yml --record --key <API KeyS>
+
+
    ```
 
 4. **View Results**
@@ -133,7 +135,6 @@ Visual representation from the Artillery Cloud Dashboard shows:
 * **Significant timeouts** during peak stress and break point phases.
 * **Error spikes (ETIMEDOUT)** showing the system’s breaking threshold.
 
-*(Attach your graph screenshot here if available)*
 
 ---
 
