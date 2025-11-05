@@ -150,6 +150,7 @@ Visual representation from the Artillery Cloud Dashboard shows:
 | Break Point   | 60s      | 148         | 178               | 9,481  |
 
 <img width="506" height="739" alt="image" src="https://github.com/user-attachments/assets/10bc1b2a-7287-4b6f-bd8e-249a659526e6" />
+
 *picture of summary report 
 
 ---
