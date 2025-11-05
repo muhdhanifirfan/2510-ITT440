@@ -10,7 +10,7 @@
 
 ---
 
-## 🧠 Background
+## 📚 Background
 
 This project focuses on evaluating how well a web API performs when accessed by multiple users at the same time.  
 The testing tool used is **Grafana K6**, which generates **virtual users (VUs)** that behave like real client traffic.
@@ -50,10 +50,9 @@ Compared to other tools, K6 offers:
 
 ## 🌐  Target Web Application  
 
-**Application:** [FakeStoreAPI](https://fakestoreapi.com/)  
+**Web Application :** [FakeStoreAPI](https://fakestoreapi.com/)  
 **Description:** A free online API for testing and prototyping e-commerce applications.  
-**Sample Endpoint Used:**  
-`https://fakestoreapi.com/products`
+**Sample Endpoint Used:**  `https://fakestoreapi.com/products`
 
 ---
 
@@ -135,18 +134,18 @@ Step 4 — View Results
 ## 📊 Results & Analysis
 ### 1️⃣ Normal Load Test (50 VUs)  
 
-<img width="1435" height="942" alt="image" src="https://github.com/user-attachments/assets/6e09223a-84f1-443a-ab40-bda039c7cb55" />
-
-Graph Analysis  
-<img width="1451" height="598" alt="image" src="https://github.com/user-attachments/assets/8eebc302-a28d-4d0a-8b0d-1cb495cf5cce" />
+|  <img width="1435" height="942" alt="image" src="https://github.com/user-attachments/assets/6e09223a-84f1-443a-ab40-bda039c7cb55" />  |
+|---|
+|  Graph Analysis  |  
+|  <img width="1451" height="598" alt="image" src="https://github.com/user-attachments/assets/8eebc302-a28d-4d0a-8b0d-1cb495cf5cce" />  |
 
 
 ### 2️⃣ Heavy Load Test (100 VUs)  
 
-<img width="1357" height="808" alt="hloatest result" src="https://github.com/user-attachments/assets/4eb7aa32-718a-4788-ae8a-d0e010b687e7" />
-
-Graph Analysis  
-<img width="1448" height="597" alt="image" src="https://github.com/user-attachments/assets/990a8d8a-a0c9-4c53-8cb6-e8edc7b8ce2b" />
+|  <img width="1357" height="808" alt="hloatest result" src="https://github.com/user-attachments/assets/4eb7aa32-718a-4788-ae8a-d0e010b687e7" />  |
+|---|
+|  Graph Analysis  |  
+|  <img width="1448" height="597" alt="image" src="https://github.com/user-attachments/assets/990a8d8a-a0c9-4c53-8cb6-e8edc7b8ce2b" />  |
 
 ## ⚖️ Performance Comparison (Normal Load vs Heavy Load)
 
