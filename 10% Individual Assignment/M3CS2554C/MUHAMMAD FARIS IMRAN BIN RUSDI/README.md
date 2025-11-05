@@ -59,7 +59,9 @@ Stress testing helps developers and organizations ensure that the system can wit
    ```
 
 2. **Create a YAML Test File**
-
+   
+    nano <name file>.yml
+     
    ```yaml
    config:
      target: "https://pokeapi.co/api/v2"
@@ -82,8 +84,8 @@ Stress testing helps developers and organizations ensure that the system can wit
          - get:
              url: "/pokemon/1"
    ```
-
-3. **Run the Test**
+    write and save the code 
+4. **Run the Test**
 
    ```bash
    artillery run stress-test.yml --record --key <API KeyS>
@@ -91,7 +93,7 @@ Stress testing helps developers and organizations ensure that the system can wit
 
    ```
 
-4. **View Results**
+5. **View Results**
 
    * In the terminal (real-time stats)
    * On [Artillery Cloud Dashboard](https://app.artillery.io/)
