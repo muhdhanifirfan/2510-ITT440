@@ -1,4 +1,4 @@
-# 🧪 Website Stress Testing Using Artillery on Linux
+# 🧪 Website Stress Testing Using Artillery 
 
 ### NAME: **MUHAMMAD FARIS IMRAN BIN RUSDI**
 ### STUDENT ID: 2025137413
@@ -96,6 +96,13 @@ Stress testing helps developers and organizations ensure that the system can wit
 
 ---
 
+## 🎯 Target
+
+The API under test was chosen to simulate **a real-world endpoint** — fetching Pokémon data via a GET request.
+This allows realistic evaluation of how a public API might respond under sudden bursts of requests.
+
+---
+
 ## 📊 Raw Data Highlights
 
 | Metric                             | Result       |
@@ -113,14 +120,11 @@ Stress testing helps developers and organizations ensure that the system can wit
 
 ---
 
-## 🎯 Target
-
-The API under test was chosen to simulate **a real-world endpoint** — fetching Pokémon data via a GET request.
-This allows realistic evaluation of how a public API might respond under sudden bursts of requests.
-
----
-
 ## 📈 Graph Analysis
+<img width="940" height="329" alt="image" src="https://github.com/user-attachments/assets/89921ab1-e25e-42ff-9c44-9694ea52b6e4" />
+
+<img width="940" height="271" alt="image" src="https://github.com/user-attachments/assets/c96e72f5-5123-4399-9a65-4d0785e2b13a" />
+
 
 Visual representation from the Artillery Cloud Dashboard shows:
 
