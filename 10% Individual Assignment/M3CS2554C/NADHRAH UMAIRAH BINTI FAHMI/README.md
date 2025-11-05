@@ -15,20 +15,20 @@
 
 ---
 
-## 🧾 1.0 INTRODUCTION
+## 🧾 1. INTRODUCTION
 Web performance testing is essential for ensuring that a program can handle sudden spikes in user traffic without failure. This project focuses on conducting spike testing of web performance using **k6**, an open-source performance testing tool, and visualizing the results using **InfluxDB** and **Grafana**.
 The primary goal of this project is to assess how the target web application, **AutomationInTesting**, responds to a sudden surge of 1000 virtual users (VUs) and how it recovers afterwards. The performance test measures **request rate**, **active virtual users**, and **stability under high traffic situations**.
 
 ---
 
 
-## 📌 2.0 WHAT IS SPIKE TESTING
+## 📌 2. WHAT IS SPIKE TESTING ?
 Spike testing is a type of performance test that examines how a system reacts when the number of users or requests increases sharply and then decreases rapidly over a short period. The objective is to identify whether the system can handle unexpected traffic spikes, recover from overload conditions, and maintain acceptable response times without crashing or data loss.
 Through spike testing, developers and testers can observe system stability, scalability limits, and potential resource constraints, such as CPU usage, memory consumption, and request handling efficiency.
 
 ---
 
-## 🎯 3.0 OBJECTIVES
+## 🎯 3. OBJECTIVES
 The vital objective of this project is to:
 - Analyse the capability of the website under a sudden spike across 1000 virtual users (VUs).  
 - Collect and monitor key performance indicators (KPIs), including request rate (req/s), response time, and error rate.  
@@ -37,7 +37,7 @@ The vital objective of this project is to:
 
 ---
 
-## ⚙️ 4.0 TOOL SELECTION JUSTIFICATION
+## ⚙️ 4. TOOL SELECTION JUSTIFICATION
 <p align="center">
   <img width="649" height="244" alt="image" src="https://github.com/user-attachments/assets/556742d2-8c3e-484d-b341-629b583db0e7" />
 </p>
@@ -57,7 +57,7 @@ K6 is frequently combined with InfluxDB for storing time-series data and Grafana
 
 ---
 
-## 🧭 5.0 TEST ENVIRONMENT SETUP AND CONFIGURATION
+## 🧭 5. TEST ENVIRONMENT SETUP AND CONFIGURATION
 This section explains how the testing environment was configured, how the spike test was designed, and how performance metrics were captured and analyzed.
 
 ### 🖥️ 5.1 TEST ENVIRONMENT CONFIGURATION
@@ -141,42 +141,50 @@ Data gathering uses a local InfluxDB database. Grafana connected through the por
 
 ---
 
-### 📊 **6.0 RESULTS AND INTERPRETATION**
+### 📊 **6. RESULTS AND INTERPRETATION**
 
 **RESULT GRAPHS**
 
 The spike test was conducted using the k6 load testing tool to evaluate the performance of the website [https://automationintesting.online](https://automationintesting.online) under sudden traffic surges.
 
 ### 1. Virtual Users vs Request Rate
+<p align="center">
 <img width="940" height="350" alt="image" src="https://github.com/user-attachments/assets/df5d38f2-7094-48e1-9f8e-ce667bb9214e" />
+</p>
 
 The test scenario began with a gradual warm-up of 50 virtual users, followed by a rapid spike to 1,000 users within 10 seconds, sustained for 30 seconds, and then reduced to zero during the recovery phase. The resulting graph shows that the number of active virtual users increased sharply and maintained stability at 1,000 before decreasing, while the request rate peaked at approximately **117 requests per second** with minor fluctuations during the high-load period. This behaviour demonstrates that the website successfully handled a sudden surge in concurrent users and recovered efficiently once the load was removed.
 
 ---
 
 ### 2. Request Rate vs Error Rate
+<p align="center">
 <img width="940" height="373" alt="image" src="https://github.com/user-attachments/assets/ec232175-dc99-4a08-9fbd-094000caa934" />
+</p>
 
 The graph shows the relationship between the request rate and error rate during the spike test. The request rate increased sharply, peaking at about **1,600 requests per second**, while the error rate briefly rose to around **37%** during the highest load. After the spike, both metrics dropped quickly, showing the system’s ability to recover. The average request rate was **140 requests per second**, with a total of **2,653 requests** and an average error rate of **1.48%**. This indicates that the system handled the sudden traffic surge effectively and returned to normal performance after the load decreased.
 
 ---
 
 ### 3. Response Time (95th Percentile)
+<p align="center">
 <img width="940" height="438" alt="image" src="https://github.com/user-attachments/assets/b7eb28f3-39df-4acd-b79b-d5aaf455281e" />
+</p>
 
 The graph shows the response time during the spike test with 1,000 virtual users on [https://automationintesting.online](https://automationintesting.online). At the start, response times were low (below **500 ms**), but as the load increased, the 95th percentile rose sharply to around **30 seconds**, showing slower responses under heavy traffic. After the spike, response times dropped and stabilised, indicating the system recovered well after the high load.
 
 ---
 
 ### K6 Command Prompt Test Result Output
+<p align="center">
 <img width="855" height="404" alt="image" src="https://github.com/user-attachments/assets/751e6ff1-8c83-49ea-8dab-2bf44a8100fa" />
+</p>
 
 The K6 CLI output provides a summary of performance metrics including total HTTP requests, response durations, and failure rates. In this test, K6 recorded **21,069 total requests**, an **average response time of 1.83 seconds**, and a **failure rate of 0.09%**, which met the defined threshold for reliability.The 95th percentile response time (**5.85s**) exceeded the 500 ms threshold, indicating temporary latency under heavy load. 
 These console results were simultaneously exported to InfluxDB and visualised through Grafana for further trend and performance analysis.
 
 ---
 
-### 🔍 **7.0 ANALYSIS AND FINDINGS**
+### 🔍 **7. ANALYSIS AND FINDINGS**
 
 | METRIC | OBSERVATION | ANALYSIS |
 |--------|--------------|-----------|
@@ -187,17 +195,17 @@ These console results were simultaneously exported to InfluxDB and visualised th
 | **Total Requests** | 2,653 total requests sent during the test | Confirms steady request flow throughout the test duration. |
 
 **Bottlenecks Identified:**
-- High latency observed during peak load (around 30s response time) — likely due to server-side queuing or limited processing capacity.
+- High latency observed during peak load (around 30s response time) likely due to server-side queuing or limited processing capacity.
 - Temporary error spike (37%) suggests possible API throttling or connection timeout when user concurrency reaches its maximum.
 - Minor instability in request rate at the highest load could be caused by client-side resource limits or network saturation.
 
 ---
 
-### 🧩 **8.0 DISCUSSION**
+### 🧩 **8. DISCUSSION**
 
 During the spike test with 1,000 virtual users, the K6 console recorded **21,069 total HTTP requests** with an average response time of **1.83 seconds**, while the Grafana dashboard displayed only **2,653 total requests**.
 
-This difference is normal and occurs because **K6 measures every executed request locally**, while **Grafana visualizes data sent to InfluxDB**, which may aggregate or drop some data points during heavy load. Grafana’s time-based sampling (e.g., grouping data by 10-second intervals) can make the total request count appear lower.
+This difference is normal and occurs because **K6 measures every executed request locally**, while **Grafana visualizes data sent to InfluxDB**, which may aggregate or drop some data points during heavy load. Grafana’s time-based sampling such as grouping data by 10-second intervals can make the total request count appear lower.
 
 Despite this variation, both tools show a consistent performance trend:
 
@@ -211,7 +219,7 @@ The lower total in Grafana does not affect test accuracy, as the performance tre
 
 ---
 
-### 🛠 **9.0 RECOMMENDATIONS**
+### 🛠 **9. RECOMMENDATIONS**
 
 Based on the spike test results, the following actions are recommended:
 
@@ -226,7 +234,7 @@ Based on the spike test results, the following actions are recommended:
 
 ---
 
-### 🧾 **10.0 CONCLUSION**
+### 🧾 **10. CONCLUSION**
 
 The spike test demonstrated that the website could handle sudden traffic surges up to **1,000 virtual users** with minimal errors, although temporary delays were observed during peak load. This indicates that, while the system is generally stable, there are moments of strain that could impact the user experience under extreme conditions.
 
@@ -239,7 +247,7 @@ Overall, this experience enhanced my technical skills in performance evaluation,
 
 ---
 
-### 📚 **11.0 REFERENCES**
+### 📚 **11. REFERENCES**
 
 - Grafana Labs. (2025). *Grafana documentation: InfluxDB data source.* Retrieved from [https://grafana.com/docs/grafana/latest/datasources/influxdb/](https://grafana.com/docs/grafana/latest/datasources/influxdb/)
 
