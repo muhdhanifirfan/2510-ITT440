@@ -379,9 +379,10 @@ Across all three test phases, **5,040 requests** were successfully completed wit
 This demonstrates that the API can handle **concurrent users effectively**, maintaining consistent performance even as load increases.  
 **Artillery** proved to be a reliable and user-friendly tool for simulating realistic load conditions and capturing detailed performance data.
 
-With a **structured test plan**, **gradual load scaling**, and **proper monitoring**, meaningful insights into API behavior can be achieved — helping developers better understand system performance under pressure.
+With a **structured test plan**, **gradual load scaling**, and **proper monitoring**, meaningful insights into API behavior can be achieved which helping developers better understand system performance under pressure.
 
 ---
+
 
 
 
