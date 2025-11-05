@@ -30,15 +30,43 @@ This hypothesis assumes that the API backend is optimized enough to handle concu
 
 ## ⚙️ Tool Selection Justification
 
-| Reason | Explanation |
-| --- | --- |
-| Easy setup | Artillery uses simple YAML configuration files that are easy to modify and read. |
-| Detailed metrics | Provides in-depth response time and throughput reports with percentiles (p50, p95, p99). |
-| Cloud visualization | Integrates with **Artillery Cloud** for graphical results and trend analysis. |
-| Lightweight | Works efficiently on local machines without extra dependencies. |
-| Industry adoption | Commonly used for API and backend performance testing in CI/CD pipelines. |
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ebebad24-dbb1-4cf0-9f99-22e37df98677" alt="1_p4IQfjORMIMZtN8SJRjzcA" width="500" height="280">
+  <br>
+  <em>Figure 1: Artillery Perfomance Testing Tool</em>
+</p>
 
-Artillery was chosen because it offers the balance of simplicity, accuracy, and modern visualization tools that fit academic and industry testing standards.
+
+
+Choosing the right tool is one of the most important steps in performance testing because it determines how accurately the test simulates real-world conditions and how meaningful the data collected will be.
+
+For this project, **Artillery** was selected as the primary load testing tool. Artillery is a **modern, open-source performance testing framework** built for **Node.js**, specifically designed to test APIs, web services, and backend systems under different traffic loads.
+
+---
+
+### 🧩 Why Artillery?
+
+| **Reason** | **Explanation** |
+|-------------|-----------------|
+| **Ease of Setup** | Artillery uses simple and readable **YAML configuration files**, making it beginner-friendly and easy to modify for various test scenarios. |
+| **Realistic User Simulation** | Supports **virtual users (VUs)** that mimic real-world interaction patterns such as sending requests, waiting (think time), and repeating actions. |
+| **Detailed Metrics** | Provides comprehensive test data, including response times, throughput, latency percentiles (p50, p95, p99), and error rates. |
+| **Scalability** | Can easily scale from small local tests to large distributed tests using **Artillery Cloud**. |
+| **Integration Support** | Works well with CI/CD pipelines such as GitHub Actions or Jenkins, allowing automated performance testing during deployment. |
+| **Lightweight and Efficient** | Runs smoothly without consuming heavy system resources, unlike tools such as JMeter that require a Java runtime and GUI. |
+| **Cloud Visualization** | Built-in integration with **Artillery Cloud** for generating interactive graphs and comparing test runs over time. |
+| **Active Community & Open Source** | Actively maintained, with a large community contributing plugins, examples, and updates. |
+| **Industry Adoption** | Widely used by developers and QA engineers for REST API load testing in real projects, ensuring credibility and reliability. |
+
+Artillery was ultimately chosen because it is:
+
+- **Easy to configure and understand**
+- **Accurate and data-rich in its performance metrics**
+- **Lightweight yet powerful**
+- **Supported by modern visualization (Artillery Cloud)**
+- **Aligned with industry best practices**
+
+This combination makes it an excellent tool for both **academic learning** and **professional testing environments**, ensuring credible, reproducible, and clear results.
 
 ---
 
@@ -212,7 +240,7 @@ npx artillery run --record --key YOUR_ARTILLERY_CLOUD_KEY --output "results/json
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/adf1012e-c5d3-4669-bbb6-39fc5f0a6aad" alt="Artillery Response Time Graph" width="750"/><br>
-  <em>Figure: Artillery Cloud graph showing response time and request rate trends</em>
+  <em>Figure 2: Artillery Cloud graph showing response time and request rate trends</em>
 </p>
 
 
@@ -253,7 +281,7 @@ Even at peak load, the system maintained acceptable latency.
 ## 📉 Graph Interpretation (Artillery Cloud)
 <p align="center">
   <img src="https://github.com/user-attachments/assets/69b9b09c-7817-4fe4-a743-5b3afed799d0" alt="Artillery Cloud Graph" width="750"/><br>
-  <em>Figure: Artillery Cloud graph showing load test metrics</em>
+  <em>Figure 3: Artillery Cloud graph showing load test metrics</em>
 </p>
 
 
@@ -338,6 +366,7 @@ This demonstrates that the API can handle **concurrent users effectively**, main
 With a **structured test plan**, **gradual load scaling**, and **proper monitoring**, meaningful insights into API behavior can be achieved — helping developers better understand system performance under pressure.
 
 ---
+
 
 
 
