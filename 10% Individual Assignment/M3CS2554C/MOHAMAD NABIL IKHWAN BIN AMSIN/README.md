@@ -1,4 +1,4 @@
-# 🧪 Comprehensive Web Application Performance Testing & Analysis Using Apache Jmeter
+# 🧪 Comprehensive Web Application Performance Testing & Analysis Using Apache JMeter
 
 ![Apache JMeter](https://img.shields.io/badge/Apache%20JMeter-v5.6%2B-orange?logo=apache&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
