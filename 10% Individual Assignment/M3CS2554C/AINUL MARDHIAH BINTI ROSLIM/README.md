@@ -142,7 +142,7 @@ In addition, I can get the overall reports documentation to analyse the **Global
 
 ## 😍 Looking at the beautifully mesmerizing factual charts or graphs  (Raw data presentation)
 
-in Global Gatling Documentation : -
+In Global Gatling Documentation : -
 
 <img width="764" height="275" alt="image" src="https://github.com/user-attachments/assets/4988fb63-17b8-4cf6-892b-9c4ce7a25a9d" />
 
@@ -155,13 +155,11 @@ in Global Gatling Documentation : -
 ### Requests / sec
 <img width="762" height="282" alt="image" src="https://github.com/user-attachments/assets/ed61e7c0-4627-403f-9cfc-8c104f3977fb" />
 
-
 ### Response / sec
+<img width="761" height="281" alt="image" src="https://github.com/user-attachments/assets/5b373167-d4ac-4fa6-8fc9-8f86b376c5b1" />
 
 
-
-
-in Details bar graph for : -
+In Details bar graph for : -
 
 ### T01_GET_Login_Page
 <img width="767" height="298" alt="T01_GET_Login_Page" src="https://github.com/user-attachments/assets/63aa8840-c1a7-475a-9f40-87d7e9efb6ba" />
