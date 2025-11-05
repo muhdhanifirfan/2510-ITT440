@@ -60,7 +60,7 @@ Stress testing helps developers and organizations ensure that the system can wit
 
 2. **Create a YAML Test File**
    
-    nano <name file>.yml
+    nano name file.yml
      
    ```yaml
    config:
