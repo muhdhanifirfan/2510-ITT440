@@ -1,4 +1,5 @@
 <h1 align="center">Website Capacity Testing Using K6</h1>
+<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/cdac8a55-346d-4a1c-8b1d-fd8499924830" />
 
 ---
 ### Prepared for: MR. SHAHADAN BIN SAAD
@@ -45,6 +46,7 @@ k6 was selected as a tool to be used in this experiment because it is a modern, 
 - Processor: Intel i5 processor 
 - RAM: 8 GB  
 - Internet Connection: Stable broadband
+
 
 
 
