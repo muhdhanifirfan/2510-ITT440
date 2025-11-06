@@ -9,7 +9,7 @@
 # :boom: Stress Testing on Local Flask Web App using Siege
 ---
 
-## Introduction
+## :wave: Introduction
 This performance testing was performed using Siege which is an open source regression test and benchmarking utility tool that available in Kali Linux to test high level of concurrent on a local flask web app that is simulation of Liquipedia.net pages. The purpose of this testing is to obsereve system behaviour when many user load access in one time and their performance. The test was conducted three test with different amount of virtual user in 60 seconds which were 10 users,50 users and 100 users. The target data to collect was transactions data, the availabilty, average response time in seconds and failed request.
 
 ---
@@ -22,6 +22,31 @@ This performance testing was performed using Siege which is an open source regre
 ---
 
 
-## Tool and Target Selection
+## Tool and Target Justification
+
+## Performance Testing Tool (Siege)
+
+The experiment used Siege because this open-source tool can easily handle hundrend users at once and enable to give details result which can checking up stability of server under high pressure request.
+
+---
+
+
+## Target Web Application (Liquipedia - Local Flask App)
+
+The experiment used Liquipedia as reference because Liquipedia is a well-known esports wiki that feels familiar and realistic to use in simulations. It includes pages from many games like Dota 2 and Valorant, making it perfect for testing different parts or routes of a web app. The experiment don’t use the real Liquipedia site to ensure the testing ethical so a local flask app copy is created instead to make sure everything is safe and legal.
+
+---
+## Test Environment Setup
+| Component | Description |
+|---------|-----------|
+| Environment | Kali Linux 2024.2 (64 bit) |
+| Testing Framework | Siege v4.1.6 |
+| Programming Language | Python 3.11.2|
+| Target Website | Liquipedia — https://www.liquipedia.net (local flask simulating liquipedia Pages) |
+| Test Selection | Stress Test | 
+| Test Duration | 60 Seconds per round|
+| Configuration File | `app.py` |
+| Monitoring Tools | `htop`(CPU & Memory Usage), `matplotlib` (Graph plotting) | 
+| Network | Localhost (127.0.0.1) |
 
 ---
