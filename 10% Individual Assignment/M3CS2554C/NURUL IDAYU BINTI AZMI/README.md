@@ -71,7 +71,6 @@ In this study, the target system is the Fake REST API hosted at https://fakerest
 | Virtual users | 100, 1000, 2000, 3000, 4000,(for comparison) | 
 
 <br><br>
-
 <img width="584" height="267" alt="image" src="https://github.com/user-attachments/assets/366b5d54-8f4a-44cf-b171-a9c52f7bbba7" />
 <br><br>
 The test was conducted using k6, written in JavaScript (.js) format.
@@ -80,7 +79,6 @@ The following code defines the test scenario, including the target website URL a
 <br><br>
 
 <img width="834" height="287" alt="image" src="https://github.com/user-attachments/assets/7a3889ee-d81f-4e42-8823-58ed496c6ccd" />
-<br><br>
 In this experiment, five separated scripts were written in JavaScript (.js) format where each script simulated 10, 1000, 2000, 3000, and 4000 concurrent virtual users respectively, with each test running for 10 seconds. Above is one of the example coding that include 100 virtual users in 10 seconds.
 
 <br><br>
@@ -88,14 +86,11 @@ The k6 testing was performed using the command:
 <img width="512" height="30" alt="image" src="https://github.com/user-attachments/assets/7789cf47-43d2-4799-9485-8bf34f8674f5" />
 
 <br><br>
-
 This command runs the k6 test script named test100.js, simulating the defined virtual users (VUs) and test duration. The --out csv=results/output100.csv option exports the test results in CSV format and saves them in the results folder for further analysis.
 
 <br><br>
 - The following shows the execution of the test100.js script and its corresponding result:
 <img width="1280" height="631" alt="image" src="https://github.com/user-attachments/assets/2ac9605b-1437-4872-9d16-6d7516e8d919" />
-
-
 
 ---
 
@@ -164,6 +159,7 @@ https://medium.com/@iqzaardiansyah/load-testing-modern-backend-applications-with
 ---
 
 ## 10. Video Link
+
 
 
 
