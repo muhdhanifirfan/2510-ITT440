@@ -79,11 +79,12 @@ The experiment used Liquipedia as reference because Liquipedia is a well-known e
 
 ---
 ## Recommendations
-
-
+- Expand Test Scenarios by adding more tests that cover different parts of the web app by database requests to helps get a clearer picture of how the whole system performs under stress.
+- Optimize Application Performance by implementing performance optimization strategies such as  handling requests asynchronously to ensure system responsiveness and scalability efficiently.
 
 ---
 ## Conclusion
+The stress testing experiment conducted with Siege clearly showed how server performance varies at different levels of user concurrency. The findings supported the hypothesis that increasing the number of simultaneous users leads to higher response times and error rates, while overall throughput declines. By running the test on a locally hosted Flask application, the project ensured ethical and safe testing without impacting any real websites. In conclusion, Siege proved to be an effective and dependable tool for evaluating web performance, offering meaningful insights into how systems behave under heavy traffic conditions.
 
 ---
 ## Youtube Video Demostration
