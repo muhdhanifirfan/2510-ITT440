@@ -65,13 +65,36 @@
 <img width="954" height="685" alt="INTRO PIC" src="https://github.com/user-attachments/assets/d8c62d79-c185-46f4-afe0-dae28eaa5a43" /> </p>
 
 <p align="center">
-<img width="954" height="685" alt="PERFORMANCE" src="https://github.com/user-attachments/assets/26a8a2dc-d7b5-49fa-9f6c-8356f5af4b10" /> </p>
-
+<img width="954" height="685" alt="PERFORMANCE" src="https://github.com/user-attachments/assets/39af9551-714b-4e48-a2a1-6fc7755aff6b" /> </p>
  <hr>
  
 ## 6. METHODOLOGY
 
-<p align="justify">  </p>
+<p align="justify">
+ <ol>
+    <li> Target Selection: The publicly accessible Joomla Launch site was chosen. </li>
+    <li> Test Execution:
+     <ul>
+      <li> Multiple test runs were conducted via GTmetrix. </li>
+      <li> Performance data was collected including: </li>
+       <ul>
+         <li> Redirect Duration </li>
+         <li> Time to First Byte (TTFB) </li>
+         <li> DOM Content Loaded Time </li>
+         <li> Connection Duration </li>
+         <li> First Paint </li>
+         <li> Onload Time </li>
+         <li> Backend Duration </li>
+         <li> DOM Interactive Time </li>
+         <li> Fully Loaded Time </li>
+       </ul>
+     </ul>
+    </li>
+ </ol>
+</p>
+
+<p align="center">
+<img width="954" height="685" alt="BROWSER TIMING" src="https://github.com/user-attachments/assets/6946ea31-4153-4bb0-beee-28f6d5109818" /> </p>
 
 <p align="justify">  </p>
 
