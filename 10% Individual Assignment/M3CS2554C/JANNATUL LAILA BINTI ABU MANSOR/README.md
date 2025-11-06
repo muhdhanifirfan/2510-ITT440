@@ -72,8 +72,8 @@
 
 <p align="justify">
  <ol>
-    <li> Target Selection: The publicly accessible Joomla Launch site was chosen. </li>
-    <li> Test Execution:
+    <li> Target Selection: The publicly accessible Joomla Launch site was chosen. </li> <!-- 1 -->
+    <li> Test Execution: <!-- 2 -->
      <ul>
       <li> Multiple test runs were conducted via GTmetrix. </li>
       <li> Performance data was collected including: </li>
@@ -90,11 +90,30 @@
        </ul>
      </ul>
     </li>
+<BR> <p align="center">
+<img width="954" height="685" alt="BROWSER TIMING" src="https://github.com/user-attachments/assets/6946ea31-4153-4bb0-beee-28f6d5109818" /> </p>
+    <li> Stress simulation: Despite GTmetrix's inability to support conventional multi-user stress tests, load was simulated through repeated runs and performance analysis under cached and uncached conditions. </li> <!-- 3 -->
+   <li> Data Collection: Metrics were recorded from GTmetrix reports and Lighthouse audits. </li>
  </ol>
 </p>
+<hr>
 
-<p align="center">
-<img width="954" height="685" alt="BROWSER TIMING" src="https://github.com/user-attachments/assets/6946ea31-4153-4bb0-beee-28f6d5109818" /> </p>
+## 7. PERFORMANCE DATA ANALYSIS
+### 7.1 Overall Scoring
+<p align="justify">
+<ul> 
+ <li> Performance Scoring: 67% </li>
+ <li> Structure Score: 79% </li>
+ <li> Fully Loaded Time: 8.7s </li>
+</ul> </p>
+
+### 7.2 Core web Vitals (User Experience Metrics)
+<p align="justify">
+<ul> 
+ <li> Largest Contentful Paint (LCP): 2.5s </li>
+ <li> Total Blocking Time (TBT): 236ms </li>
+</ul> </p>
+<hr>
 
 <p align="justify">  </p>
 
@@ -103,4 +122,22 @@
 <!-- <ol> <li>  </li>  </ol> numeric points -->
 <!-- [ <hr> section devider ] [ <br> enter ] -->
 
+<!-- 
+8. Result Interpretation
+The stress test revealed several performance issues:
+= Slow LCP: Indicating slow rendering of the main content.
+= High TBT: Suggesting unoptimized JavaScript execution blocking the main thread.
+= Long Fully Loaded Time (8.7s): Highlights resource-heavy elements and slow server response.
 
+Under repeated access, the site showed consistent degradation in performance metrics, especially in TBT and LCP, indicating poor stress tolerance.
+
+9. Identification of Bottlenecks and Failure Points
+= Backend Duration (1.3s): Suggests server-side processing delays.
+= Large Image Files: Several images over 100KB (e.g., what-is-joomla4.jpg – 179KB) contribute to slow loading.
+= Render-Blocking Resources: CSS and JavaScript files delay page rendering.
+= Third-Party Scripts: Google Tag Manager and reCAPTCHA add significant overhead.
+
+10. Summary
+The stress testing of https://launch.joomla.org/ using GTmetrix highlighted significant performance bottlenecks under load, particularly in LCP and TBT. The application struggles with resource-heavy content and render-blocking scripts, leading to suboptimal user experience under stress. Recommendations include optimizing images, deferring non-critical JavaScript, and improving server response times. These changes would enhance both performance and stability under high-load conditions.
+
+-->
