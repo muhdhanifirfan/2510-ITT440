@@ -5,8 +5,11 @@
 ### Prepared for: MR. SHAHADAN BIN SAAD 🎯
 
 **Name: NURUL IDAYU BINTI AZMI**  
+
 **Student ID: 2025156453**  
+
 **Group: CDCS2554C**  
+
 **Subject: ITT440 - Network Programming**  
 
 ---
@@ -76,7 +79,8 @@ The k6 testing was performed using the command:
 
 This command runs the k6 test script named test100.js, simulating the defined virtual users (VUs) and test duration. The --out csv=results/output100.csv option exports the test results in CSV format and saves them in the results folder for further analysis.
 
-<img width="787" height="251" alt="image" src="https://github.com/user-attachments/assets/2f487310-94fe-446f-878b-9080e9d99214" />
+<img width="1280" height="631" alt="image" src="https://github.com/user-attachments/assets/2ac9605b-1437-4872-9d16-6d7516e8d919" />
+
 
 
 ---
@@ -146,6 +150,7 @@ https://medium.com/@iqzaardiansyah/load-testing-modern-backend-applications-with
 ---
 
 ## 10. Video Link
+
 
 
 
