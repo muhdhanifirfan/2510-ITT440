@@ -40,7 +40,7 @@ The goal is to simulate concurrent users accessing the site and analyze the syst
 ## ⚙️ Setting Up wrk on Linux
 
 wrk is not pre-installed on most Linux distributions, so it needs to be built from source.  
-Follow these steps to set up and verify wrk on your system:
+Below are the steps to set up and verify wrk on the system:
 
 ## ⚙️ Setup Guide: Installing wrk on Linux
 
