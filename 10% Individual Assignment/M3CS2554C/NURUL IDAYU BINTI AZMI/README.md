@@ -138,10 +138,13 @@ From these results, it can be concluded that the maximum reliable capacity of th
 
 ## 9. Reference
 
+Grafana k6 Labs. (2025) The best developer experience for load testing. Retrieved October 26, 2025, from https://k6.io/
+
+Iqza Ardiansyah. (2025, May 15). Load Testing Modern Backend Applications with Grafana k6: Best Practices and Implementation Guide. Medium. 
+https://medium.com/@iqzaardiansyah/load-testing-modern-backend-applications-with-grafana-k6-best-practices-and-implementation-guide-4eacdce8cd9a
+
 --
 
 ## 10. Video Link
-
-
 
 
