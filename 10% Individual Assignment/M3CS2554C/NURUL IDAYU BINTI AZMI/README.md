@@ -1,4 +1,6 @@
-# 🏷️ Website Capacity Testing Using K6
+<h1 align="center">Website Capacity Testing Using K6</h1>
+
+---
 ### Prepared for: MR. SHAHADAN BIN SAAD
 
 **Name: NURUL IDAYU BINTI AZMI**  
@@ -43,6 +45,7 @@ k6 was selected as a tool to be used in this experiment because it is a modern, 
 - Processor: Intel i5 processor 
 - RAM: 8 GB  
 - Internet Connection: Stable broadband
+
 
 
 
