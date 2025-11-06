@@ -14,13 +14,7 @@
 
 ---
 
-## 1. Introduction
-
-This report focuses on capacity testing of a web application using Grafana k6. Capacity testing aims to determine the maximum number of concurrent users or requests a system can handle before performance degrades or failures occur. In this study, the target system is the Fake REST API hosted at https://fakerestapi.azurewebsites.net/, which simulates typical REST-based API operations.
-
----
-
-## 2. Capacity Testing
+## 1. Capacity Testing
 
 ### 💡 What is Capacity Testing?
 
@@ -34,9 +28,23 @@ The goal is to identify the system’s limit (capacity threshold), the point whe
 
 ---
 
-## 3. Objectives
+## 2. Objective
 
-The objective of this test is to perform capacity testing on the target web API to identify the system’s upper performance limit. Specifically, the test measures how response time, throughput, and error rate change as the number of virtual users (VUs) increases.
+- This report focuses on capacity testing of a web application using Grafana k6. Capacity testing aims to determine the maximum number of concurrent users or requests a system can handle before performance degrades or failures occur. 
+
+- The objective of this test is to perform capacity testing on the target web API to identify the system’s upper performance limit. Specifically, the test measures how response time, throughput, and error rate change as the number of virtual users (VUs) increases.
+
+---
+
+## 3. Target Website Preview
+
+In this study, the target system is the Fake REST API hosted at https://fakerestapi.azurewebsites.net/, which simulates typical REST-based API operations.
+<br><br>
+<img width="1916" height="893" alt="image" src="https://github.com/user-attachments/assets/f93f37ed-9fb0-4003-b623-d790acce0dbc" />
+<br><br>
+<img width="1919" height="902" alt="image" src="https://github.com/user-attachments/assets/12e9a4a3-d164-4942-a65f-27e1a7da2165" />
+<br><br>
+<img width="1919" height="859" alt="image" src="https://github.com/user-attachments/assets/118799f1-d090-40e6-9c70-d0ebea1a8276" />
 
 ---
 
@@ -150,6 +158,7 @@ https://medium.com/@iqzaardiansyah/load-testing-modern-backend-applications-with
 ---
 
 ## 10. Video Link
+
 
 
 
