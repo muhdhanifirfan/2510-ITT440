@@ -1,4 +1,7 @@
 # 🧠 Web Perfomance Testing on JMeter
+* ANIS NURSABRINA LOKMAN 
+* 2025900087
+* ITT440 - NETWORK PROGRAMMING
 
 ## 📘 1. Introduction
 This project focuses on **evaluating the performance of a Moodle-based web application** through **load testing** and **stress testing** using **Apache JMeter**.  
@@ -17,8 +20,7 @@ The objective is to identify how the system behaves under normal, heavy, and ext
 
 ## ⚙️ 3. Tool Selection
 
-![JMeter Logo]([https://github.com/YourUsername/YourRepoName/blob/main/images/result.png?raw=true](https://jmeter.apache.org/images/jmeter.png))
-
+![JMeter Logo](https://jmeter.apache.org/images/jmeter.png)
 
 ### 🧰 Apache JMeter
 **JMeter** is an open-source software testing tool developed  to load test functional behaviour and measure performance by Apache. It is widely used for testing web applications, APIs, and databases.
