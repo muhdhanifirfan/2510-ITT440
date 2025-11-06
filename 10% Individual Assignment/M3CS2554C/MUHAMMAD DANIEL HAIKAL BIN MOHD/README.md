@@ -81,4 +81,5 @@ For future improvements, you can:
 ---
 
 ## Video Demo
+For the demo how to use BlazeMeter to make a load test on WordPress you can watch the video via the link below:
 https://youtu.be/xP7-TOZOCJ8?si=1P-AY5u7uzC875TU
