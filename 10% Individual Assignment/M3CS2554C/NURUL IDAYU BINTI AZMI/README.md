@@ -66,6 +66,9 @@ The k6 testing was performed using the command:
 
 This command runs the k6 test script named test100.js, simulating the defined virtual users (VUs) and test duration. The --out csv=results/output100.csv option exports the test results in CSV format and saves them in the results folder for further analysis.
 
+<img width="787" height="251" alt="image" src="https://github.com/user-attachments/assets/2f487310-94fe-446f-878b-9080e9d99214" />
+
+
 ---
 
 ## 6. Result Capacity Testing
@@ -101,4 +104,30 @@ In the results, no errors were observed at 100 virtual users (VUs), which confir
 When the load increased to 2000 and 3000 VUs, the error rate jumped to 32.49% and 43.58%, showing that the server could not process all requests successfully. This suggests the Fake REST API started to become overloaded or reached its resource capacity, resulting in request timeouts or dropped connections.
 
 At 4000 VUs, the error percentage slightly dropped to 37.97%, possibly because the system rejected requests faster instead of letting them time out. Overall, this shows that the maximum stable capacity for the API is around 1000 VUs, as performance degrades rapidly beyond that point.
+
+### Interpretation
+ - The Fake REST API can handle up to around 1000 virtual users before response times become unstable and error rates increase notably.
+
+- The irregular drop in average latency at higher loads likely reflects cloud load balancing or temporary throttling, not genuine stability.
+
+- From a capacity standpoint, the practical load limit of the API is estimated at between 1000–2000 concurrent users, depending on request complexity.
+
+---
+
+## 8. Conclusion
+
+Based on the capacity testing conducted using Grafana k6 on the Fake REST API, the results show a clear relationship between the number of virtual users, average response time, and error percentage.
+
+As the number of users increased, the average response time rose significantly, indicating that the server required more time to handle concurrent requests. Meanwhile, the error percentage also increased after 1000 virtual users, showing that the system started failing to respond to some requests once it reached its limit.
+
+From these results, it can be concluded that the maximum reliable capacity of the API is around 1000 concurrent users. Beyond this point, the system experiences higher latency and error rates, which reduces overall stability. Therefore, optimization such as load balancing, caching, or server scaling would be needed to improve its performance under heavy traffic.
+
+---
+
+## 9. Reference
+
+--
+
+## 10. Video
+
 
