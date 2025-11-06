@@ -13,7 +13,8 @@
 
 ## 1. Introduction
 
-<img width="1200" height="1162" alt="image" src="https://github.com/user-attachments/assets/7b9dcf5a-caf2-4d66-9772-87941762961b" />
+<img width="900" height="681" alt="image" src="https://github.com/user-attachments/assets/cd379d19-6437-46e6-a66a-a4973900b595" />
+
 
 This report focuses on capacity testing of a web application using Grafana k6. Capacity testing aims to determine the maximum number of concurrent users or requests a system can handle before performance degrades or failures occur. In this study, the target system is the Fake REST API hosted at https://fakerestapi.azurewebsites.net/, which simulates typical REST-based API operations.
 
@@ -58,7 +59,9 @@ In this experiment, five separated scripts were written in JavaScript (.js) form
 
 
 The k6 testing was performed using the command:
-**k6 run --out csv=results/output100.csv scripts/test100.js**
+
+<img width="512" height="30" alt="image" src="https://github.com/user-attachments/assets/7789cf47-43d2-4799-9485-8bf34f8674f5" />
+
 
 This command runs the k6 test script named test100.js, simulating the defined virtual users (VUs) and test duration. The --out csv=results/output100.csv option exports the test results in CSV format and saves them in the results folder for further analysis.
 
@@ -78,9 +81,22 @@ This command runs the k6 test script named test100.js, simulating the defined vi
 
 ## 7. Graphs and Data Analysis
 
+### Average Response Time
+<img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/6ffefc9e-bea2-4f54-8cb7-7fa60534326d" />
 
+The average response time represents how long the server takes to respond to user requests under different levels of load. In this capacity testing, the average latency increased significantly as the number of virtual users (VUs) rose from 100 to 1000, with the mean response time jumping from 989 ms to 10,574 ms. This sharp increase indicates that the system began experiencing  queuing delays as the number of concurrent requests grew, suggesting that the server’s available processing capacity or bandwidth was being stretched.
 
+Interestingly, when the number of users increased further to 2000, 3000, and 4000 VUs, the average response time dropped again, ranging between 3504 ms to 5731 ms. This behavior appears counterintuitive, as one would normally expect response times to keep rising under heavier load.
 
+Overall, the response time results show that the system started to slow down when more users were added. After a certain point, the performance seemed to stabilize, possibly because the system adjusted to the heavy load. However, this improvement did not mean the system was fully stable, as shown in the Error Rate section, some requests still failed or timed out. This means the recovery was only partial and temporary.
 
+### Error Percentage
+<img width="622" height="375" alt="image" src="https://github.com/user-attachments/assets/6fc733b3-65cb-415d-bbb8-ddc8014b100b" />
 
+The error percentage metric indicates the proportion of failed requests compared to the total number of requests made during the test. This is a critical measure for identifying when a system begins to fail or become unreliable under increasing load.
 
+In the results, no errors were observed at 100 virtual users (VUs), which confirms that the Fake REST API can handle low levels of traffic efficiently and respond successfully to all incoming requests. However, at 1000 VUs, errors began appearing (0.2%), indicating the system was nearing its limit.
+
+When the load increased to 2000 and 3000 VUs, the error rate jumped to 32.49% and 43.58%, showing that the server could not process all requests successfully. This suggests the Fake REST API started to become overloaded or reached its resource capacity, resulting in request timeouts or dropped connections.
+
+At 4000 VUs, the error percentage slightly dropped to 37.97%, possibly because the system rejected requests faster instead of letting them time out. Overall, this shows that the maximum stable capacity for the API is around 1000 VUs, as performance degrades rapidly beyond that point.
