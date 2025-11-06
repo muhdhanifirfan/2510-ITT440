@@ -18,6 +18,12 @@ This performance testing was performed using Siege which is an open source regre
 -  To determine the maximum handling capacity of the web server functionality and efficiency
 -  To show and ensure how stress can be performed safely and ethically by using a local flask web app instead of real website.
 
+---
+## Hypothesis
+“If users are active at the same time increase, the average response time and error rate are expected to increase, while the overall throughput will drop.
+This hypothesis suggests that the simulated Flask server will show clear signs of performance slowdown under heavy user load that similar to what happens in real-world web systems.”
+
+
 
 ---
 
@@ -50,3 +56,35 @@ The experiment used Liquipedia as reference because Liquipedia is a well-known e
 | Network | Localhost (127.0.0.1) |
 
 ---
+## Load Pattern Design
+| Level | Concurrency | Duration | Expected behavior |
+|---------|-----------|---------|-----------|
+| Low | 10 users| 6o second  | Stable response, no errors |
+| Medium | 50 users| 60 second | Slight increase in latency |
+| High | 200 users| 60 second | Noticeable slowdown, possible errors |
+
+---
+## Testing Procedure
+
+
+
+---
+## Raw Data
+
+
+
+---
+## Result and Analysis
+
+
+---
+## Recommendations
+
+
+
+---
+## Conclusion
+
+---
+## Youtube Video Demostration
+
