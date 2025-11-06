@@ -81,8 +81,10 @@ It is up to you to use any name for the Docker container.
   docker run -d -p 8088:80 --name stress-target nginx
   ```
  This creates a running container serving static web pages at http://localhost:8088.
+ <br></br>
  **2. Create Locust test script**
- This will be the file you run on your terminal or PowerShell
+ <br></br>
+ This will be the file you run on your terminal or PowerShell, and make sure that this script is in the *locust folder*.
  ```javascript
   from locust import HttpUser, task, between
 
@@ -99,6 +101,9 @@ class StressUser(HttpUser):
   ```
  Open the web interface at http://localhost:8088 to configure and start the test.
 
+ ## Demostration
+ 
+
  ## Methodology
 
 | Component | Specification |
@@ -109,5 +114,22 @@ class StressUser(HttpUser):
 | Testing Tool | Locust 2.42 |
 | Python | 3.13.9 |
 
+# Raw Data Presentation
+
+- **500 Users**
+
+<img width="1841" height="1125" alt="number_of_users_1762229559 305" src="https://github.com/user-attachments/assets/3c0d6ef3-b552-468f-9662-ab73e50c25f9" />
+
+Here you can see the stable graph and has successful responses to all 500 concurrent users without any problem.
+
+<br></br>
+
+- **4000 Users**
+
+<img width="1841" height="1125" alt="total_requests_per_second_1762278295 045" src="https://github.com/user-attachments/assets/a41461ff-a37d-42ac-bf8f-6f2e2e2af5d7" />
+
+Here
+
+## Interpretation on the Results
 ### Hypothesis
 The Nginx container can handle moderate concurrent loads but will show increased latency under heavy stress. OR The hypothesis is that Nginx can handle up to 400–450 concurrent users efficiently, but performance will degrade as CPU usage reaches near saturation.
