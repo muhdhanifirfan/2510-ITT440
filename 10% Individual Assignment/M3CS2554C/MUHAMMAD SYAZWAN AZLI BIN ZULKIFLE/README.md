@@ -137,6 +137,8 @@ locust -f locustfile.py
 **PHASE 1 (10 USERS)**
 <img width="1488" height="603" alt="image" src="https://github.com/user-attachments/assets/a85c4b79-3c64-41e3-88bf-1130bbc48eb0" />
 
+The API demonstrated good scalability at this user load. After an initial warm-up period, the system stabilized and maintained consistent response times while sustaining steady throughput. The overall performance is acceptable for this load level.
+
 **PHASE 2 (50 USERS)**
 <img width="1489" height="615" alt="image" src="https://github.com/user-attachments/assets/39266b68-058d-460d-a1f2-bea2062c26ac" />
 
