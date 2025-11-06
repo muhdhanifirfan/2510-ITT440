@@ -1,4 +1,4 @@
-# 🧪 Using wrk to Load Test httpbin.org
+# 🧪 Using wrk to Load Test httpbingo.org
 
 **CONDUCTED BY:** MUHAMMAD AMIR SYAZWAN BIN MOHD SAIZUL  
 **STUDENT ID:** 2024553853  
@@ -22,7 +22,7 @@
 
 Performance testing ensures that a web service remains **stable and responsive** under varying user loads. It helps uncover **bottlenecks**, high latency responses, or throughput limitations before deployment.
 
-In this project, I used **[wrk](https://github.com/wg/wrk)** a fast and modern HTTP benchmarking tool to load test [httpbin.org](https://httpbin.org/), a public HTTP service.  
+In this project, I used **[wrk](https://github.com/wg/wrk)** a fast and modern HTTP benchmarking tool to load test [httpbingo.org](https://httpbingo.org/), a public HTTP service.  
 The goal is to simulate concurrent users accessing the site and analyze the system’s performance under pressure.
 
 ---
@@ -33,7 +33,7 @@ The goal is to simulate concurrent users accessing the site and analyze the syst
 |------|--------------|
 | **wrk** | High-performance open-source HTTP benchmarking tool designed to generate heavy concurrent loads using threads. |
 | **Linux Terminal** | Command-line interface to execute wrk commands and analyze outputs. |
-| **httpbin.org** | Public API that returns HTTP request and response data, ideal for testing purposes. |
+| **httpbingo.org** | Public API that returns HTTP request and response data, ideal for testing purposes. |
 
 ---
 
@@ -84,7 +84,7 @@ wrk -t <threads> -c <connections> -d <duration> <URL>
 ```
 ### 💻 Example Command
 ```
-wrk -t4 -c100 -d30s https://httpbin.org/get
+wrk -t4 -c100 -d30s https://httpbingo.org/get
 ```
 
 Parameter Explanation:
@@ -95,7 +95,7 @@ Parameter Explanation:
 
 - -d30s → Run test for 30 seconds
 
-- https://httpbin.org/get → Target website
+- https://httpbingo.org/get → Target website
 ___
 
 ## 📊 Sample Test Result
@@ -103,7 +103,7 @@ ___
 After running the test the result would be shown as below.
 
 ```
-Running 30s test @ https://httpbin.org/get
+Running 30s test @ https://httpbingo.org/get
   4 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency     85.32ms   10.14ms 201.47ms   90%
@@ -143,7 +143,7 @@ ___
 ## 🧾 Report Summary
 | Metric                  | Value                                              |
 | ----------------------- | -------------------------------------------------- |
-| **Target URL**          | [https://httpbin.org/get](https://httpbin.org/get) |
+| **Target URL**          | [https://httpbingo.org/get](https://httpbingo.org/get) |
 | **Threads Used**        | 4                                                  |
 | **Connections**         | 100                                                |
 | **Duration**            | 30 seconds                                         |
@@ -153,6 +153,6 @@ ___
 | **Transfer Rate**       | ~0.85 MB/sec                                       |
 
 ### ✅ Conclusion:
-The test results show that httpbin.org can handle moderate concurrent traffic efficiently.
+The test results show that httpbingo.org can handle moderate concurrent traffic efficiently.
 Latency increases slightly with higher connections, but throughput remains stable, proving its reliability and scalability.
 This demonstrates how wrk can effectively reveal performance characteristics and potential bottlenecks in web systems.
