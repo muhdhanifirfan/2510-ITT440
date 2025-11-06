@@ -13,10 +13,6 @@
 
 ## 1. Introduction
 
-<img width="584" height="267" alt="image" src="https://github.com/user-attachments/assets/366b5d54-8f4a-44cf-b171-a9c52f7bbba7" />
-
-
-
 This report focuses on capacity testing of a web application using Grafana k6. Capacity testing aims to determine the maximum number of concurrent users or requests a system can handle before performance degrades or failures occur. In this study, the target system is the Fake REST API hosted at https://fakerestapi.azurewebsites.net/, which simulates typical REST-based API operations.
 
 ---
@@ -41,19 +37,7 @@ The objective of this test is to perform capacity testing on the target web API 
 
 ---
 
-## 4. Test Plan and Methodology
-
-| Type | Content |
-|----------------|--------------------|
-| Testing type | Capacity Testing | 
-| Tool name | k6 (command-line load testing tool |
-| Target | https://fakerestapi.azurewebsites.net/ |
-| Test duration | 10 seconds per scenario |
-| Virtual users | 100, 1000, 2000, 3000, 4000,(for comparison) | 
-  
----
-
-## 5. Test Environment Setup
+## 4. Test Environment Setup
 
 **System Configuration:**
 - Operating System: Windows 11  
@@ -63,7 +47,19 @@ The objective of this test is to perform capacity testing on the target web API 
 
 ---
 
-## 6. Test Setup Configuration
+## 5. Test Setup Configuration
+
+### Table 1: Test Setup Details
+
+| Type | Context |
+|----------------|--------------------|
+| Testing type | Capacity Testing | 
+| Tool name | k6 (command-line load testing tool |
+| Target | https://fakerestapi.azurewebsites.net/ |
+| Test duration | 10 seconds per scenario |
+| Virtual users | 100, 1000, 2000, 3000, 4000,(for comparison) | 
+
+<img width="584" height="267" alt="image" src="https://github.com/user-attachments/assets/366b5d54-8f4a-44cf-b171-a9c52f7bbba7" />
 
 The test was conducted using k6, written in JavaScript (.js) format.
 The following code defines the test scenario, including the target website URL and virtual user configuration
@@ -85,7 +81,9 @@ This command runs the k6 test script named test100.js, simulating the defined vi
 
 ---
 
-## 7. Result Capacity Testing
+## 6. Result Capacity Testing
+
+### Table 2: Raw Data Summary
 
 | Test | VUs | Avg (ms) | P95 (ms) | Max (ms) | Req/s | Error % |
 |--------------|-------|---------|--------|-------|-------|------|
@@ -97,7 +95,7 @@ This command runs the k6 test script named test100.js, simulating the defined vi
 
 ---
 
-## 8. Graphs and Data Analysis
+## 7. Graphs and Data Analysis
 
 ### Average Response Time
 <img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/6ffefc9e-bea2-4f54-8cb7-7fa60534326d" />
@@ -128,7 +126,7 @@ At 4000 VUs, the error percentage slightly dropped to 37.97%, possibly because t
 
 ---
 
-## 9. Conclusion
+## 8. Conclusion
 
 Based on the capacity testing conducted using Grafana k6 on the Fake REST API, the results show a clear relationship between the number of virtual users, average response time, and error percentage.
 
@@ -138,11 +136,12 @@ From these results, it can be concluded that the maximum reliable capacity of th
 
 ---
 
-## 10. Reference
+## 9. Reference
 
 --
 
-## 11. Video Link
+## 10. Video Link
+
 
 
 
