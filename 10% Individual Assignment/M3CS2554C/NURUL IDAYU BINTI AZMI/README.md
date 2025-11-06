@@ -21,13 +21,27 @@ This report focuses on capacity testing of a web application using Grafana k6. C
 
 ---
 
-## 2. Objectives
+## 2. Capacity Testing
+
+### 💡 What is Capacity Testing?
+
+Capacity testing is a type of performance testing used to find out the maximum number of users or requests a website, system, or application can handle before it slows down or starts failing.
+
+In other words, it helps one to answer:
+
+“How many users can use this system at the same time before performance drops?”
+
+The goal is to identify the system’s limit (capacity threshold), the point where response times become too slow or errors start to appear.
+
+---
+
+## 3. Objectives
 
 The objective of this test is to perform capacity testing on the target web API to identify the system’s upper performance limit. Specifically, the test measures how response time, throughput, and error rate change as the number of virtual users (VUs) increases.
 
 ---
 
-## 3. Test Plan and Methodology
+## 4. Test Plan and Methodology
 
 | Type | Content |
 |----------------|--------------------|
@@ -39,7 +53,7 @@ The objective of this test is to perform capacity testing on the target web API 
   
 ---
 
-## 4. Test Environment Setup
+## 5. Test Environment Setup
 
 **System Configuration:**
 - Operating System: Windows 11  
@@ -49,7 +63,7 @@ The objective of this test is to perform capacity testing on the target web API 
 
 ---
 
-## 5. Test Setup Configuration
+## 6. Test Setup Configuration
 
 The test was conducted using k6, written in JavaScript (.js) format.
 The following code defines the test scenario, including the target website URL and virtual user configuration
@@ -71,7 +85,7 @@ This command runs the k6 test script named test100.js, simulating the defined vi
 
 ---
 
-## 6. Result Capacity Testing
+## 7. Result Capacity Testing
 
 | Test | VUs | Avg (ms) | P95 (ms) | Max (ms) | Req/s | Error % |
 |--------------|-------|---------|--------|-------|-------|------|
@@ -83,7 +97,7 @@ This command runs the k6 test script named test100.js, simulating the defined vi
 
 ---
 
-## 7. Graphs and Data Analysis
+## 8. Graphs and Data Analysis
 
 ### Average Response Time
 <img width="650" height="377" alt="image" src="https://github.com/user-attachments/assets/6ffefc9e-bea2-4f54-8cb7-7fa60534326d" />
@@ -114,7 +128,7 @@ At 4000 VUs, the error percentage slightly dropped to 37.97%, possibly because t
 
 ---
 
-## 8. Conclusion
+## 9. Conclusion
 
 Based on the capacity testing conducted using Grafana k6 on the Fake REST API, the results show a clear relationship between the number of virtual users, average response time, and error percentage.
 
@@ -124,10 +138,11 @@ From these results, it can be concluded that the maximum reliable capacity of th
 
 ---
 
-## 9. Reference
+## 10. Reference
 
 --
 
-## 10. Video
+## 11. Video Link
+
 
 
