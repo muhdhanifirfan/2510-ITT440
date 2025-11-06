@@ -13,7 +13,8 @@
 
 ## 1. Introduction
 
-<img width="900" height="681" alt="image" src="https://github.com/user-attachments/assets/cd379d19-6437-46e6-a66a-a4973900b595" />
+<img width="584" height="267" alt="image" src="https://github.com/user-attachments/assets/366b5d54-8f4a-44cf-b171-a9c52f7bbba7" />
+
 
 
 This report focuses on capacity testing of a web application using Grafana k6. Capacity testing aims to determine the maximum number of concurrent users or requests a system can handle before performance degrades or failures occur. In this study, the target system is the Fake REST API hosted at https://fakerestapi.azurewebsites.net/, which simulates typical REST-based API operations.
@@ -100,3 +101,4 @@ In the results, no errors were observed at 100 virtual users (VUs), which confir
 When the load increased to 2000 and 3000 VUs, the error rate jumped to 32.49% and 43.58%, showing that the server could not process all requests successfully. This suggests the Fake REST API started to become overloaded or reached its resource capacity, resulting in request timeouts or dropped connections.
 
 At 4000 VUs, the error percentage slightly dropped to 37.97%, possibly because the system rejected requests faster instead of letting them time out. Overall, this shows that the maximum stable capacity for the API is around 1000 VUs, as performance degrades rapidly beyond that point.
+
