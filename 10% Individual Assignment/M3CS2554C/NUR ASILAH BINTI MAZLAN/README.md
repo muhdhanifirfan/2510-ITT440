@@ -59,8 +59,6 @@ This configuration enabled controlled load escalation and sustained stress condi
 
 
 ## 5. Methodology and Execution
-
-
 Test execution was conducted by writing the script into the Grafana Cloud K6 Script Editor and clicking ‘Run Test’. Real time metrics were served on the Grafana dashboards showing total requests, the failure rate, and response duration.
 
 ### 5.1 Test Configuration Summary
@@ -74,6 +72,9 @@ Test execution was conducted by writing the script into the Grafana Cloud K6 Scr
 | Virtual Users (VU) Range | 50 → 75 → 100 |
 | Thresholds | p(95) < 2000 ms, failure rate < 5% |
 | Endpoints Tested | `/`, `/news.php`, `/contacts.php`, `/login` |
+
+<strong>Table 5.1 </strong><em>Summary of Test Configuration</em>
+
 </div>
 
 ### 5.2 Test Script Code
