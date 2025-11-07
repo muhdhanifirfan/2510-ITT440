@@ -1,15 +1,15 @@
 # Stress Testing on QuickPizza Using Grafana Cloud K6  
 
-**Name:** NUR ASILAH BINTI MAZLAN  
-**Student ID:** 2025160559 
-**Course Code:** ITT440  
-**Course Name:** Network Programming
-**Class:** CDCS2554C
+**NAME:** NUR ASILAH BINTI MAZLAN<br> <br>
+**STUDENT ID:** 2025160559<br> <br>
+**GROUP:** CDCS2554C
 
 ---
-## **Abstract**
+## **What is Stress Testing?**
 <p align="justify">
-This article details the results from a web application stress test on the QuickPizza demo site using Grafana Cloud K6. The purpose of the experiment was to test how the system behaved under progressively increasing concurrent user loads, with the goal of demonstrating performance stability, identifying potential bottlenecks, and observing how the system responded under pressure. This testing was done completely within the Grafana Cloud K6 web app interface rather than running K6 on a local device via Visual Studio Code or Windows Command Prompt to ease the setup time and also in a way to see results in real time. The K6 cloud stress test was initiated by ramping up virtual users (VU) from 1 to 50 concurrent users, which was increased to 75 and 100 users. That was the maximum limit of concurrent users allowed under the Grafana Cloud free-tier plan. The results indicated response times were stable during the test, but one HTTP request timed out due to simulated login credentials being used in the performance test. Overall the system managed concurrent sessions well. 
+Stress testing is a form of non-functional performance testing used to evaluate how a system behaves under extreme conditions or heavy user load. The main purpose is to determine the stability, reliability, and robustness of an application when it operates beyond its normal capacity. Unlike load testing, which measures performance under expected traffic levels, stress testing pushes the system to its limits to identify potential points of failure.  
+<p align="justify">
+Through stress testing, testers can observe how the application recovers after failure, monitor its response time, and detect bottlenecks that may lead to performance degradation or crashes. This testing method provides valuable insights into system resilience, ensuring that the application can maintain functionality during unexpected surges in demand or hardware limitations. Ultimately, stress testing helps improve scalability planning, system architecture, and user experience by highlighting weaknesses before they affect real-world users.
 
 ## 1. Introduction
 <p align="justify">
@@ -64,6 +64,7 @@ This configuration enabled controlled load escalation and sustained stress condi
 Test execution was conducted by writing the script into the Grafana Cloud K6 Script Editor and clicking ‘Run Test’. Real time metrics were served on the Grafana dashboards showing total requests, the failure rate, and response duration.
 
 ### 5.1 Test Configuration Summary
+<div align="center">
 
 | **Parameter** | **Configuration** |
 |----------------|-------------------|
@@ -73,8 +74,9 @@ Test execution was conducted by writing the script into the Grafana Cloud K6 Scr
 | Virtual Users (VU) Range | 50 → 75 → 100 |
 | Thresholds | p(95) < 2000 ms, failure rate < 5% |
 | Endpoints Tested | `/`, `/news.php`, `/contacts.php`, `/login` |
+</div>
 
-### 5.2 Script
+### 5.2 Test Script Code
 ```js
 import http from 'k6/http';
 import { sleep } from 'k6';
@@ -134,11 +136,13 @@ The Cloud Insights panel of Grafana gave a succinct overview of system health an
   <strong>Figure 6.3 </strong><em>All thresholds passed</em>
 </p>
 
+<div align="center">
+  
 | **Metric** | **Threshold Condition** | **Observed Result** | **Status** |
 |-------------|--------------------------|----------------------|-------------|
 | HTTP Request Duration (p95) | < 2000 ms | ~3.6 ms | ✅ Passed |
 | HTTP Failure Rate | < 5 % | ~0.01 % | ✅ Passed |
-
+</div>
 Both defined thresholds were satisfied, indicating that the system maintained the targeted performance level throughout the test.
 
 ### 6.4 HTTP Summary
@@ -171,7 +175,6 @@ The graph showed that response times maintained a flat trend line which leads us
 Throughput followed the number of users ramped and held a steady state at 682 RPS approximately. No sharp spikes or dips inferred that QuickPizza performed well at handling concurrency and Grafana’s load generators load balanced effectively over the test period. 
 
 ### 7.3 Failure and Error Handling
-<p align="justify">
 The one failed HTTP 403 request observed was not unexpected from the `/login` endpoint confirming authentication logic was acting in the intended mode rather than exhibiting a performance error. The Logs tab confirmed no connection timeouts nor any unexpected 5xx server errors occurred. 
 
 ### 7.4 Resource Utilization Perspective
@@ -206,7 +209,7 @@ From this assignment, I learned how to create load profiles, interpret response 
 ## 11. Video Demonstration
 A short walkthrough video showcasing the test execution, configuration steps, and the result visualization is available on : 
 
-👉 [**Watch on YouTube**](https://www.youtube.com/watch?v=CDNLb47zqJQ) 
+👉 [**Watch here on YouTube**](https://www.youtube.com/watch?v=CDNLb47zqJQ) 
 
 ## 12. References
 
@@ -215,6 +218,3 @@ A short walkthrough video showcasing the test execution, configuration steps, an
 - Grafana Labs. (2024). *Test.k6.io – Demo Website for Load Testing.* Retrieved from [https://test.k6.io/](https://test.k6.io/)
 
 - Isaiah, A. (2025, March 3). _Introduction to Modern Load Testing with Grafana k6._ Better Stack Community. Retrieved from [https://betterstack.com/community/guides/testing/grafana-k6/](https://betterstack.com/community/guides/testing/grafana-k6/)
-
-
-
