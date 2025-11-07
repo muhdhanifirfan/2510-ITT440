@@ -11,12 +11,12 @@
 
  <hr>
 
-## 1. INTRODUCTION
+## 1.0 INTRODUCTION
 
 <p align="justify"> Web application performance is a crucial factor in determining user satisfaction and business success in today's digital environment.  This report uses stress testing techniques to provide a thorough performance analysis of the Joomla Launch website (https://launch.joomla.org/).  Stress testing helps find breaking points and performance degradation before they affect actual users by assessing how a system responds to extreme load conditions.  In order to evaluate the application's responsiveness, stability, and resource management under pressure, this study uses GTMetrix to simulate high user traffic. </p>
  <hr>
  
-## 2. OBJECTIVES
+## 2.0 OBJECTIVES
 
 <p align="justify"> This stress testing assignment's main goals are: 
 <ul>
@@ -28,12 +28,12 @@
 </p>
  <hr>
 
- ## 3. WHAT IS STRESS TESTING
+## 3.0 WHAT IS STRESS TESTING
  
 <p align="justify"> One kind of performance testing called stress testing assesses a system's ability to function in harsh circumstances which beyond its typical operating range. Determining the system's resilience, stability, and error-handling skills in the face of extreme traffic spikes, resource depletion, or peak loads is the aim.  In contrast to load testing, which replicates anticipated user loads, stress testing tests the system's limits in order to identify potential failures and breaking points. </p>
  <hr>
 
-## 4. TOOL SELECTION JUSTIFICATION
+## 4.0 TOOL SELECTION JUSTIFICATION
 
 <p align="justify"> The tool selected for this analysis is GTMetrix. </p>
 <p align="justify"> 
@@ -47,7 +47,7 @@
  While not a traditional stress testing tool like JMeter, GTMetrix can simulate repeated loads and analyze performance degradation, making it a practical choice for this study. </p>
  <hr>
 
- ## 5. TEST ENVIRONMENT SETUP
+ ## 5.0 TEST ENVIRONMENT SETUP
  
 <p align="justify"> The test environment was set up to create a baseline before carefully introducing stressors.
  <ol>
@@ -63,19 +63,16 @@
 
 <p align="center">
 <img width="954" height="685" alt="INTRO PIC" src="https://github.com/user-attachments/assets/d8c62d79-c185-46f4-afe0-dae28eaa5a43" /> </p>
-
-<p align="center">
-<img width="954" height="685" alt="PERFORMANCE" src="https://github.com/user-attachments/assets/39af9551-714b-4e48-a2a1-6fc7755aff6b" /> </p>
  <hr>
  
-## 6. METHODOLOGY
+## 6.0 METHODOLOGY
 
 <p align="justify">
  <ol>
     <li> Target Selection: The publicly accessible Joomla Launch site was chosen. </li> <!-- 1 -->
     <li> Test Execution: <!-- 2 -->
      <ul>
-      <li> Multiple test runs were conducted via GTmetrix. </li>
+      <li> Multiple test runs were conducted via GTMetrix. </li>
       <li> Performance data was collected including: </li>
        <ul>
          <li> Redirect Duration </li>
@@ -92,13 +89,17 @@
     </li>
 <BR> <p align="center">
 <img width="954" height="685" alt="BROWSER TIMING" src="https://github.com/user-attachments/assets/6946ea31-4153-4bb0-beee-28f6d5109818" /> </p>
-    <li> Stress simulation: Despite GTmetrix's inability to support conventional multi-user stress tests, load was simulated through repeated runs and performance analysis under cached and uncached conditions. </li> <!-- 3 -->
-   <li> Data Collection: Metrics were recorded from GTmetrix reports and Lighthouse audits. </li>
+  
+<p align="center">
+<img width="954" height="685" alt="PERFORMANCE" src="https://github.com/user-attachments/assets/39af9551-714b-4e48-a2a1-6fc7755aff6b" /> </p>
+    <li> Stress simulation: Despite GTMetrix's inability to support conventional multi-user stress tests, load was simulated through repeated runs and performance analysis under cached and uncached conditions. </li> <!-- 3 -->
+   <li> Data Collection: Metrics were recorded from GTMetrix reports and Lighthouse audits. </li>
  </ol>
 </p>
 <hr>
 
-## 7. PERFORMANCE DATA ANALYSIS
+## 7.0 PERFORMANCE DATA ANALYSIS
+
 ### 7.1 Overall Scoring
 <p align="justify">
 <ul> 
@@ -107,15 +108,53 @@
  <li> Fully Loaded Time: 8.7s </li>
 </ul> </p>
 
+<p align="center">
+<img width="954" height="685" alt="GRADE" src="https://github.com/user-attachments/assets/462b02a3-78fc-4f1a-bc58-452e6ac86abd" /> </p>
+
 ### 7.2 Core web Vitals (User Experience Metrics)
 <p align="justify">
 <ul> 
  <li> Largest Contentful Paint (LCP): 2.5s </li>
  <li> Total Blocking Time (TBT): 236ms </li>
-</ul> </p>
+ <li> Cumulative Layout Shift (CLS): 0 </li>
+</ul> 
+The page is visually stable (excellent CLS score) and loads its main content acceptably. Interactivity is crucial, though, because the high TBT suggests that the page is unresponsive for an extended period of time after loading.</p>
+<p align="center">
+<img width="954" height="685" alt="WEB VITALS" src="https://github.com/user-attachments/assets/a982f35f-9ec2-4579-980b-c41427bd6d2b" /> </p>
 <hr>
 
-<p align="justify">  </p>
+## 8.0 RESULT INTERPRETATION
+
+<p align="justify"> The stress test revealed several performance issues:
+<ol>
+ <li> Slow LCP: showing that the main content is being rendered slowly. </li>
+ <li> High TBT: suggesting that the main thread be blocked by a poorly optimied JavaScript execution </li>
+ <li> Long FUlly Loaded Time: 8.7s, this indicate there are elements that use a lot of resources and the slow server response. </li>
+</ol>
+Under repeated process, the site showed a very much consistent degradation in performance metrics, especially in TBT and LCP which indicates a poor stress tolerance.
+</p>
+<hr>
+
+## 9.0 IDENTIFICATION OF BOTTLENECKS AND FAILURE POINTS
+
+<p align="justify"> 
+<ol>
+ <li> Backend Duration: 1.3s, this shows delays in server-side processing. </li>
+ <li> Large Image Files: several images over 100KB contribute to slow loading. </li>
+ <li> Render-Blocking Resources: CSS and JavaScript files delaying page rendering. </li>
+ <li> Third-Party scripts: Google TAg MAnager and reCAPTCHA add a very significant overhead. </li>
+</ol>
+</p>
+<p align="center">
+<img width="954" height="685" alt="REQUEST" src="https://github.com/user-attachments/assets/e537c371-0aab-468a-912d-7e398bbce802" /> </p>
+<hr>
+
+## 10.0 SUMMARY
+
+<p align="justify"> The GTMetrix stress test of https://launch.joomla.org/ revealed a notable performance snags under load, especially in Largest Contentful Paint (LCP) and Total Blocking Time (TBT). Render-blocking Scripts and resource-heavy content cause the application to perform poorly under stress, resulting in a less than ideal user experince. Overall it is recommended to enhance server response times, postponing non-essential JavaScript and optimizing images. Under high-load circumstances, these modification would improve stability and website smooth opration. </p>
+
+
+<hr>
 
 <!-- [ <p align="justify">  </p> ]paragraph -->
 <!-- [ <ul> <li>  </li>  </ul> ] bullet points --> 
@@ -123,21 +162,10 @@
 <!-- [ <hr> section devider ] [ <br> enter ] -->
 
 <!-- 
-8. Result Interpretation
-The stress test revealed several performance issues:
-= Slow LCP: Indicating slow rendering of the main content.
-= High TBT: Suggesting unoptimized JavaScript execution blocking the main thread.
-= Long Fully Loaded Time (8.7s): Highlights resource-heavy elements and slow server response.
+ Under high-load circumstances, these modifications would improve stability and performance. -->
 
-Under repeated access, the site showed consistent degradation in performance metrics, especially in TBT and LCP, indicating poor stress tolerance.
 
-9. Identification of Bottlenecks and Failure Points
-= Backend Duration (1.3s): Suggests server-side processing delays.
-= Large Image Files: Several images over 100KB (e.g., what-is-joomla4.jpg – 179KB) contribute to slow loading.
-= Render-Blocking Resources: CSS and JavaScript files delay page rendering.
-= Third-Party Scripts: Google Tag Manager and reCAPTCHA add significant overhead.
 
-10. Summary
-The stress testing of https://launch.joomla.org/ using GTmetrix highlighted significant performance bottlenecks under load, particularly in LCP and TBT. The application struggles with resource-heavy content and render-blocking scripts, leading to suboptimal user experience under stress. Recommendations include optimizing images, deferring non-critical JavaScript, and improving server response times. These changes would enhance both performance and stability under high-load conditions.
 
--->
+
+
