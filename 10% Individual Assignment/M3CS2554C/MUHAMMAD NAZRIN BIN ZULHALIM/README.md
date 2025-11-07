@@ -17,13 +17,13 @@
 
 ---
 ## 🔨 Tools Selection
+### 🔥Grafana k6
 
 <p align="center">
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/ce07a1f9-b3e4-49e1-962e-a9aa77d878ec" />
 </p>
 
-## 🔥Grafana k6
-## 🚀 Key Features of Grafana k6
+### 🚀 Key Features of Grafana k6
 
 | Feature | Description |
 | :--- | :--- |
@@ -59,6 +59,7 @@
 | **Target Application URL** | ‘https://demo.nopcommerce.com’ |
 
 ---
+
 ## :microscope: Test Methodology: Simulating Realistic Behaviour
 ### To ensure the testing is valid, a realistic user scenario was created. The test simulates a user browsing the site, searching for a product and viewing certain product's page, with random pause between each steps. The test runs for a total of **35 minutes** and is broken into the following stages:
 
@@ -110,6 +111,7 @@ export default function() {
 }
 ```
 ---
+
 ### The User Simulation: What Are They Doing?
 The VU are designed to act like real, curious shoppers, not just bots hitting the homepage. Each user will repeatedly execute a 3-step "Browse and Search" journey.
 
@@ -210,7 +212,7 @@ Even after the system stabilized, the error rate was *not* zero. It averaged 10-
 * **Add a Load Balancer:** If not already in place, a load balancer is essential. It will distribute traffic evenly across your servers, preventing one server from being overloaded while others are idle.
 ---
 
-### :dart: Overall Conclusion
+## :dart: Overall Conclusion
 
 **The application cannot handle a *rapidly increasing* load.**
 
@@ -220,3 +222,8 @@ The data tells a clear story:
 2.  However, once the load *stabilized* (even at its peak of 300 users), the application "caught its breath" and recovered. This could be due to caches warming up, database connection pools finally scaling, or an auto-scaler kicking in too late.
 
 **Key Takeaway:** If this were a real e-commerce site, a "flash sale" or a successful marketing email would **crash the site** for the first 15-20 minutes—exactly when you need it to be working the most. The system's ability to handle *changing* load (its "elasticity") is its biggest weakness.
+
+---
+
+## 🎥 Demonstration Video
+## https://youtu.be/v87tvTjvAgA
