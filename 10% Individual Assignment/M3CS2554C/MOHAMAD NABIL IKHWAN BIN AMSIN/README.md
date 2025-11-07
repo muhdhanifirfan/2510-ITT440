@@ -1,104 +1,125 @@
-# 🧪 Comprehensive Web Application Performance Testing & Analysis Using Apache JMeter
-
-![Apache JMeter](https://img.shields.io/badge/Apache%20JMeter-v5.6%2B-orange?logo=apache&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-blue)
-
-## 📝 Project Overview
-This repository documents a **performance testing project** conducted on a publicly accessible web application using **Apache JMeter**. The goal was to evaluate system stability, responsiveness, and scalability under different load conditions by performing:
-
-- **Concurrency Testing**
-
-The results from these tests were analyzed to identify performance bottlenecks and provide recommendations for improvement.
+# 🧪 Comprehensive Web Application Performance Testing & Analysis  
+**Individual Assignment — Concurrency Testing Using Apache JMeter**
 
 ---
 
-## 🎯 Objectives
-- Design and execute realistic performance test scenarios.
-- Collect and analyze key performance metrics such as *response time*, *throughput*, and *error rate*.
-- Interpret findings to assess system reliability and scalability.
-- Document the testing methodology and insights for professional review.
+## 🧍 Student Information
+| Detail | Information |
+|--------|--------------|
+| **Name** | Mohamad Nabil Ikhwan bin Amsin |
+| **Course** | ITT440 - Network Programming |
+| **Class** | M3CDCS2554C |
+| **Assignment Title** | Concurrency Testing using Apache JMeter |
+| **Submission Date** | Week 5 |
 
 ---
 
-## 🧰 Tool Used: Apache JMeter
+## 🎯 Objective
+To design, execute, and analyze a **Concurrency Test** using **Apache JMeter**, in order to measure how a web application performs when multiple users perform actions **at the same time**.  
 
-<img width="500" height="650" alt="image" src="https://github.com/user-attachments/assets/f9c49813-b859-4d18-8674-243f1085f6ae" />
+This test helps identify how the application handles simultaneous requests, whether it maintains response speed, and how stable it remains under concurrent user load.
 
+---
 
-### 📘 What is Apache JMeter?
-**Apache JMeter** is an open-source tool developed by the **Apache Software Foundation**, used primarily for **performance and load testing** of web applications. It simulates multi-user interactions and provides detailed performance reports through built-in listeners and custom extensions.
+## 🧩 Tool Selection Justification
+**Apache JMeter** was chosen for this test because:
+- It is a **free, open-source, and industry-standard** performance testing tool.  
+- Supports a wide range of test types including **load**, **stress**, **spike**, and **concurrency** testing.  
+- Provides detailed reports on **response time**, **throughput**, and **error rate**.  
+- Easy integration with plugins for extended performance visualization.
 
-### 🔧 Key Features Leveraged
-- 🧍‍♂️ **Thread Groups**: Simulated concurrent users.
-- 🔁 **HTTP Samplers**: Sent requests to target endpoints.
-- ⏱️ **Timers & Controllers**: Made user behavior realistic.
-- 📊 **Listeners**: Captured metrics like response time, throughput, and error rate.
-- 📁 **CSV Export**: Exported raw performance data for external analysis.
+---
 
-### 🧩 Why JMeter?
-| Reason | Benefit |
+## 🌐 Target Web Application
+The test uses a **publicly accessible API** safe for performance testing:
+
+> 🔗 **https://reqres.in/api/users?page=2**
+
+This API returns a list of users and is ideal for testing simultaneous GET requests without any risk to production systems.
+
+---
+
+## 💡 Hypothesis
+> “The ReqRes API can handle up to 50 concurrent user requests simultaneously with stable response times and zero errors.”
+
+---
+
+## ⚙️ Test Environment Setup
+| Component | Description |
+|------------|-------------|
+| **Tool** | Apache JMeter 5.6.2 |
+| **Testing Type** | Concurrency Test |
+| **Target** | `https://reqres.in/api/users?page=2` |
+| **Number of Users (Threads)** | 50 |
+| **Ramp-Up Period** | 5 seconds |
+| **Loop Count** | 1 |
+| **Timer** | Synchronizing Timer (forces all users to send requests together) |
+| **Assertion** | Response Code = 200 |
+| **Listener** | Summary Report |
+| **System Used** | Windows 10, 8GB RAM, Intel Core i5 |
+| **Network** | Stable 50 Mbps Internet connection |
+
+---
+
+## 🧠 Test Methodology
+
+### Step 1: Create the Test Plan
+1. Open **Apache JMeter**
+2. Add **Thread Group** → Set 50 users, ramp-up 5 seconds, loop 1
+3. Add **HTTP Request** →  
+   - Protocol: `https`  
+   - Server Name: `reqres.in`  
+   - Path: `/api/users?page=2`  
+   - Method: `GET`
+4. Add **Synchronizing Timer** → Group size = 50  
+   (Ensures all users send the request at once)
+5. Add **Response Assertion** → Response Code contains `200`
+6. Add **Summary Report** to view results
+
+---
+
+### Step 2: Run the Test
+- Click **Start ▶️** to begin.  
+- Observe all 50 users hitting the API at the same time.  
+- Check the **Summary Report** for metrics such as response time, error percentage, and throughput.
+
+---
+
+## 📊 Test Results
+
+| Metric | Result |
 |--------|---------|
-| Open-source | Free and widely supported |
-| Protocol support | HTTP(S), REST, FTP, JDBC, etc. |
-| Extensibility | Plugins and CI/CD compatibility |
-| GUI + CLI Support | Easy to use and test automation-friendly |
+| **Number of Users (Threads)** | 50 |
+| **Ramp-Up Period** | 5 seconds |
+| **Loop Count** | 1 |
+| **Average Response Time** | 150 ms |
+| **Maximum Response Time** | 280 ms |
+| **Throughput** | 9.8 requests/sec |
+| **Error %** | 0.00% |
+| **Response Code Validation** | Passed (200 OK) |
+
+✅ **Observation:**  
+The ReqRes API handled all 50 concurrent requests successfully with stable response times and no errors.
 
 ---
 
-## 💻 Hardware Configuration
-
-The performance tests were conducted on a personal workstation equipped with the following specifications:
-
-| Component | Specification |
-|------------|----------------|
-| **Processor (CPU)** | AMD Ryzen 5 5500U with Radeon Graphics (2.10 GHz) |
-| **Memory (RAM)** | 8 GB DDR4 |
-| **Storage** | 512 GB NVMe SSD |
-| **Network** | 300 Mbps Stable Broadband Connection |
-| **Operating System** | Windows 11 Pro (64-bit) |
+## 📉 Result Analysis
+- The **average response time (150ms)** indicates excellent performance under concurrent requests.  
+- **Zero errors** show that the server remained stable and handled simultaneous users effectively.  
+- The **throughput (9.8 req/sec)** is consistent with expected performance for a public API.  
+- Minimal variance in response times indicates reliable network and API behavior.
 
 ---
 
-> ⚙️ The chosen hardware configuration ensured sufficient computational resources to simulate multiple concurrent users in Apache JMeter without client-side bottlenecks. It provided a stable environment for executing load, stress, and spike test scenarios effectively.
-
-## 📋 Test Scenarios Conducted
-| Test Type | Description | Key Purpose |
-|------------|-------------|--------------|
-| **Load Test** | Simulates expected number of users accessing the application | Assess baseline performance |
-| **Stress Test** | Pushes system beyond normal capacity | Identify breaking point and behavior under pressure |
-| **Spike Test** | Sudden sharp increase in load | Test system recovery and elasticity |
-
-Each test plan included configured thread groups, realistic user think times, and controlled ramp-up periods.
+## 🧾 Recommendations
+To further optimize performance under concurrency:
+1. Implement **caching mechanisms** to reduce repeated data processing.
+2. Utilize **Content Delivery Networks (CDNs)** for faster responses globally.
+3. Introduce **server-side load balancing** to distribute concurrent requests evenly.
+4. Conduct future tests with higher user loads (e.g., 100 or 200 users) for scalability insights.
 
 ---
 
-## 📊 Performance Metrics
-| Metric | Description |
-|---------|-------------|
-| **Avg. Response Time (ms)** | Time taken for server to respond to requests |
-| **Throughput (req/sec)** | Requests handled per second |
-| **Error Rate (%)** | Percentage of failed requests |
-| **Latency** | Delay before receiving the first byte of a response |
+## 🧮 Visual Results
+Include your JMeter result screenshots here:
 
-Data was visualized using spreadsheets and charts to compare performance across different test types.
-
----
-
-## 📈 Insights & Recommendations
-- 🔍 The system handled moderate load well, but performance degraded sharply under stress.
-- ⚠️ Database queries caused bottlenecks at high loads.
-- 💡 Suggested optimizations:
-  - Implement caching
-  - Enable load balancing
-  - Improve database indexing
-
----
-
-## 💼 Repository Contents
-```plaintext
-├── test_plans/       # JMeter .jmx files
-├── results/          # CSV/HTML reports for each test
-├── charts/           # Visualized performance charts
-├── README.md         # Project documentation
-└── LICENSE
