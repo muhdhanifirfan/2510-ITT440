@@ -172,18 +172,20 @@ In Details bar graph for : -
 
 ## 📊 So, What can I say about the Findings...(Interpretation of results
 
-### 1.0  Response Time (Latency)
+### 1.0 Response Time (Latency)
 
 **○ Response Time Ranges :** The majority of request which was *75-80%* fell into the **Green** range by the indicating under 800 ms meanwhile, a smaller significant, portion which was *20-25%* situated into the **Yellow or Orange** range.
 
 **○ In depth - explanation :** The initial GET Login Page request is the slowest, with an average of **1.13 seconds** and a poor maximum time of nearly **5 seconds**. Nevertheless, the subsequent POST requests which was the actual acces or login are very fast, averaging around under **420 ms**.
 
+### 2.0 Throughput & Load Profile 
 
+**○ Number of Users Strated per Second & Concurrent Users :** The test employed an infrequent, **spiky load pattern**. The "Number of users started per second" indicated short burts of users foloowed by periods of zero users starting. The "Number of concurrent users" also confirming that this was a **very light load test**, with a peak of only **3 concurrent users** that I assigned for the simulation.
 
+**○ In depth - explanation :** In my opinion, my improvised system's throuput is kinda moderate or we could said easy to achieve the excellent because it succesfully served every request given the minimal load. The number of concurrent users was low, which is suitable and appropriately for such a simple functional verification load test.
 
-
-   
-
+### 3.0 Error Rate
+**○ Assertion Rate**
 
 
 
