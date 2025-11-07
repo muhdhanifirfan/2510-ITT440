@@ -32,7 +32,7 @@ SOAK testing is especially important for:
 
 It provides empirical evidence of long-term reliability, helping developers and DevOps teams make informed decisions about scaling, caching, and infrastructure tuning.
 
-### 🛠️ Why Apache JMeter?
+### Why Apache JMeter?
 
 **Apache JMeter** is a widely adopted open-source tool for load and performance testing. Its relevance in SOAK testing stems from:
 
@@ -46,7 +46,7 @@ JMeter’s extensibility and reliability make it a go-to choice for performance 
 
 ---
 
-## ⚙️ Test Environment Setup & Methodology
+## Test Environment Setup & Methodology
 
 **Environment Configuration:**  
 *nnti link video di sini*
@@ -94,36 +94,36 @@ Two test durations were executed against the same Vercel-hosted app:
 
 ---
 
-## 🧪 Stability & Performance
+## Stability & Performance
 
 - Both tests showed **consistent response times** and **high APDEX scores** across functional endpoints.  
 - **No server-side 5xx errors** were observed, indicating backend resilience.
 
 ---
 
-## ⚠️ Bottlenecks Identified
+## Bottlenecks Identified
 
-### 🔴 404-1 Endpoint Failures
+### 404-1 Endpoint Failures
 
 - 100% failure rate in both tests  
 - Skewed overall failure rate and APDEX  
 - Likely due to misconfigured or deprecated routes
 
-### 🟠 DNS Resolution Errors (Exp. 2)
+### DNS Resolution Errors (Exp. 2)
 
 - 1.25% of total requests failed due to `UnknownHostException`  
 - Indicates potential DNS throttling or cold start latency under higher concurrency
 
-### 🟡 Connection Timeouts
+### Connection Timeouts
 
 - Present in both tests, slightly reduced in Exp. 2  
 - May stem from Vercel cold starts or network congestion
 
 ---
 
-## 📌 Recommendations
+## Recommendations
 
-### 🔧 Fixes
+### Fixes
 
 - Remove or repair `Page Returning 404-1` to prevent skewed metrics  
 - Enable DNS caching in JMeter and consider using a CDN (e.g., Cloudflare) for DNS failover  
