@@ -136,7 +136,7 @@ Step 4 — View Results
 
 |  <img width="1435" height="942" alt="image" src="https://github.com/user-attachments/assets/6e09223a-84f1-443a-ab40-bda039c7cb55" />  |
 |---|
-|  Graph Analysis  |  
+|  Graph Analysis:  |  
 |  <img width="1451" height="598" alt="image" src="https://github.com/user-attachments/assets/8eebc302-a28d-4d0a-8b0d-1cb495cf5cce" />  |
 
 
@@ -144,18 +144,23 @@ Step 4 — View Results
 
 |  <img width="1357" height="808" alt="hloatest result" src="https://github.com/user-attachments/assets/4eb7aa32-718a-4788-ae8a-d0e010b687e7" />  |
 |---|
-|  Graph Analysis  |  
+|  Graph Analysis:  |  
 |  <img width="1448" height="597" alt="image" src="https://github.com/user-attachments/assets/990a8d8a-a0c9-4c53-8cb6-e8edc7b8ce2b" />  |
 
-## ⚖️ Performance Comparison (Normal Load vs Heavy Load)
+## ⚖️ Performance Comparison (Normal Load vs Heavy Load)  
+
+|  Graph:  |
+|---|
+|  <img width="1465" height="726" alt="graph compare" src="https://github.com/user-attachments/assets/b580cd35-c241-4e86-8b69-5912fbeb34e1" />  |
+
 
 | Test Condition | Normal Load Test | Heavy Load Test |
 |---|---|---|
 | **Virtual Users (VUs)** | **50 VUs** | **100 VUs** |
 | **Test Duration** | 30 seconds | 30 seconds |
-| **P95 Response Time** | **~888 ms** | **~10,158 ms (≈10s)** |
-| **Peak Request Rate (RPS)** | ~36 req/s | ~43 req/s |
-| **Total Requests Made** | ~1,000 requests | ~121 requests |
+| **P95 Response Time** | **888 ms** | **42,087 ms (42 seconds)** |
+| **Peak Request Rate (RPS)** | 36 req/s | 43 req/s |
+| **Total Requests Made** | 1,000 requests | 530 requests |
 | **HTTP Failure Rate** | 0 failures | 0 failures |
 | **Performance Behavior** | Stable and responsive | Severe slowdown, high latency |
 | **Scalability Observation** | System handles moderate traffic well | System struggles with heavy concurrency |
