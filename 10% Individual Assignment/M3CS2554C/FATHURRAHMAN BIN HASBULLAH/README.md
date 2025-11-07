@@ -41,7 +41,7 @@ Drupal is an up-to-date, open-source CMS. Thanks to its flexibility and strong s
 
 ## 🖥️ Testing Enviroment Setup and Methodology
 
-### 📦 Resources:
+### 📦 Resources
  
 #### **Hardware**
 - **Server:** Workstation
@@ -92,7 +92,7 @@ The test was conducted on a single laptop workstation connected to a Wi-Fi (802.
   - Base URL: `http://192.168.1.24/websitegua`
   - Shared across all requests
 
-##### **HTTP Cache Manager**:
+##### **HTTP Cache Manager**
   - Max cache elements: 5000
   - Cache-Control/Expires headers: Enabled
   - Simulates realistic browser caching behavior
@@ -112,3 +112,232 @@ The test was conducted on a single laptop workstation connected to a Wi-Fi (802.
 | 3 | 100 | 55 | 10 | 10 | 5 |
 
 **Total Virtual Users**: 400 threads across entire test duration (~2 minutes)
+
+#### 🔹 Ran Test 🔬
+<div style="text-align: justify;">
+The test can be run using a command line.  The command line used for the test is shown as below. From the command itself, an HTML report can be generated using the <b> -e </b> option.
+</div>
+<br />
+
+**Command Line**
+```CLI
+..\Program Files\apache-jmeter-5.6.3\bin> ./jmeter -n -t ..\plans\<Name of Saved JMeter File>.jmx
+-l .\logs\<Name of Saved JMeter File>.jtl -e -o .\next-js-report\
+```
+**Generate HTML**
+
+---
+
+##  📊 Raw Data Representation 
+<div style="text-align: justify;">
+Generated HTML provides different types of charts. The charts can be categorized into <b>Over Time</b>, <b>Throughput</b>, and <b>Response Time</b>.
+</div>
+
+### Over Time Charts
+
+### Throughput Charts
+
+### Response Time Charts
+
+---
+
+##  📝 JMeter Spike Test Analysis and Interpretation
+
+ ### 1️⃣ Over Time Analysis
+
+#### Active Threads Pattern
+- **Peak Load**: ~127 active threads at 01:22:47
+- **Test Duration**: Approximately 2 minutes (01:22:46 to 01:22:48)
+- **Load Pattern**: Three distinct spikes with smooth transitions
+  - **Spike 1** (0-30s): 100 threads ramping up gradually
+  - **Spike 2** (30-55s): 200 threads creating maximum load
+  - **Spike 3** (55-80s): 100 threads for final spike
+- **Observation**: The thread pattern successfully executed the planned spike test configuration, with clear load phases visible in the graph
+
+#### Network Throughput (Bytes/sec)
+- **Starting Point**: ~240,000 bytes/sec
+- **Peak Throughput**: ~490,000 bytes/sec (approximately double the initial rate)
+- **Pattern**: Directly correlates with active thread count, peaking during second spike
+- **Interpretation**: Network bandwidth scales proportionally with load, indicating no network-level bottleneck. The system was able to transfer data efficiently even at peak load of 200 concurrent threads.
+
+#### Response Latencies Over Time
+- **Baseline Latency**: ~9,000ms (9 seconds) at low load (first spike)
+- **Peak Latency**: ~13,500ms (13.5 seconds) at maximum load (second spike)
+- **Increase**: 50% degradation from baseline to peak
+- **Recovery**: Latency decreases to ~9,000ms during third spike (100 threads)
+- **Secondary Metric** (orange line): Remains consistently flat at ~500ms throughout all spikes
+- **Critical Finding**: Even at baseline with minimal load (100 threads), response times of 9 seconds indicate serious performance issues. The 13.5-second peak response time during the 200-thread spike is unacceptable for any web application. The orange line likely represents static assets or cached responses, which maintain acceptable performance.
+
+---
+
+### 2️⃣ Throughput Analysis
+
+#### Responses Per Second
+- **Starting Rate**: ~9 responses/sec (first spike)
+- **Peak Rate**: ~18 responses/sec (second spike - 200 threads)
+- **Post-Peak Decline**: Drops sharply as load decreases in third spike
+- **Interpretation**: The system achieved maximum throughput at peak load but could not sustain higher rates, suggesting capacity limits were reached. Doubling the thread count (100→200) only doubled throughput, indicating linear scaling up to the limit.
+
+#### Hits Per Second
+- **Starting Rate**: ~10.5 hits/sec
+- **Ending Rate**: ~17.5 hits/sec
+- **Pattern**: Continuous linear increase throughout the test duration
+- **Anomaly**: Unlike other metrics, hits/sec continues to rise even during ramp-down phase (third spike)
+- **Possible Causes**: 
+  - Cached responses being served more efficiently as test progresses
+  - Background requests or retries accumulating from previous spikes
+  - HTTP Cache Manager becoming more effective over time
+  - Measurement artifact from overlapping thread groups
+
+#### Transactions Per Second
+- **Multiple Transaction Types**: Chart shows 4 different transaction types (corresponding to 4 HTTP requests)
+- **Dominant Transaction** (red line): Peaks at ~8.5 transactions/sec
+  - Likely represents one of the recipe pages (most frequently accessed)
+- **Other Transactions** (blue, green, orange lines): Remain relatively flat at ~2-3 transactions/sec
+  - Represent other recipe pages and search functionality
+- **Interpretation**: Load distribution is uneven across endpoints. One specific page/endpoint dominates traffic while others show minimal activity. This could indicate:
+  - Weighted request distribution in test design
+  - One endpoint being significantly slower, creating a bottleneck
+  - Realistic user behavior simulation where main landing pages get more traffic
+
+---
+
+### 3️⃣ Response Times Analysis
+
+#### Response Time vs Active Threads
+- **Low Load (0-40 threads)**: 6,000-10,000ms with high variability
+- **Medium Load (40-100 threads)**: 8,000-12,000ms, increasing gradually
+- **High Load (100-127 threads)**: 20,000-27,000ms, dramatic spike at peak
+- **Peak Response Time**: ~27,000ms (27 seconds) at ~120 active threads
+- **Volatility**: Extreme fluctuations at peak load (ranging from 13,000ms to 27,000ms)
+- **Recovery Pattern**: As threads decrease post-peak, response times drop to 8,000-15,000ms range
+
+#### Multiple Request Types Performance
+- **Primary Request** (blue line - dominant): Shows severe degradation
+  - Starts at 6-8 seconds
+  - Peaks at 27 seconds under load
+  - Likely represents dynamic recipe page rendering
+- **Secondary Requests** (other colored lines): Remain under 2,000ms (2 seconds) throughout
+  - Probably static assets, CSS, JavaScript, images
+  - Well-handled by HTTP Cache Manager
+- **Interpretation**: The main page/endpoint (blue) is the clear performance bottleneck, while static resources or simpler endpoints maintain reasonable response times. This suggests:
+  - Database queries for recipe content are slow
+  - Drupal's page rendering for recipe nodes is inefficient
+  - No effective page-level caching implemented
+
+ ---
+
+### 🚨 Key Performance Issues/ Bottlenecks Identified
+
+#### 1. **Unacceptable Baseline Performance** ⚠️
+Even with minimal load (~90-100 threads during first spike), the application shows 9-second response times. This indicates fundamental performance problems:
+- **Database query optimization needed**: Recipe content queries are likely unoptimized
+- **Inefficient server-side processing**: Drupal page rendering taking too long
+- **Lack of page caching**: No evidence of page-level caching (Drupal's cache system may be disabled)
+- **Potential resource contention**: Single laptop workstation hosting both web server and acting as load generator
+
+#### 2. **Poor Scalability** 📉
+The application does not scale linearly with increased load:
+- **2x thread increase** (100 → 200 threads) resulted in **3x response time increase** (9s → 27s)
+- This super-linear degradation indicates resource exhaustion:
+  - CPU saturation (likely on single-core processing)
+  - Memory pressure (possible memory leaks or inefficient memory usage)
+  - Database connection pool exhaustion (MySQL connection limits reached)
+  - Apache/PHP-FPM worker process limits
+- The second spike (200 threads) pushed the system beyond its capacity
+
+#### 3. **Severe Performance Bottleneck in Recipe Pages** 🔴
+The primary endpoint (recipe pages) is the clear bottleneck:
+- While secondary requests (static assets) maintain <2 second response times
+- The main recipe page endpoint degrades to 27 seconds under load
+- Suggests specific issues:
+  - Complex database queries to fetch recipe data, ingredients, related content
+  - Drupal Views or custom queries without proper indexing
+  - N+1 query problems (multiple queries per page load)
+  - Lack of query result caching
+
+#### 4. **High Response Time Variability** 📊
+The wide fluctuations (13s-27s at peak load) indicate:
+- **Inconsistent resource availability**: CPU time slicing between web server and test threads
+- **Possible garbage collection pauses**: PHP or MySQL memory management
+- **Database connection pool exhaustion**: Threads waiting for available database connections
+- **Competing processes**: Test environment running both server and JMeter on same machine
+- **Lock contention**: Database table locks during concurrent write operations (if any)
+
+#### 5. **Search Functionality Performance** 🔍
+While not the primary bottleneck, the search endpoint (`/search/node?keys=pasta`) shows:
+- Similar degradation pattern to recipe pages
+- Drupal's search module is known to be resource-intensive
+- Full-text search without optimization (consider Apache Solr or Elasticsearch integration)
+
+---
+
+##  ⚖ Recommendation and Conclusion
+
+### 🔴 Immediate Actions (Critical Priority)
+
+1. **Enable Drupal Page Caching**
+   - Enable Drupal's internal page cache for anonymous users
+   - Configure cache lifetime appropriately (e.g., 15 minutes)
+   - Expected improvement: 70-80% reduction in response times for repeated requests
+
+2. **Profile the Recipe Pages**
+   - Use Drupal Devel module with XHProf or Blackfire.io
+   - Identify which specific code/queries are slowest
+   - Focus on the blue line endpoint (likely `/recipes/*` pages)
+
+3. **Database Query Optimization**
+   - Enable MySQL slow query log
+   - Identify queries taking >1 second
+   - Add appropriate database indexes for:
+     - Recipe content type fields
+     - Taxonomy terms (likely used for recipe categories)
+     - Node relationships (related recipes)
+
+### 🟡 Short-term Improvements (High Priority)
+ 
+1. **Implement Opcode Caching**
+     - Enable OPcache in PHP configuration
+     - Configure appropriate memory size (128MB+)
+     - Expected improvement: 30-40% reduction in CPU usage
+
+2. **Optimize Drupal Views (if used)**
+     - Review recipe listing/display Views configurations
+     - Reduce number of fields loaded
+     - Implement Views query caching
+     - Consider using View's AJAX pagination instead of full page loads
+
+3. **Database Connection Pooling**
+     - Review MySQL max_connections setting (increase if needed)
+     - Configure PHP-FPM worker pool appropriately
+     - Set up persistent database connections
+
+### 🟢 Long-term Strategy (Medium Priority)
+ 
+1. **Horizontal Scaling**
+   - Implement load balancing across multiple web server nodes
+   - Use HAProxy or Nginx as load balancer
+   - Share session storage via Redis/Memcached
+
+2. **Separate Database Server**
+   - Move MySQL to dedicated hardware/VM
+   - Reduce resource contention
+   - Allow independent scaling of web and database tiers
+
+---
+### 🤔 Test Environment Considerations
+
+Since this test was conducted on a **single laptop workstation** (192.168.1.24):
+
+**Limitations of Current Setup**:
+- Web server and JMeter client competing for same CPU/RAM resources
+- Results may not reflect production performance accurately
+- Local environment resource constraints likely exaggerate issues
+- No separation of concerns (database, web server, load generator all on same machine)
+
+---
+
+### 🎯 Conclusion
+<div style="text-align: justify;">
+The spike test reveals that the Drupal-based hosting environment faces <b>critical performance challenges</b> that must be addressed before production deployment. With baseline response times of 9 seconds escalating to 27 seconds under moderate load (200 concurrent users), the application is **not production-ready** for any significant user traffic.
+</div>
