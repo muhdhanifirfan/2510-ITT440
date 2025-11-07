@@ -172,12 +172,11 @@ In Details bar graph for : -
 
 ## 📊 So, What can I say about the Findings...(Interpretation of results
 
-1.0  **Response Time (Latency)**
-### ○ Response Time Ranges :
-The majority of request which was *75-80%* fell into the **Green** range by the indicating under 800 ms meanwhile, a smaller significant, portion which was *20-25%* situated into the **Yellow or Orange** range.
+### 1.0  Response Time (Latency)
 
-### ○ In depth - explanation :
-The initial GET Login Page request is the slowest, with an average of **1.13 seconds** and a poor maximum time of nearly **5 seconds**. Nevertheless, the subsequent POST requests which was the actual acces or login are very fast, averaging around under **420 ms**.
+**○ Response Time Ranges :** The majority of request which was *75-80%* fell into the **Green** range by the indicating under 800 ms meanwhile, a smaller significant, portion which was *20-25%* situated into the **Yellow or Orange** range.
+
+**○ In depth - explanation :** The initial GET Login Page request is the slowest, with an average of **1.13 seconds** and a poor maximum time of nearly **5 seconds**. Nevertheless, the subsequent POST requests which was the actual acces or login are very fast, averaging around under **420 ms**.
 
 
 
