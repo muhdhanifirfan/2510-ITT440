@@ -197,15 +197,21 @@ In Details bar graph for : -
 **○ In depth - explanation :** I kinda think my system is **functionally stable** and quite robust under this light load. There are no indication of application errors, connection failures, or functional issues. 
 
 ---
-## ⚠️ Can i find the Obstruction ?! (Identified bottlenecks)
+## ⚠️ Can I find the Obstruction ?! (Identified bottlenecks)
 
 **Client-Side Bottleneck (Inference)** 
-I have find a slight or maybe the main problems in my simulation for the `https://the-internet.herokuapp.com`. The data **clearly points** to a bottlenck in the '/T01 GET Login Page' transaction. 
+I have find a slight or maybe the main problems in my simulation for the `https://the-internet.herokuapp.com`. The data **clearly points** to a bottlenck in the `/T01 GET Login Page` transaction. 
 
+| Metric | Observation | Hypothesizing |
+| :--- | :--- | :--- |
+| **Average Response Time** | **1136 ms** (1.13 seconds) | This is **significantly slower** than subsequent transactions (385 ms and 413 ms), consistently causing the largest delay in the user flow. |
+| **Maximum Response Time** | **4890 ms** (4.89 seconds) | A maximum time near **5 seconds** for a simple GET request is a major performance concern and indicates a very poor worst-case user experience.
 
+**○ In depth - surmise :** The first request to load the login page is the **application's slowest transaction** and is acting as a transactional bottleneck for the user flow. Poosible causes include heavy initial server processing, slow database queries for session setup, or large static content loading.
 
+---
 ## ○ Recommendations for improvement.
-
+---
 ## ○ Final conclusions.
 
 
@@ -214,3 +220,4 @@ I have find a slight or maybe the main problems in my simulation for the `https:
 
 <a href="https://youtu.be/Zpucm2vnlpQ" target="_blank">Visit the video at my YouTube channel</a>
 
+---
