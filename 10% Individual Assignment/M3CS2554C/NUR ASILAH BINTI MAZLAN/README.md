@@ -166,24 +166,23 @@ The HTTP summary indicates that all requests were successfully completed except 
 <p align="justify">
 The collected data confirms that the QuickPizza demo site performed reliably under stress. As virtual users increased, there was no significant rise in latency or failure rate. The system maintained efficient throughput and quickly responded to all GET requests.
 
-### 7.1 Response Time Stability
-<p align="justify">
-The graph showed that response times maintained a flat trend line which leads us to believe the web server operated with consistent processing capacity. Even under peak load, the P95 value of 3.65 ms held far below 4 seconds threshold, showcasing an efficient backend processing capability.
+<div align="center">
 
-### 7.2 Throughput and Scalability Capability
-<p align="justify">
-Throughput followed the number of users ramped and held a steady state at 682 RPS approximately. No sharp spikes or dips inferred that QuickPizza performed well at handling concurrency and Grafana’s load generators load balanced effectively over the test period. 
+| **Aspect Analyzed** | **Observation** | **Interpretation** |
+|:--------------------|:----------------|:-------------------|
+| **Response Time Stability** | Response times remained consistently low with a stable P95 trend throughout all stages of the test. | The server processed requests efficiently even as concurrent users increased, showing strong backend optimization. |
+| **Throughput and Scalability** | Throughput scaled linearly with virtual users, peaking around 682 RPS without fluctuations. | Indicates that the QuickPizza site can handle additional load without performance degradation. |
+| **Failure and Error Handling** | Only one HTTP 403 request failed during the `/login` simulation with invalid credentials. | Confirms proper error-handling logic and stable authentication response under stress. |
+| **Resource Utilization** | No latency spikes or throttling behavior were detected in Grafana Cloud metrics. | Suggests that system resources remained within safe operating ranges during the test. |
+| **Grafana Analysis Insights** | Grafana reported all thresholds as “Passed” with average request time remaining constant. | The overall test health was stable, validating strong performance consistency under load. |
 
-### 7.3 Failure and Error Handling
-The one failed HTTP 403 request observed was not unexpected from the `/login` endpoint confirming authentication logic was acting in the intended mode rather than exhibiting a performance error. The Logs tab confirmed no connection timeouts nor any unexpected 5xx server errors occurred. 
+<strong>Table 7.1 </strong><em>Summary of Performance Analysis and Interpretation</em>
 
-### 7.4 Resource Utilization Perspective
-<p align="justify">
-Since the test occurred in Grafana’s cloud environment, CPU and memory usage at the server were not available as the major perspective. However, there were no latency spikes or throttling behaviour that would indicate that the requested infrastructure operated within safe performance ranges. 
+</div>
 
-### 7.5 Insights from Grafana's Analysis Panel
 <p align="justify">
-The Analysis tab in Grafana aggregated the run to be “Healthy”, with all thresholds listed as “Passed”. Average request time and data transfer remain unchanged and confirm that the system can sustain moderate to heavy traffic.
+From the analysis summarized in Table 7.1, it can be concluded that the QuickPizza demo site performed reliably under stress conditions. The consistent response times, steady throughput, and near-zero failure rate all indicate that the system is well-optimized for moderate-to-high concurrency. No evidence of instability or resource saturation was observed, suggesting that the application architecture can sustain its performance level effectively within the tested limits.
+</p>
 
 ## 8. Recommendations and Best Practices
 - **Increase Test Duration:** Extend test duration beyond four minutes to capture long-term stability trends.  
