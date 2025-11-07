@@ -163,4 +163,5 @@ The Gatling spike test successfully simulated a sudden increase of 320 users and
 While the server infrastructure showed resilience and remained responsive, the application layer rejected half of the requests with HTTP 405 errors.
 This indicates that under sudden high load, the system fails functionally rather than performance wise — the requests reach the server but are not processed as intended.
 
+## 📹 Video Demostration
 
