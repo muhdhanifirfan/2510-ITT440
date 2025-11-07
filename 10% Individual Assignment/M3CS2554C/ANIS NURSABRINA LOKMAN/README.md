@@ -5,7 +5,7 @@
 
 ## 📘 1. Introduction
 This project focuses on **evaluating the performance of a Moodle-based web application** through **load testing** and **stress testing** using **Apache JMeter**.  
-The objective is to identify how the system behaves under normal, heavy, and extreme traffic conditions — measuring response time, throughput, and server stability.
+The objective is to identify how the system behaves under normal, heavy, and extreme traffic conditions by measuring response time, throughput, and server stability.
 
 ---
 
