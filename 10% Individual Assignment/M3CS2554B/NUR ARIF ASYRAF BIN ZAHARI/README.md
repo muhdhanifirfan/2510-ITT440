@@ -177,9 +177,9 @@ The Artillery performance test evaluated the DummyJSON API through various load 
 
 ### Reference
 
-Artillery Official Documentation - https://www.artillery.io/docs
-Node.js Official Documentation - https://nodejs.org/en/docs
-Artillery Load Testing Made Simple - https://www.artillery.io/blog
+- Artillery Official Documentation - https://www.artillery.io/docs
+- Node.js Official Documentation - https://nodejs.org/en/docs
+- Artillery Load Testing Made Simple - https://www.artillery.io/blog
 
 ---
 
