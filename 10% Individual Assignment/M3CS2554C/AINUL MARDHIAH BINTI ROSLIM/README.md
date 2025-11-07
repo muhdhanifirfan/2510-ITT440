@@ -170,7 +170,9 @@ In Details bar graph for : -
 ### T03_POST_Login_And_Access_Secure Redirect 1
 <img width="763" height="290" alt="T03_POST_Login_And_Access_Secure Redirect 1" src="https://github.com/user-attachments/assets/f3c27aa3-82b7-4aa9-b88e-8ef230582974" />
 
-## ○ Interpretation of results.
+## 📊 So, What can I say about the Findings...(Interpretation of results)
+
+
 
 ## ○ Identified bottlenecks.
 
