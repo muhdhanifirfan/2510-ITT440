@@ -1,4 +1,4 @@
-# Performance Testing Report: Web Application Load Analysis on Vercel Infrastructure Using Apache JMeter (WIP)
+# Web Application Load Analysis on Vercel Infrastructure Using Apache JMeter (WIP)
 
 **Author:** Muhammad Syahir Rifqi bin Mohamad Nizam
 
