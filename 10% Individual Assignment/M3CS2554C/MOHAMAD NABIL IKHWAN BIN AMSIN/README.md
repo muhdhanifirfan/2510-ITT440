@@ -7,9 +7,7 @@
 ## 📝 Project Overview
 This repository documents a **performance testing project** conducted on a publicly accessible web application using **Apache JMeter**. The goal was to evaluate system stability, responsiveness, and scalability under different load conditions by performing:
 
-- **Load Test**
-- **Stress Test**
-- **Spike Test**
+- **Concurrency Testing**
 
 The results from these tests were analyzed to identify performance bottlenecks and provide recommendations for improvement.
 
