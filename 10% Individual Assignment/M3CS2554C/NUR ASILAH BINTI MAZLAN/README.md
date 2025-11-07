@@ -14,6 +14,13 @@ This article details the results from a web application stress test on the Quick
 ## 1. Introduction
 <p align="justify">
 The performance of web applications is fundamentally important to user satisfaction and operational reliability. As applications scale, they must withstand increased traffic without sacrificing responsiveness or stability. Stress testing is one type of non-functional testing that observes how an application performs under extreme conditions. For example, the load will be gradually increased until the system is near or has exceeded its expected limits.
+  
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e20d20e7-ec91-4434-a4b8-cca882a0e610" width="600">
+  <br>
+  <strong>Figure 1.1 </strong><em>QuickPizza Website</em>
+</p>
+
 <p align="justify">
 For purposes of the experiment, the QuickPizza demo website was chosen as the target system. The demo site provided static and dynamic content such as menu listings, news pages, and login forms. Thus, it was fitting for replicating realistic browsing and transaction activity. Grafana Cloud K6 is an open-source, cloud-based performance testing platform which was used to assess the website’s reaction as the number of simulated users increased. 
 
@@ -52,6 +59,22 @@ This configuration enabled controlled load escalation and sustained stress condi
 
 
 ## 5. Methodology and Execution
+
+
+Test execution was conducted by writing the script into the Grafana Cloud K6 Script Editor and clicking ‘Run Test’. Real time metrics were served on the Grafana dashboards showing total requests, the failure rate, and response duration.
+
+### 5.1 Test Configuration Summary
+
+| **Parameter** | **Configuration** |
+|----------------|-------------------|
+| Test Type | Stress Test |
+| Tool Used | Grafana Cloud K6 |
+| Total Duration | 4 minutes |
+| Virtual Users (VU) Range | 50 → 75 → 100 |
+| Thresholds | p(95) < 2000 ms, failure rate < 5% |
+| Endpoints Tested | `/`, `/news.php`, `/contacts.php`, `/login` |
+
+### 5.2 Script
 ```js
 import http from 'k6/http';
 import { sleep } from 'k6';
@@ -80,21 +103,8 @@ export default function () {
 ```
 The script simulates a typical user flow visiting the homepage, reading a news section, checking contact details, and then attempting a login. This utilized intentionally invalid credentials to simulate authentication handling under load.
 
-Test execution was conducted by writing the script into the Grafana Cloud K6 Script Editor and clicking ‘Run Test’. Real time metrics were served on the Grafana dashboards showing total requests, the failure rate, and response duration.
-
-### 5.1 Test Configuration Summary
-
-| **Parameter** | **Configuration** |
-|----------------|-------------------|
-| Test Type | Stress Test |
-| Tool Used | Grafana Cloud K6 |
-| Total Duration | 4 minutes |
-| Virtual Users (VU) Range | 50 → 75 → 100 |
-| Thresholds | p(95) < 2000 ms, failure rate < 5% |
-| Endpoints Tested | `/`, `/news.php`, `/contacts.php`, `/login` |
-
 ## 6. Results and Raw Data
-<p align="justify">!
+<p align="justify">
 After performing the stress test on Grafana Cloud K6, a comprehensive array of performance metrics was generated. The platform automatically presented the output using numerous visualization and analysis panels such as Graph, Cloud Insights, HTTP Summary, Thresholds, and Profile. All of these panels together, show how the QuickPizza test site performed when put under a gradually increasing load.
 
 ### 6.1 Graph Overview
