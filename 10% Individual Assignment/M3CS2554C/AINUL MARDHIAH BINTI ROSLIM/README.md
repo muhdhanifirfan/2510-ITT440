@@ -185,10 +185,18 @@ In Details bar graph for : -
 **○ In depth - explanation :** In my opinion, my improvised system's throuput is kinda moderate or we could said easy to achieve the excellent because it succesfully served every request given the minimal load. The number of concurrent users was low, which is suitable and appropriately for such a simple functional verification load test.
 
 ### 3.0 Error Rate
+
 **○ Assertion Rate**
+| Metric | Value | Threshold Met | Interpretation |
+| :--- | :--- | :--- | :--- |
+| **Success Rate (OK %)** | 100% | Yes | All system requests completed without any functional failures. |
+| **Failed Rate (KO %)** | 0% | Yes | Zero errors were recorded during the simulation. |
+| **Global Failed Items (%)** | ≤ 1.0% | Yes | The overall success criteria for the test were met. |
+
+**○ In depth - explanation :**
 
 
-
+---
 ## ○ Identified bottlenecks.
 
 ## ○ Recommendations for improvement.
