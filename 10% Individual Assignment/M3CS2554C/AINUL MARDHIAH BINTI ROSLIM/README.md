@@ -171,7 +171,7 @@ In Details bar graph for : -
 <img width="763" height="290" alt="T03_POST_Login_And_Access_Secure Redirect 1" src="https://github.com/user-attachments/assets/f3c27aa3-82b7-4aa9-b88e-8ef230582974" />
 
 ---
-## 📊 So, What can I say about the Findings...(Interpretation of results
+## 📊 So, What can I say about the Findings...(Interpretation of results)
 
 ### 1.0 Response Time (Latency)
 
@@ -198,6 +198,10 @@ In Details bar graph for : -
 
 ---
 ## ⚠️ Can i find the Obstruction ?! (Identified bottlenecks)
+
+**Client-Side Bottleneck (Inference)** 
+I have find a slight or maybe the main problems in my simulation for the `https://the-internet.herokuapp.com`. The data **clearly points** to a bottlenck in the '/T01 GET Login Page' transaction. 
+
 
 
 ## ○ Recommendations for improvement.
