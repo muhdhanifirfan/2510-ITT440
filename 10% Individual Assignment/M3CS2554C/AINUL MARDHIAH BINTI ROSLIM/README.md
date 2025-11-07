@@ -171,6 +171,11 @@ In Details bar graph for : -
 <img width="763" height="290" alt="T03_POST_Login_And_Access_Secure Redirect 1" src="https://github.com/user-attachments/assets/f3c27aa3-82b7-4aa9-b88e-8ef230582974" />
 
 ## 📊 So, What can I say about the Findings...(Interpretation of results)
+1.  **Response Time (Latency)**
+### ○ Response Time Ranges :
+The majority of request which was *75-80%* fell into the **Green** range by the indicating under 800 ms meanwhile, a smaller significant, portion which was *20-25%* situated into the **Yellow/ 
+   
+
 
 
 
