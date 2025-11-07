@@ -6,7 +6,8 @@
 #### 👥 GROUP : M3CS2554A
 ---
 ## 🎯  Project Overview
-The purpose of this spike test was to evaluate the stability and behavior of the target web application under a sudden surge in user load. The test emulates an abrupt influx of users performing concurrent actions, such as visiting the home page and searching for flights.
+
+The goal of this test was to evaluate the application’s stability and responsiveness under a sudden surge in user load, in line with [**OWASP**](https://owasp.org/www-project-juice-shop/) performance testing practices. A spike test simulates abrupt traffic increases to determine whether a system can handle sharp load variations without functional or performance degradation.
 
 ## ⚙️ Test Setup
 
@@ -14,7 +15,7 @@ The purpose of this spike test was to evaluate the stability and behavior of the
 |------------|---------------|
 | **💻System Environment** | Windows 11, Java JDK 17, 24 GB RAM |
 | **🛠️Tool** |  Gatling 3.10.4 (Highcharts bundle) |
-| **📋Language** | Scala simulation (SpikeTest.scala |
+| **📋Language** | Scala simulation (SpikeTest.scala) |
 | **📈Type of Test** | Spike Test |
 | **🌍Target URL** | (https://owasp.org/www-project-juice-shop/) |
 | **🧍Total Virtual Users** | 320 concurrent |
@@ -68,34 +69,29 @@ gatling.bat
 ---
 
 ## 🧠 Hypothesis
-The test expected successful HTTP 200 responses from both endpoints.
+The test expected the server should maintain stability and return valid HTTP 200 responses for both endpoints.
+
+## 🔍 Test Summary
+
+| ✅ Test Execution |❌ Response Outcome |
+|------------|---------------|
+| Most users will injected and complete their scenarios | All requests to the “Search Flights” endpoint failed, producing HTTP 405|
+| Gatling successfully parsed results and generated the summary report | The server rejected the HTTP method used|
+| No test-level runtime errors occurred | The endpoint was inaccessible or restricted under high load or security policies |
+
+## 🔬 Quantitative Results
+
+| Metric | Total | OK | KO |
+|---------|--------|-------------|----------|
+| Total Request | 640 | 320 | 320 |
+| Total Request | 640 | 320 | 320 |
+
 ## 📊 Raw Data
 ## 🧬 Analysis
 ## 💡 Recommendations
 ## 🧩 Conclusion
-✅ Test Execution
-
-The simulation executed correctly:
-
-Most users will injected and complete their scenarios.
-
-Gatling will successfully parse and generated logs and summary reports.
-
-❌ Response Outcome
-
-All requests to the “Search Flights” endpoint failed, producing HTTP 405 (Method Not Allowed) errors instead of the expected 200 OK.
-Output excerpt:
-
-status.find.is(200), but actually found 405
 
 
-This indicates that:
-
-The server rejected the HTTP method (e.g., POST vs. GET mismatch), or
-
-The endpoint was inaccessible or restricted under high load.
-
-4. Quantitative Results
 Metric	Total	OK	KO
 Total Requests	640	320	320
 Response Time (ms)			
@@ -176,5 +172,4 @@ The Gatling spike test successfully simulated a sudden increase of 320 users and
 While the server infrastructure showed resilience and remained responsive, the application layer rejected half of the requests with HTTP 405 errors.
 This indicates that under sudden high load, the system fails functionally rather than performance-wise — the requests reach the server but are not processed as intended.
 
-Next Steps:
-Refine request methods, confirm endpoint behavior, and rerun the spike test to verify whether the errors are configuration-related or true load-induced failures.
+
