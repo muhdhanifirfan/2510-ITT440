@@ -41,8 +41,8 @@ The experiment used the Snapchat API because it offers a robust and scalable pla
 | **Network**       | 100 Mbps broadband                       |
 | **Target API**    | `https://developers.snap.com/api/home`                |
 | **Test Duration** | 240 seconds                              |
-| **Virtual Users** | 125 created, 2992 completed             |
-| **Arrival Rate**  | 31 requests/sec                          |
+| **Virtual Users** | 125 created, 120 completed             |
+| **Arrival Rate**  | 20 requests/sec                          |
 
 ---
 
