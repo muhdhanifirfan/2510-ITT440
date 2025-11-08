@@ -99,12 +99,12 @@ scenarios:
 ```
 | **Metric**                         | **Result** | **Interpretation**                                                                    |
 | ---------------------------------- | ---------- | ------------------------------------------------------------------------------------- |
-| **Total Requests Sent**            | 5,992      | Total number of HTTP requests executed during the test.                               |
-| **Requests per Second**            | ~31/sec    | Indicates stable throughput at moderate concurrency.                                  |
+| **Total Requests Sent**            | 5,760      | Total number of HTTP requests executed during the test.                               |
+| **Requests per Second**            | ~29/sec    | Indicates stable throughput at moderate concurrency.                                  |
 | **Virtual Users Created**          | 125      | Number of concurrent simulated users.                                                 |
 | **Virtual Users Completed**        | 120      | Almost all users successfully completed their sessions.                               |
 | **Virtual Users Failed**           | 5          | Minimal failures, likely due to transient connection resets.                          |
-| **HTTP 4xx Errors (404)**          | 5,984      | Most requests hit non-existent endpoint — indicates misconfiguration or invalid path. |
+| **HTTP 4xx Errors (404)**          | 1920      | Most requests hit non-existent endpoint — indicates misconfiguration or invalid path. |
 | **Connection Errors (ECONNRESET)** | 5          | Occurred under heavy concurrency, minor network/socket resets.                        |
 | **Minimum Response Time**          | 216 ms     | Fastest response recorded.                                                            |
 | **Maximum Response Time**          | 2,240 ms   | Longest response observed during peak load.                                           |
