@@ -212,9 +212,15 @@ I have find a slight or maybe the main problems in my simulation for the `https:
 ---
 ## 🚨Now it's time for advocate (Recommendations for improvement) ##
 
-The goal is to bring the average response time for the initial Login Page GET REQUEST **down below 500 ms** to match the performance of subsequent successful transactions. In addition, i think the slow load time could be due to several issues on the server handling this request.
+The goal is to bring the average response time for the initial Login Page GET REQUEST **down below 500 ms** to match the performance of subsequent successful transactions. In addition, i think the slow load time could be due to several issues on the server handling this request. So I guess I should start analyzing the **server-side logs** and running a **code profiler** on the execution path for this specific request (`/T01 GET Login Page`). 
 
-i. 
+**Recommendation on server-side logs** : Aggressively investigate and optimize the `/T01 GET Login Page` request.
+
+○ I should bring the average response time for this request **below 500 ms** too ensure fast,consistent user entry point and also look for code inefficiences, slow database calls such as session setup, configuration loading), or unnecessarily large page assets contributing to the **1136** ms average.
+
+**Recommendation on code profiler** : I think even when it is still functionally stable, my test needs to inforce performance requirements in the future.
+
+○ I would add **Response Time Assertions** to my test script. For instance, add a rule or coding that forces the test to fail if the **90th percentile reponse time** for any core transaction exceeds a specific Service Level Objective like 15 seconds. This ensures future runs won't pass if the performance degrades.
 
 ---
 ## ○ Final conclusions.
