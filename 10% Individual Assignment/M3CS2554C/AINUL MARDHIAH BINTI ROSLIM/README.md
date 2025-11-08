@@ -210,7 +210,12 @@ I have find a slight or maybe the main problems in my simulation for the `https:
 **○ In depth - surmise :** The first request to load the login page is the **application's slowest transaction** and is acting as a transactional bottleneck for the user flow. Poosible causes include heavy initial server processing, slow database queries for session setup, or large static content loading.
 
 ---
-## ○ Recommendations for improvement.
+## 🚨Now it's time for advocate (Recommendations for improvement) ##
+
+The goal is to bring the average response time for the initial Login Page GET REQUEST **down below 500 ms** to match the performance of subsequent successful transactions. In addition, i think the slow load time could be due to several issues on the server handling this request.
+
+i. 
+
 ---
 ## ○ Final conclusions.
 
