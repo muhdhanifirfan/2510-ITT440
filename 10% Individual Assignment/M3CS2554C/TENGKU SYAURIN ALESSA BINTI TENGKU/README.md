@@ -128,9 +128,6 @@ Hatch rate (spawn rate)
 
 Test duration
 
- ## 🎥 Demostration Video
- https://youtu.be/gKn5ygyEpC0 
-
  ## Methodology
 
 | Component | Specification |
@@ -220,25 +217,29 @@ This stress testing experiment successfully demonstrated the process of using Lo
 
 The findings reveal that:
 
-Docker provides an isolated, reproducible environment for testing and deployment.
+- Docker provides an isolated, reproducible environment for testing and deployment.
 
-Locust is a highly effective tool for generating controlled load and analyzing real-time performance data.
+- Locust is a highly effective tool for generating controlled load and analyzing real-time performance data.
 
-Resource constraints in Docker containers directly affect system throughput and response stability.
+- Resource constraints in Docker containers directly affect system throughput and response stability.
 
 Recommendations for Improvement:
 
-Increase Docker Resource Allocation:
+- Increase Docker Resource Allocation:
 Allocate more CPU cores and RAM to Docker Desktop via its settings panel.
 
-Implement Load Balancing:
+- Implement Load Balancing:
 Deploy multiple Nginx containers behind a reverse proxy or Kubernetes service to distribute traffic evenly.
 
-Enable Auto-scaling:
+- Enable Auto-scaling:
 In production environments, configure auto-scaling rules so that more containers spawn automatically when CPU usage exceeds a threshold.
 
-Use Monitoring Tools:
+- Use Monitoring Tools:
 Integrate Prometheus and Grafana to visualize resource usage and performance over time.
 
-Future Work:
+- Future Work:
 Extend testing scenarios to include POST requests, user authentication, or database interaction to simulate real-world user activity.
+
+
+ ## 🎥 Demostration Video
+ https://youtu.be/gKn5ygyEpC0 
