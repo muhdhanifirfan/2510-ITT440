@@ -139,6 +139,13 @@ locust -f locustfile.py
 
 The API demonstrated good scalability at this user load. After an initial warm-up period, the system stabilized and maintained consistent response times while sustaining steady throughput. The overall performance is acceptable for this load level.
 
+The response time graph shows two main phases:
+
+Initial Phase: Response times were higher, with the 95th percentile around 400-600ms and average times around 200-300ms.
+Stable Phase: Performance improved significantly as both the average and 95th percentile response times dropped to approximately 200ms and remained consistent.
+
+A brief spike occurred where response times jumped to 750ms, likely due to a network delay or specific heavy request, before immediately returning to normal levels.
+
 **PHASE 2 (50 USERS)**
 <img width="1489" height="615" alt="image" src="https://github.com/user-attachments/assets/39266b68-058d-460d-a1f2-bea2062c26ac" />
 
