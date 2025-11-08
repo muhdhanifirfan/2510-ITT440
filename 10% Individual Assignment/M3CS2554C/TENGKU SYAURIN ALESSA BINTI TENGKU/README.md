@@ -11,7 +11,6 @@
     <img width="246" height="65" alt="image" src="https://github.com/user-attachments/assets/a283fd9e-4320-438f-b12c-0d5591caadbd" />
 
 
-
 ---
 ## Introduction
 In modern software development, ensuring that a web application performs reliably under high load conditions is critical. Applications are often deployed on cloud or containerized environments like Docker, where scalability and efficiency are top priorities. However, even a well-built system can fail when subjected to excessive user requests or resource constraints.
@@ -75,6 +74,7 @@ In summary, Locust’s Python foundation, real-time observability, and Docker co
    ```bash
   python -m locust --version
   ```
+   
 - **Install Visual Studio Code (VS Code)**
   <br>This is for editing the Locust test script and run commands in an integrated terminal.</br>
   📘 [Install Visual Studio Code (VS Code)](https://code.visualstudio.com/)
@@ -92,6 +92,7 @@ It is up to you to use any name for the Docker container.
   ```bash
   docker run -d -p 8088:80 --name stress-target nginx
   ```
+
  This command deploys a running Nginx web server accessible via http://localhost:8088.
  <br></br>
  **2. Create Locust test script**
