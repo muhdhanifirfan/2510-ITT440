@@ -27,6 +27,7 @@ Artillery is an open-source tool used for HTTP, WebSocket, and API performance t
   
 ## Target Web Application (Snapchat)
 
+
 The experiment used the Snapchat API because it offers a robust and scalable platform suitable for real-world performance testing. The API supports various functionalities such as media sharing, messaging, and user interaction features, allowing realistic simulations of active user behavior. Its well-documented endpoints and reliable architecture make it an effective choice for evaluating response times, throughput, and stability under high user load using Artillery.
 ---
 ## Test Environment Setup
