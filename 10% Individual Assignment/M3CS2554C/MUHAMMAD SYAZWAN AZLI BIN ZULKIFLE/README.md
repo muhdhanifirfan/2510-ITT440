@@ -214,5 +214,5 @@ The scalability testing of ReqRes API using Locust revealed that:
 
 ## ⭐  Video Demonstration
 
-https://youtu.be/mCIiS6glR2s
+https://youtu.be/2sFKieRNAow
 
