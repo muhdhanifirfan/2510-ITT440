@@ -223,8 +223,13 @@ The goal is to bring the average response time for the initial Login Page GET RE
 ○ I would add **Response Time Assertions** to my test script. For instance, add a rule or coding that forces the test to fail if the **90th percentile reponse time** for any core transaction exceeds a specific Service Level Objective like 15 seconds. This ensures future runs won't pass if the performance degrades.
 
 ---
-## ○ Final conclusions.
+## ‼️The Summarization Of My Verdiection (Final conclusions)
 
+I think at the end of this experimental test performance of website application and Analysis, I can assure you that it is **Stable, But Slow to Start**. The system also can also be indicated by the color such as when it is currently **Green** 🟩 for **Functional stability** but **Yellow** 🟨 for Perfformance readines.
+
+The **Positive Outcome** that I could get was the test achieved a *100%* **success rate** with **zero errors** under light load, confirming functional stability.
+
+The **Critical Weakness** is that the `/T01 GET Login Page` transaction is a **transactional bottleneck**, averaging *1.13* **seconds** and peaking near *5* **seconds**. This is I think the single biggest performance risk to the user experimence.
 
 ---
 ## 🎥 Wanna see a video? Link below ! (Video Demonstration)
@@ -232,3 +237,5 @@ The goal is to bring the average response time for the initial Login Page GET RE
 <a href="https://youtu.be/Zpucm2vnlpQ" target="_blank">Visit the video at my YouTube channel</a>
 
 ---
+
+# 🍀That's all for now, Thank You for reading my humble Article 💟
