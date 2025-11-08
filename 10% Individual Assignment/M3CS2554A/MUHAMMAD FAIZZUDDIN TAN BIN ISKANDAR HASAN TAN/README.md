@@ -178,12 +178,20 @@ Overall, the spike test demonstrated that OpenCart can **sustain performance und
 
 ---
 
-## Recommendations
+## 💡 Recommendations
 
-1. Host the test on a **private OpenCart instance** to avoid public API rate limits.  
-2. Increase spike duration (e.g., 2–3 minutes) for deeper observation of system bottlenecks.  
-3. Implement **caching or load balancing** for better scalability under high concurrency.  
-4. Perform **stress and soak tests** next to assess long-term endurance and capacity limits.
+1. Implement **caching or load balancing** to enhance scalability under high concurrency.  
+   - ⚙️ **Reason:** Reduces repeated database queries and distributes user traffic efficiently.  
+   - 🚀 **Impact:** Improves response time and prevents performance degradation during heavy load.  
+
+2. Perform **stress and soak tests** to evaluate long-term stability and endurance.  
+   - ⏱️ **Reason:** Identifies memory leaks, performance drops, or failures over extended use.  
+   - 🧩 **Impact:** Ensures consistent reliability even under sustained or extreme load.  
+
+3. Optimize **server configuration and resource allocation** to handle future scalability.  
+   - 🧠 **Reason:** Adjusting CPU, RAM, and concurrent connection limits allows better handling of high spikes.  
+   - 📈 **Impact:** Enhances system resilience and prepares the environment for larger-scale traffic.
+
 
 ---
 
