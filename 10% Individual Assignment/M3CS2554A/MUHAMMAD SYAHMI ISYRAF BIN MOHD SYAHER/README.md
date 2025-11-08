@@ -138,7 +138,7 @@ Example Result:
 ---
 
 ## ✅ Conclusion
-The Spike Testing conducted using the Fake Store API successfully demonstrated how system performance behaves under sudden load surges. Despite a 50× increase in request volume, the API maintained a stable average response time with minimal errors which is (0.6%). Once the load decreased, the performance recovered to near-baseline levels without persistent degradation. These results indicate that the Fake Store API is resilient, well-optimized, and capable of maintaining reliability even during abrupt traffic spikes. The experiment also emphasizes the importance of spike testing as part of performance assurance, ensuring that real-world systems remain stable under unpredictable user demand. 
+The Spike Testing conducted using the Fake Store API successfully demonstrated how system performance behaves under sudden load surges. Despite a 50× increase in request volume, the API maintained a stable average response time with minimal errors which is (0.6%). Once the load decreased, the performance recovered to near baseline levels without persistent degradation. These results indicate that the Fake Store API is resilient, well optimized, and capable of maintaining reliability even during abrupt traffic spikes. The experiment also emphasizes the importance of spike testing as part of performance assurance, ensuring that real world systems remain stable under unpredictable user demand. 
 
 ---
 
