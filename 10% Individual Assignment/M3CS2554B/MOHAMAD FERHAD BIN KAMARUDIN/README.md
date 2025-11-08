@@ -77,10 +77,12 @@ The experiment used the Snapchat API because it offers a robust and scalable pla
 config:
   target: "https://snapchat.com"
   phases:
+    - duration: 120
+      arrivalRate: 2
     - duration: 60
       arrivalRate: 10
-    - duration: 120
-      arrivalRate: 20
+    - duration: 60
+      arrivalRate: 2
 scenarios:
   - name: "Get Users"
     flow:
@@ -99,11 +101,11 @@ scenarios:
 | ---------------------------------- | ---------- | ------------------------------------------------------------------------------------- |
 | **Total Requests Sent**            | 5,992      | Total number of HTTP requests executed during the test.                               |
 | **Requests per Second**            | ~31/sec    | Indicates stable throughput at moderate concurrency.                                  |
-| **Virtual Users Created**          | 3,000      | Number of concurrent simulated users.                                                 |
-| **Virtual Users Completed**        | 2,992      | Almost all users successfully completed their sessions.                               |
-| **Virtual Users Failed**           | 8          | Minimal failures, likely due to transient connection resets.                          |
+| **Virtual Users Created**          | 125      | Number of concurrent simulated users.                                                 |
+| **Virtual Users Completed**        | 120      | Almost all users successfully completed their sessions.                               |
+| **Virtual Users Failed**           | 5          | Minimal failures, likely due to transient connection resets.                          |
 | **HTTP 4xx Errors (404)**          | 5,984      | Most requests hit non-existent endpoint — indicates misconfiguration or invalid path. |
-| **Connection Errors (ECONNRESET)** | 8          | Occurred under heavy concurrency, minor network/socket resets.                        |
+| **Connection Errors (ECONNRESET)** | 5          | Occurred under heavy concurrency, minor network/socket resets.                        |
 | **Minimum Response Time**          | 216 ms     | Fastest response recorded.                                                            |
 | **Maximum Response Time**          | 2,240 ms   | Longest response observed during peak load.                                           |
 | **Average (Mean) Response Time**   | 278 ms     | Average response time remained well under 300 ms.                                     |
@@ -122,7 +124,7 @@ scenarios:
 |--------|--------------|----------------|
 | **Response Time (mean)** | 278 ms | Acceptable for most API calls (<300 ms). |
 | **p95 Response Time** | 487 ms | Indicates 95% of requests completed below 0.5s — good stability. |
-| **Errors (ECONNRESET)** | 8 | Minimal network resets due to concurrency spikes. |
+| **Errors (ECONNRESET)** | 5 | Minimal network resets due to concurrency spikes. |
 | **HTTP 404 Errors** | 5984 | Suggests requests to a non-existent endpoint or query mismatch. |
 | **User Completion Rate** | 2992/3000 (99.7%) | Excellent session completion rate under load. |
 
