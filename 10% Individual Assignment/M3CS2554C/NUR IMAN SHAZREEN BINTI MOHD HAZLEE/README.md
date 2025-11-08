@@ -1,4 +1,4 @@
-#  Web Performance Analysis : GitHub Repository Load Speed Using GTMetrix
+#  Web Performance Analysis : GitHub Repository Load Speed Using GTmetrix
 
 ####  STUDENT NAME : NUR IMAN SHAZREEN BINTI MOHD HAZLEE
 ####  ITT440 - INDIVIDUAL ASSIGNMENT 
@@ -14,7 +14,7 @@
 
 ---
 ## 1. Introduction
-This report documents the performance analysis of a publicly hosted GitHub repository page (https://github.com/NurImanShazreen/Individual-Assignment-ITT440.git) using the GTMetrix web performance auditing tool. The primary goal of this analysis is to establish a performance baseline, identify existing inefficiencies, and recommend actionable strategies for optimization. The test was conducted on **October 31 2025**, from the **Seattle, WA, USA** test server location.
+This report documents the performance analysis of a publicly hosted GitHub repository page (https://github.com/NurImanShazreen/Individual-Assignment-ITT440.git) using the GTmetrix web performance auditing tool. The primary goal of this analysis is to establish a performance baseline, identify existing inefficiencies, and recommend actionable strategies for optimization. The test was conducted on **October 31 2025**, from the **Seattle, WA, USA** test server location.
 
 ---
 ## 2. Objectives
@@ -30,7 +30,7 @@ The core objectives of this performance analysis are:
 ### 3. What is a Load Speed?
 Load speed or web performance is a measure of how quickly a web page's content becomes fully visible and interactive to the user. It encompasses several key phases, starting from the moment a user requests a URL until the page is visually stable and able to respond reliably to user inputs. High load speed translates directly into a better User Experience (UX).
 
-Key metrics, particularly the **Core Web Vitals (LCP, FID/TBT, CLS)**, are used by tools like GTMetrix to measure 3 aspects of UX: loading, interactivity, and visual stability.
+Key metrics, particularly the **Core Web Vitals (LCP, FID/TBT, CLS)**, are used by tools like GTmetrix to measure 3 aspects of UX: loading, interactivity, and visual stability.
 
 ---
 ### 4. Tool Selection Justification
@@ -53,7 +53,7 @@ Key metrics, particularly the **Core Web Vitals (LCP, FID/TBT, CLS)**, are used 
 ### 6.  Methodology
 |Step | Description |
 |-----|-------------|
-|**Baseline test Execution** | The target URL was submitted to GTMetrix with the specified environment settings. |
+|**Baseline test Execution** | The target URL was submitted to GTmetrix with the specified environment settings. |
 |**Data Extraction and Categorization** | The resulting report data was systematically extracted and categorized into 3 groups: **Overall Scores, Performance Metrics(Core Web Vitals)** and **Structural Audits**. |
 |**Interpretation** | Each metric and audit finding was interpreted against accepted industry thresholds to determine teh grade (**Good, OK, Poor**) and identify the areas requiring the most urgent attention. |
 
@@ -83,7 +83,7 @@ The performance analysis provided the following key results:
 </p>
 
 **7.2 Core Web Vitals (User Experience Metrics)**
-|Metric | Value | Threshold (GTMetrix Goal) | Status |
+|Metric | Value | Threshold (GTmetrix Goal) | Status |
 |-------|-------|---------------------------|--------|
 |**Largest Contenful Paint (LCP)** | 1.1s | &le; 1.2s | Good |
 |**Total Blocking Time (TBT)** | 250ms | &le; 150ms | Needs Improvement |
