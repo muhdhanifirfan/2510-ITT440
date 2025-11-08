@@ -1,4 +1,4 @@
-# 🧪 Website Stress Testing Using Artillery.io
+# 🧪 Website Stress Testing Using Artillery
 
 ### NAME: **MUHAMMAD FARIS IMRAN BIN RUSDI**
 ### STUDENT ID: 2025137413
