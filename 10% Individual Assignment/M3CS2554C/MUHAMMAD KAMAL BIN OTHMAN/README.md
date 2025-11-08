@@ -55,6 +55,11 @@ Kali Linux is an open-source Linux distribution that is created for cybersecurit
 
 **TESTED APPLICATION**  
 **https://tools-httpstatus.pickup-services.com/**  
+**https://tools-httpstatus.pickup-services.com/200**
+**https://tools-httpstatus.pickup-services.com/206**
+**https://tools-httpstatus.pickup-services.com/302**
+**https://tools-httpstatus.pickup-services.com/404**
+
 
 This website is a public HTTP Status Code testing service that provides various endpoints to simulate server responses. It is primarily designed for testing HTTP client behavior and verifying response codes such as 200 OK, 204 No Content, or 404 Not Found. Due to its lightweight feature, this website is suitable for quick performance and availability testing.
 
@@ -66,21 +71,30 @@ This website is a public HTTP Status Code testing service that provides various 
 
 ---
 
-**Testing Infrastructure Setup**  
+**Testing Infrastructure Setup**
+
 Testing Tool: Siege 4.1.6  
 Operating System: Windows 11  
 System Memory: 32 GB RAM  
 Processor: AMD Ryzen 5 5600H  
 Network Connection: 131 Mbps mobile hotspot (may introduce variable latency)
 
-**Test Configuration**  
-**Performance Test Design**  
+#### **Test Configuration**
+
+**Performance Test Design**
+
 Objective: Evaluate the website’s response consistency and throughput under moderate concurrent user load in 1 minute.  
 Concurrent Users: 50 virtual users  
 Test Duration: 60 seconds (1 minute)  
-User Behavior: Accessed the root URL, which is 'https://tools-httpstatus.pickup-services.com/'.  
+User Behavior: Accessed the URL, which is 
+'https://tools-httpstatus.pickup-services.com/', 
+'https://tools-httpstatus.pickup-services.com/200',
+'https://tools-httpstatus.pickup-services.com/206',
+'https://tools-httpstatus.pickup-services.com/302',
+'https://tools-httpstatus.pickup-services.com/404' 
 
 **HTTP Request Configuration**  
+
 Protocol: HTTPS  
 Server Name: tools-httpstatus.pickup-services.com  
 Server URL: https://tools-httpstatus.pickup-services.com/  
