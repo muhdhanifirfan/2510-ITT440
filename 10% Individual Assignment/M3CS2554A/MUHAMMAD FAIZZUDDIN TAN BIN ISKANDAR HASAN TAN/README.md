@@ -1,4 +1,7 @@
 # Web Application Spike Testing using Artillery  
+<img width="866" height="288" alt="image" src="https://github.com/user-attachments/assets/061dacc4-1a30-4ca0-9608-7edbe365548a" />
+
+
 **By:** MUHAMMAD FAIZZUDDIN TAN BIN ISKANDAR HASAN TAN  
 **Class:** M3CS2554A  
 **Course Code:** ITT440 (10% Individual Assignment)  
