@@ -130,6 +130,10 @@ The test resulted in a failure rate of 1.01% (40 failed transactions). Engineers
 
 In conclusion, the website https://tools-httpstatus.pickup-services.com/ showed stable performance under moderate load, managing 50 concurrent users with 2.69 seconds average response time. The website’s throughput of 0.21 MB/sec and transaction rate of 64.88 transactions/sec indicate efficient handling of multiple requests simultaneously. However, improvements such as response time optimization and failure reduction are needed. By addressing these, the website can achieve higher availability and provide a better experience during high traffic conditions.
 
+### **Video**
+
+## https://www.youtube.com/watch?v=OszLN6ys1mQ
+
 ### **References**
 
 Fulmer, J. E. (2023). Siege: An HTTP/HTTPS load testing and benchmarking tool (Version 4.0.5) [Computer software]. JoeDog Software. https://github.com/JoeDog/siege
