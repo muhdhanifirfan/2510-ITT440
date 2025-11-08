@@ -91,16 +91,80 @@ During this test, K6 rapidly increased virtual users to 200 within 10 seconds, m
 
 ## 7. Test Results & Observations
 
+---
 
+### 🧩 Test 1 — 50 Virtual Users
+**Scenario:** Light spike load for 1 minute.
 
-### Example K6 Summary Output:
+#### ▶️ Running Test
+![Running Test 50 VUs](running_50.png)
 
+#### 🧾 Test Output
+![Result Output 50 VUs](result_50.png)
+
+#### 📊 Graph Results
+- ⏱ **Response Time**
+  ![Response Time 50](response_time_50.png)
+- 📈 **Requests Per Second**
+  ![Requests Per Second 50](requests_per_second_50.png)
+- ⚠️ **Failure Rate**
+  ![Failure Rate 50](failure_rate_50.png)
+
+---
+
+### 🧩 Test 2 — 100 Virtual Users
+**Scenario:** Moderate spike load for 2 minutes.
+
+#### ▶️ Running Test
+![Running Test 100 VUs](running_100.png)
+
+#### 🧾 Test Output
+![Result Output 100 VUs](result_100.png)
+
+#### 📊 Graph Results
+- ⏱ **Response Time**
+  ![Response Time 100](response_time_100.png)
+- 📈 **Requests Per Second**
+  ![Requests Per Second 100](requests_per_second_100.png)
+- ⚠️ **Failure Rate**
+  ![Failure Rate 100](failure_rate_100.png)
+
+---
+
+### 🧩 Test 3 — 200 Virtual Users
+**Scenario:** Heavy spike load for 3 minutes.
+
+#### ▶️ Running Test
+![Running Test 200 VUs](running_200.png)
+
+#### 🧾 Test Output
+![Result Output 200 VUs](result_200.png)
+
+#### 📊 Graph Results
+- ⏱ **Response Time**
+  ![Response Time 200](response_time_200.png)
+- 📈 **Requests Per Second**
+  ![Requests Per Second 200](requests_per_second_200.png)
+- ⚠️ **Failure Rate**
+  ![Failure Rate 200](failure_rate_200.png)
+
+---
+
+### 📊 Summary Table
+
+| Test | Virtual Users | Avg Response (ms) | p95 (ms) | Failure Rate | Requests/sec |
+|------|----------------|------------------|-----------|---------------|---------------|
+| Test 1 | 50 | 246 | 500 | 0.00% | ~13 RPS |
+| Test 2 | 100 | 540 | 1100 | 0.01% | ~25 RPS |
+| Test 3 | 200 | 1456 | 8779 | 0.22% | ~85 RPS |
+
+---
 
 ### 📌 Key Observations
-- ✅ **Stable Load Handling:** Shopist.io performed well up to ~150 users.  
-- ⚠️ **Latency Increased:** 95th percentile response time rose above 2s after 180 users.  
-- 🚫 **Minor Failures:** 0.01% failure rate from timeouts during peak load.  
-- 📈 **Throughput:** Maintained around 200 requests per second during the spike.  
+✅ **Stable Load Handling:** Shopist.io performed well up to ~150 users.  
+⚠️ **Latency Increased:** 95th percentile response time rose above 2s after 180 users.  
+🚫 **Minor Failures:** 0.01% failure rate from timeouts during peak load.  
+📈 **Throughput:** Maintained around 200 requests per second during the spike.  
 
 ---
 
