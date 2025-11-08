@@ -1,3 +1,6 @@
+<p align="center">
+<img width="400" height="400" alt="Picture1" src="https://github.com/user-attachments/assets/84ac953a-e51a-47b3-b158-802c5d97b005" />
+
 # MOHAMAD FERHAD BIN KAMARUDIN
 #  Comprehensive Web Application Performance Testing & Analysis
 
