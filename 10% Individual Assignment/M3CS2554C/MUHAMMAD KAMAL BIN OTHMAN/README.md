@@ -1,9 +1,9 @@
 # MUHAMMAD KAMAL BIN OTHMAN
-**Web Application Performance Testing**
+**WEB APPLICATION PERFORMANCE TESTING**
 
 **STUDENT ID: 2025118299**  
 **CLASS: M3CS2554C**  
-**TITLE: WEBSITE PERFORMANCE TESTING USING SIEGE**
+**TITLE: WEBSITE LOAD TESTING USING SIEGE**
 
 ---
 
@@ -27,17 +27,29 @@ Siege is known for its beginner-friendly concept and ease of use. The command-li
 
 ### **TEST ENVIRONMENT SETUP AND METHODOLOGY**
 
-**TESTED ENVIRONMENT**  
-**IMAGE (KALI)**  
+#### **TESTED ENVIRONMENT**
+
+<img width="1919" height="990" alt="kali" src="https://github.com/user-attachments/assets/e3c37f2e-ee8a-46bf-b0a1-58ccb010bf18" />
+  
 Kali Linux is an open-source Linux distribution that is created for cybersecurity purpose. Even though it is closely related with cybersecurity, it is also can be used for other purposes, such as website's performance test in this case using 'siege' tool.
 
 **GUIDE:**  
-1. Update the Kali Linux using this command  
-2. Install 'siege' using this command  
-3. Run test using this command:  
+1. Update the Kali Linux using this command
+   
+   <img width="274" height="54" alt="image" src="https://github.com/user-attachments/assets/06c9cf33-e4ff-4e88-8c93-173b2c8d6ecf" />
+
+3. Install 'siege' using this command (URL via GitHub)
+   
+   <img width="440" height="64" alt="image" src="https://github.com/user-attachments/assets/eebf5309-aa5d-4638-8f8f-66abb0a142b0" />
+
+5. Run test using this command:
+   
+   <img width="393" height="66" alt="image" src="https://github.com/user-attachments/assets/051d09f1-32af-4c7c-a8ad-b350f25b9760" />
+  
    - `-c50` represents 50 users  
-   - `-t1M` represents 1 minute duration  
-   - Specify the target website’s URL  
+   - `-t1M` represents 1 minute duration
+   - `-d5` represents random delay between 1-5 seconds
+   - Specify the target website’s URL / File
 
 ---
 
@@ -79,14 +91,24 @@ Port: 443
 
 ### **RAW DATA PRESENTATION**
 
-**GRAPH1 IMAGE**  
-Figure 1: Transaction Summary showing successful and failed transactions  
+<img width="512" height="325" alt="image" src="https://github.com/user-attachments/assets/69a3d3df-7ca6-46dd-9417-64cda9d8f45f" />
 
-**GRAPH2 IMAGE**  
-Figure 2: Key Performance Metrics Overview  
+                          Figure 1: Raw Output
 
-**GRAPH3 IMAGE**  
-Figure 3: Transaction Time Comparison  
+
+<img width="512" height="325" alt="image" src="https://github.com/user-attachments/assets/320ed710-f925-450e-8e3b-1918b6bbbd51" />
+  
+    Figure 2: Transaction Summary showing successful and failed transactions  
+
+
+<img width="512" height="325" alt="image" src="https://github.com/user-attachments/assets/83818dda-e01c-489a-a964-617257d408f7" />
+  
+                Figure 3: Key Performance Metrics Overview  
+
+
+<img width="512" height="320" alt="image" src="https://github.com/user-attachments/assets/b3d95514-876c-46c0-ba51-fe4dc06d09ea" />
+  
+                  Figure 4: Transaction Time Comparison  
 
 ---
 
