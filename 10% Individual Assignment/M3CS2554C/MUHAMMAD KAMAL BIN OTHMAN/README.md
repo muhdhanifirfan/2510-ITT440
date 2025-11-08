@@ -53,12 +53,13 @@ Kali Linux is an open-source Linux distribution that is created for cybersecurit
 
 ---
 
-**TESTED APPLICATION**  
-**https://tools-httpstatus.pickup-services.com/**  
-**https://tools-httpstatus.pickup-services.com/200**
-**https://tools-httpstatus.pickup-services.com/206**
-**https://tools-httpstatus.pickup-services.com/302**
-**https://tools-httpstatus.pickup-services.com/404**
+**TESTED APPLICATION** 
+
+- https://tools-httpstatus.pickup-services.com/
+- https://tools-httpstatus.pickup-services.com/200
+- https://tools-httpstatus.pickup-services.com/206
+- https://tools-httpstatus.pickup-services.com/302
+- https://tools-httpstatus.pickup-services.com/404
 
 
 This website is a public HTTP Status Code testing service that provides various endpoints to simulate server responses. It is primarily designed for testing HTTP client behavior and verifying response codes such as 200 OK, 204 No Content, or 404 Not Found. Due to its lightweight feature, this website is suitable for quick performance and availability testing.
@@ -71,7 +72,7 @@ This website is a public HTTP Status Code testing service that provides various 
 
 ---
 
-**Testing Infrastructure Setup**
+**TEST INFRASTRUCTURE SETUP**
 
 Testing Tool: Siege 4.1.6  
 Operating System: Windows 11  
@@ -79,19 +80,19 @@ System Memory: 32 GB RAM
 Processor: AMD Ryzen 5 5600H  
 Network Connection: 131 Mbps mobile hotspot (may introduce variable latency)
 
-#### **Test Configuration**
+#### **TEST CONFIGURATION**
 
 **Performance Test Design**
 
 Objective: Evaluate the website’s response consistency and throughput under moderate concurrent user load in 1 minute.  
 Concurrent Users: 50 virtual users  
 Test Duration: 60 seconds (1 minute)  
-User Behavior: Accessed the URL, which is 
-'https://tools-httpstatus.pickup-services.com/', 
-'https://tools-httpstatus.pickup-services.com/200',
-'https://tools-httpstatus.pickup-services.com/206',
-'https://tools-httpstatus.pickup-services.com/302',
-'https://tools-httpstatus.pickup-services.com/404' 
+User Behavior: Accessed the following URLs:
+- https://tools-httpstatus.pickup-services.com/
+- https://tools-httpstatus.pickup-services.com/200
+- https://tools-httpstatus.pickup-services.com/206
+- https://tools-httpstatus.pickup-services.com/302
+- https://tools-httpstatus.pickup-services.com/404
 
 **HTTP Request Configuration**  
 
@@ -128,7 +129,7 @@ Port: 443
 
 ### **INTERPRETATION OF RESULTS**
 
-The performance test on the website https://tools-httpstatus.pickup-services.com/ shows that the site can handle response times well when there is a moderate load. The average response time of 2.69 seconds, as shown in Figure 1, suggests that the server can manage multiple requests within a reasonable timeframe. Although the longest transaction recorded was 19.18 seconds, this is still within an acceptable range for a public service under load, especially with 50 concurrent users accessing the same website simultaneously. This indicates stable system performance for handling multiple user groups.
+The performance test on the website https://tools-httpstatus.pickup-services.com/ shows that the site can handle response times well when there is a moderate load. The average response time of 2.69 seconds, as shown in Figure 2, suggests that the server can manage multiple requests within a reasonable timeframe. Although the longest transaction recorded was 19.18 seconds, this is still within an acceptable range for a public service under load, especially with 50 concurrent users accessing the same website simultaneously. This indicates stable system performance for handling multiple user groups.
 
 The website is good at handling data, with a throughput rate of 0.21 MB/sec, as shown in Figure 2. The transaction rate of 64.88 transactions per second shows that the server can manage multiple requests per second without serious problems, maintaining network utilization and server load. The total data transferred during the test was 12.35 MB, which shows that the website efficiently handles resource usage while maintaining stable data transfer capabilities.
 
@@ -181,3 +182,7 @@ Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter, L., Leach, P., & Ber
 Fulmer, J. E. (2023). Siege source code repository [Source code]. GitHub. https://github.com/JoeDog/siege
 
 Molenaar, J. (2022). Web performance testing and benchmarking methodologies. In K. Johnson (Ed.), Modern DevOps practices (pp. 145-167). O'Reilly Media.
+
+### **Justification**
+
+I selected Siege over alternatives like Apache JMeter or Grafana K6 because it is beginner-friendly and also provides realistic user simulation with random delays (-d5 parameter), supports concurrent connections (-c50), and generates complete transaction reports. The test plan focused on multiple HTTP status endpoints (200, 206, 302, 404) to simulate real-world user behavior and identify how different server responses impact performance under load. Based on the output we observed, we recommend that this website improve their availability when many users access the website simultaneously. In addition, This approach follows the specific standard recommendation for comprehensive web application performance testing.
