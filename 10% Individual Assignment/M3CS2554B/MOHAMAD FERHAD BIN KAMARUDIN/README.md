@@ -27,7 +27,6 @@ Artillery is an open-source tool used for HTTP, WebSocket, and API performance t
   
 ## Target Web Application (Snapchat)
 
-
 The experiment used the Snapchat API because it offers a robust and scalable platform suitable for real-world performance testing. The API supports various functionalities such as media sharing, messaging, and user interaction features, allowing realistic simulations of active user behavior. Its well-documented endpoints and reliable architecture make it an effective choice for evaluating response times, throughput, and stability under high user load using Artillery.
 ---
 ## Test Environment Setup
@@ -35,7 +34,7 @@ The experiment used the Snapchat API because it offers a robust and scalable pla
 | Component         | Details                                  |
 | ----------------- | ---------------------------------------- |
 | **Tool**          | Artillery (v2.x)                         |
-| **Machine**       | Localhost (Windows 10, 16GB RAM, i7 CPU) |
+| **Machine**       | Localhost (Windows 11, 16GB RAM, i7 CPU) |
 | **Network**       | 100 Mbps broadband                       |
 | **Target API**    | `https://developers.snap.com/api/home`                |
 | **Test Duration** | 240 seconds                              |
@@ -55,14 +54,14 @@ The experiment used the Snapchat API because it offers a robust and scalable pla
 | **Test Type**                        | Soak Test                                                                                                                               |
 | **Test Date**                        | 08 November 2025                                                                                                                                                 |
 | **Test Engineer**                    | *Mohamad Ferhad*                                                                                                                                                    |
-| **Target System / API Endpoint**     | `https://discord.com/api`                                                                                                                             |
+| **Target System / API Endpoint**     | `https://developers.snap.com/api/home`                                                                                                                             |
 | **Test Duration**                    | 4 minutes (240 seconds)                                                                                                                                          |
 | **Load Model**                       | Stepwise ramp-up (10 → 20 virtual users per second)                                                                                                              |
 | **Number of Virtual Users (VUs)**    | 125 created                                                                                                                                                     |
 | **Test Scenario Description**        | Each virtual user sends a `GET` request to `/api/users?page=2`, simulating typical client behavior retrieving paginated user data.                               |
 | **KPIs Measured**                    | - Response Time (min, mean, p95, p99)  <br> - Throughput (requests/sec) <br> - Error Rate <br> - Virtual User Completion                                         |
 | **Performance Thresholds (Targets)** | - Average Response Time ≤ 500 ms  <br> - Error Rate ≤ 2%  <br> - 95% Responses < 1s                                                                              |
-| **Test Environment**                 | Localhost (Windows 10, Intel i7, 16GB RAM) <br> Network: 100 Mbps broadband                                                                                      |
+| **Test Environment**                 | Localhost (Windows 11, Intel i7, 16GB RAM) <br> Network: 100 Mbps broadband                                                                                      |
 | **Monitoring Tools**                 | Artillery CLI and built-in metrics                                                                                                                               |
 | **Assumptions**                      | Snapchat API remains accessible and stable throughout testing.                                                                                              |
 | **Risks / Constraints**              | Snapchat API may have rate limiting or IP blocking during extended scalability tests.                                                                                     |
@@ -143,7 +142,7 @@ scenarios:
 
 ##  **Conclusion**
 
-The performance test demonstrated that the target API handles moderate concurrent load effectively with an average response time below 300 ms and high completion rates. However, consistent 404 errors and occasional connection resets suggest configuration or rate-limiting issues under sustained high traffic. Future tests will explore long-duration soak tests and scaling improvements.
+The performance evaluation confirms the API's robustness under moderate concurrent load, demonstrating stable performance with sub-300ms response times and strong reliability. However, the presence of consistent 404 errors and intermittent connection resets indicates potential bottlenecks in routing, resource availability, or rate-limiting configurations during sustained high traffic.Further tuning and endurance testing are recommended.
 
 ---
 
